@@ -20,6 +20,21 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    public void Level1()
+    {
+        SceneManager.LoadScene("Level 1");
+    }
+
+    public void Level2()
+    {
+        SceneManager.LoadScene("Level 2");
+    }
+
+    public void Level3()
+    {
+        SceneManager.LoadScene("Level 3");
+    }
+
     public void Start()
     {
         sceneIndex = SceneManager.GetActiveScene (). buildIndex;
