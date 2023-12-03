@@ -6,60 +6,76 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // variable to keep track of the playback position of the audio clip
-    private float audioClipPosition = 0f;
-    public AudioSource theMusic;
-
-    // i am so sorry there are so many audio variable
-    public AudioSource winMusic;
-    public AudioSource winFX;
-    public AudioSource loseFX;
-    //public AudioSource missSound;
-
-    public bool startPlaying;
-
     public static GameManager instance;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
+
+    // ------------------------------------------------------------
+    // Defining attributes
+    // ------------------------------------------------------------
+
+
+    // Game has started or not started yet
+    public bool startPlaying;
+
+    // Game is paused or not - set to not paused initially
+    private bool isPaused = false;
+
+    // Variable to keep track of the playback position of the audio clip
+    private float audioClipPosition = 0f;
+
+    // Music in scene
+    private AudioSource theMusic;
+
+    // public AudioSource winMusic;
+    // public AudioSource winFX;
+    // public AudioSource loseFX;
+    // public AudioSource missSound;
+
+    // Keeping track of scenes
     int sceneIndex;
 
+    // Screens to show on triggering certain scenarios
     public GameObject pauseMenuPanel;
     public GameObject winPanel;
     public GameObject gameOverPanel;
-    private bool isPaused = false;
+
+
+    // ------------------------------------------------------------
+    // Methods
+    // ------------------------------------------------------------
+
 
     // Start is called before the first frame update
     void Start()
     {
-    
+        // Set music to the audio source defined by the audio manager in scene
+        theMusic = AudioManager.instance.currentMusic.music;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Handling pausing and resuming game
+        // Input will be set to 'some' button on Quest controllers
         if (Input.GetKeyDown(KeyCode.P))
         {
             if (isPaused)
             {
+                // If the game is already paused, the game will be resumed 
                 ResumeGame();
             }
             else
             {
+                // If the game is not paused, the game will be paused
                 PauseGame();
             }
         }
 
-    }
-
-    public void TogglePause()
-    {
-        if (isPaused)
-        {
-            ResumeGame();
-        }
-        else
-        {
-            PauseGame();
-        }
     }
 
     private void PauseGame()
