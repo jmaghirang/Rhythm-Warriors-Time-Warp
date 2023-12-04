@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
     int sceneIndex;
 
     // Screens to show on triggering certain scenarios
-    public GameObject pauseMenuPanel;
+    // public GameObject pauseMenuPanel;
     public GameObject winPanel;
     public GameObject gameOverPanel;
 
@@ -61,8 +63,9 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // Handling pausing and resuming game
-        // Input will be set to 'some' button on Quest controllers
-        if (Input.GetKeyDown(KeyCode.P))
+        // Input to trigger pause menu set to menu button on left controller
+        // If the menu button was pressed, game pause/unpause
+        if (MenuManager.instance.menuButton.action.WasPressedThisFrame() /*Input.GetKeyDown(KeyCode.P)*/)
         {
             if (isPaused)
             {
@@ -82,7 +85,9 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         isPaused = true;
-        pauseMenuPanel.SetActive(true);
+
+        // Menu manager will handle showing pause menu
+        // pauseMenuPanel.SetActive(true);
 
         audioClipPosition = theMusic.time;
         theMusic.Pause();
@@ -90,11 +95,13 @@ public class GameManager : MonoBehaviour
         Debug.Log ("Game has been paused");
     }
 
-    private void ResumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1f;
         isPaused = false;
-        pauseMenuPanel.SetActive(false);
+
+        // Menu manager will handle disabling pause menu
+        // pauseMenuPanel.SetActive(false);
 
         theMusic.time = audioClipPosition;
         theMusic.Play();
@@ -107,7 +114,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void QuitGame()
@@ -115,5 +122,4 @@ public class GameManager : MonoBehaviour
         Debug.Log ("QUIT!");
         Application.Quit();
     }
-
 }
