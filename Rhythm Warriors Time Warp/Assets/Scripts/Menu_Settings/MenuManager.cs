@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 // Code referenced from
 // How to Make a VR Game in Unity 2022 - PART 7 - User Interface
@@ -23,16 +22,10 @@ public class MenuManager : MonoBehaviour
 
 
     // Position rotation of player's head
-    public Transform head;
+    public Transform playerCamera;
 
     // Distance menu will spawn from player's head
     public float spawnDistance = 0.5f;
-
-    // Canvas/menu to show
-    public GameObject menu;
-
-    // Input on controller to trigger menu
-    public InputActionProperty menuButton;
 
 
     // ------------------------------------------------------------
@@ -49,20 +42,21 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // If the button specified was pressed
-        if (menuButton.action.WasPressedThisFrame())
-        {
-            // Menu will be shown or put away depending on it's currently showing up or not
-            menu.SetActive(!menu.activeSelf);
+        
+    }
 
-            // Position of menu will be at the position of the player's head but will face in the direction of where the player is looking
-            menu.transform.position = head.position + new Vector3(head.forward.x, 0, head.forward.z).normalized * spawnDistance;
-        }
+    public void ShowMenu(GameObject m)
+    {
+        // Position of menu will be spawned at the position of where the player is looking
+        m.transform.position = playerCamera.position + new Vector3(playerCamera.forward.x, 0, playerCamera.forward.z).normalized * spawnDistance;
+    }
 
+    public void OrientMenu(GameObject m)
+    {
         // Menu will always face the position of the player's head
-        menu.transform.LookAt(new Vector3(head.position.x, menu.transform.position.y, head.transform.position.z));
+        m.transform.LookAt(new Vector3(playerCamera.position.x, m.transform.position.y, playerCamera.transform.position.z));
 
         // Menu is at the right orientation
-        menu.transform.forward *= -1;
+        m.transform.forward *= -1;
     }
 }

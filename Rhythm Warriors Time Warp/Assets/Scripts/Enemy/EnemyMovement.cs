@@ -17,8 +17,11 @@ public class EnemyMovement : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, player.position, movementSpeed * Time.deltaTime);
 
         // Rotate to face the player (optional)
-        Vector3 direction = player.position - transform.position;
-        transform.rotation = Quaternion.LookRotation(direction);
+        transform.LookAt(new Vector3(player.position.x, transform.position.y, player.transform.position.z));
+        transform.forward *= -1;
+
+        //Vector3 direction = player.position - transform.position;
+        //transform.rotation = Quaternion.LookRotation(direction);
     }
 
     // Collision detection with player (Modify this based on your interaction system)

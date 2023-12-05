@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Dialogue : MonoBehaviour
 {
@@ -11,6 +12,11 @@ public class Dialogue : MonoBehaviour
     private int index;
     private bool isTyping = false;
 
+    // Input on controller to continue dialogue
+    // Set to primary button [X] on left controller
+    // With XR Device Simulator, it is Shift + B
+    public InputActionProperty continueButton;
+
     void Start()
     {
         textComponent.text = string.Empty;
@@ -19,7 +25,7 @@ public class Dialogue : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (continueButton.action.WasPressedThisFrame() /*Input.GetKeyDown(KeyCode.R)*/)
         {
             if (isTyping)
             {

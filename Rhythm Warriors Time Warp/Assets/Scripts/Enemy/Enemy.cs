@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private int bpm;
+    //private int bpm;
 
     public string enemyName;
     public bool canBeHit;
@@ -12,22 +12,21 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bpm = AudioManager.instance.currentMusic.BPM;
+        //bpm = AudioManager.instance.currentMusic.BPM;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.startPlaying)
-        {
-            transform.position -= new Vector3(0, 0, bpm * Time.deltaTime);
-        }
-        
+       if (canBeHit)
+       {
+            Destroy(gameObject);
+       }
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Slice")
+        if (other.tag == "Weapon")
         {
             canBeHit = true;
         }
@@ -37,12 +36,10 @@ public class Enemy : MonoBehaviour
     {
         if (gameObject.activeInHierarchy)
         {
-            if (other.tag == "Slice")
+            if (other.tag == "Weapon")
             {
                 canBeHit = false;
             }
         }
     }
-
-
 }

@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         // Handling pausing and resuming game
         // Input to trigger pause menu set to menu button on left controller
         // If the menu button was pressed, game pause/unpause
-        if (MenuManager.instance.menuButton.action.WasPressedThisFrame() /*Input.GetKeyDown(KeyCode.P)*/)
+        if (ControlManager.instance.pauseButton.action.WasPressedThisFrame() /*Input.GetKeyDown(KeyCode.P)*/)
         {
             if (isPaused)
             {
