@@ -6,7 +6,8 @@ public class WeaponTutorial : MonoBehaviour
     public Dialogue dialogue; // reference to the dialogue system
     public GameObject tutorialUI; // reference to the tutorial UI
     public GameObject dummyEnemy;
-
+    public GameObject dummyEnemyAttacked;
+    
     void Start()
     {
         // start the tutorial when required, maybe triggered from another script or event
@@ -15,10 +16,10 @@ public class WeaponTutorial : MonoBehaviour
 
     public void StartWeaponTutorial()
     {
-        StartCoroutine(WeaponTutorial());
+        StartCoroutine(WeaponTutorialCoroutine());
     }
 
-    IEnumerator WeaponTutorial()
+    IEnumerator WeaponTutorialCoroutine()
     {
         Debug.Log("Weapon tutorial started.");
 
@@ -43,9 +44,10 @@ public class WeaponTutorial : MonoBehaviour
 
     bool DummyEnemyAttacked()
     {
-        // check if the player has attacked the dummy enemy
-        return /* condition for attacking the dummy enemy */;
+    // Assuming dummyEnemyAttacked is a boolean variable that indicates whether the dummy enemy has been attacked
+        return dummyEnemyAttacked;
     }
+
 
     void EndTutorial()
     {
