@@ -40,6 +40,11 @@ public class MainMenu : MonoBehaviour
         sceneIndex = SceneManager.GetActiveScene (). buildIndex;
     }
 
+    public void NewGame()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
     public void QuitGame()
     {
         Debug.Log ("QUIT!");

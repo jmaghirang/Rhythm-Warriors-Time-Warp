@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Weapon : Item
 {
@@ -10,6 +11,7 @@ public class Weapon : Item
 
 
     public bool isEquipped;
+    public Transform controller;
 
 
     // Start is called before the first frame update
@@ -22,5 +24,10 @@ public class Weapon : Item
     void Update()
     {
         
+    }
+
+    public void Equip()
+    {
+        transform.SetParent(controller);
     }
 }
