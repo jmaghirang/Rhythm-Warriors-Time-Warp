@@ -26,8 +26,7 @@ public class DialogueManager : MonoBehaviour
     Message[] lines;
     Character[] characters;
 
-    // Active message
-    private int index = 0;
+    private int index = 0; // Active message
 
     // Index paused at
     private int pIndex;
