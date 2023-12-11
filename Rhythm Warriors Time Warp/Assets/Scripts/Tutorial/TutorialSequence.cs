@@ -7,6 +7,8 @@ public class TutorialSequence : MonoBehaviour
 {
     public int rIndex = 0;
 
+    public GameObject weapon;
+
     // Keeps track of what is called once - very not efficient will change later
     private bool execute1Once = false;
     private bool execute2Once = false;
@@ -52,9 +54,10 @@ public class TutorialSequence : MonoBehaviour
     public IEnumerator SwingWeapon()
     {
         DialogueManager.instance.dialogueBox.SetActive(false);
+        weapon.SetActive(true);
         // Player does stuff
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
 
         DialogueManager.instance.dialogueBox.SetActive(true);
     }
@@ -72,7 +75,7 @@ public class TutorialSequence : MonoBehaviour
     public IEnumerator HitEnemies()
     {
         DialogueManager.instance.dialogueBox.SetActive(false);
-        SongManager.instance.StartSong();
+        StartCoroutine(SongManager.instance.StartSong());
 
         yield return new WaitForSeconds(10f);
 

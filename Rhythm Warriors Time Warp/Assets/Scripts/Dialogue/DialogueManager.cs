@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 // Code referenced from
 // https://youtu.be/PswC-HlKZqA?si=o7Q38JtiN-xi6kkS
@@ -83,6 +84,9 @@ public class DialogueManager : MonoBehaviour
         else
         {
             dialogueBox.SetActive(false);
+
+            // Specifically for tutorial scene for demo purposes
+            SceneManager.LoadScene("Wild West");
         }
     }
 

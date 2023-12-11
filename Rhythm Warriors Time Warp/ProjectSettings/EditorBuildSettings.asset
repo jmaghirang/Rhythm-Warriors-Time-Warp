@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Level 3.unity
     guid: b49c27f5428f3934d876ca246863c07c
+  - enabled: 1
+    path: Assets/Scenes/Wild West.unity
+    guid: a2a6791da2054d64abd0c6f755f3e8e5
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: db414da60d3fe1b408ef3633bd3f16e4, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1820ae183c6762d45a6688eca32d7979, type: 2}

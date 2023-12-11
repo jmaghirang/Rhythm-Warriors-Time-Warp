@@ -16,21 +16,11 @@ public class MenuManager : MonoBehaviour
     }
 
 
-    // ------------------------------------------------------------
-    // Defining attributes
-    // ------------------------------------------------------------
-
-
     // Position rotation of player's head
     public Transform playerCamera;
 
     // Distance menu will spawn from player's head
     public float spawnDistance = 0.5f;
-
-
-    // ------------------------------------------------------------
-    // Methods
-    // ------------------------------------------------------------
 
 
     // Start is called before the first frame update

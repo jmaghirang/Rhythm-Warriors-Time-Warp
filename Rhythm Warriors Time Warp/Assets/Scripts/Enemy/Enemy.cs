@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         timeInstantiated = SongManager.GetAudioSourceTime();
+        GetComponentInChildren<MeshRenderer>().enabled = false;
     }
 
     // Update is called once per frame
@@ -34,24 +35,30 @@ public class Enemy : MonoBehaviour
         {
             // Move along two points - from spawn point to despawn point
             transform.localPosition = Vector3.Lerp(Vector3.forward * SongManager.instance.noteSpawnZ, Vector3.forward * SongManager.instance.noteDespawnZ, t);
+            GetComponentInChildren<MeshRenderer>().enabled = true;
         }
     }
 
     // Check collisions with hit box
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Slice"))
+        if (other.CompareTag("Weapon"))
         {
             canBeHit = true;
+            Destroy(gameObject);
+            AudioManager.instance.hitSFX.Play();
+            Debug.Log("Hit");
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (gameObject.activeInHierarchy)
         {
-            if (other.CompareTag("Slice"))
+            if (other.CompareTag("Weapon"))
             {
                 canBeHit = false;
+                AudioManager.instance.missSFX.Play();
+                Debug.Log("Miss");
             }
         }
     }

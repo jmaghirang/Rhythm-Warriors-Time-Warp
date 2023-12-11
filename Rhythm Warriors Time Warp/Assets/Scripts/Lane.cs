@@ -1,4 +1,5 @@
 using Melanchall.DryWetMidi.Interaction;
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.XR.CoreUtils;
@@ -48,7 +49,7 @@ public class Lane : MonoBehaviour
             }
         }
 
-        // Hit Registration (have not tested yet)
+        // Hit Registration
         /*if (timeIndex < timeStamps.Count)
         {
             // Assigned variables for clarity
@@ -56,25 +57,23 @@ public class Lane : MonoBehaviour
             double marginOfError = SongManager.instance.errorMargin;
             double audioTime = SongManager.GetAudioSourceTime() - (SongManager.instance.inputDelay / 1000.0); // milliseconds to seconds
 
-            //if (enemies[spawnIndex].canBeHit)
-            //{
-                // If the player hit within the margin of error
-                if (Math.Abs(audioTime - timeStamp) < marginOfError)
-                {
-                    Hit();
-                    // Notify of accurate hit
-                    print($"Hit on {timeIndex} note");
+            // If the player hit within the margin of error
+            if (Math.Abs(audioTime - timeStamp) < marginOfError)
+            {
+                Hit();
+                // Notify of accurate hit
+                print($"Hit on {timeIndex} note");
 
-                    // Destroy enemy game object
-                    Destroy(enemies[timeIndex].gameObject);
-                    // Increment index to next time stamp that needs to be fulfilled
-                    timeIndex++;
-                }
-                else
-                {
-                    // Notify of inaccurate hit
-                    print($"Hit inaccurate on {timeIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
-                }
+                // Destroy enemy game object
+                Destroy(enemies[timeIndex].gameObject);
+                // Increment index to next time stamp that needs to be fulfilled
+                timeIndex++;
+            }
+            else
+            {
+                // Notify of inaccurate hit
+                print($"Hit inaccurate on {timeIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+            }
             //}
 
             // If the player did not hit the object within the margin of error at the specified time stamp

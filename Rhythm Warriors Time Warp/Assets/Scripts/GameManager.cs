@@ -16,40 +16,18 @@ public class GameManager : MonoBehaviour
     }
 
 
-    // ------------------------------------------------------------
-    // Defining attributes
-    // ------------------------------------------------------------
+    public bool startPlaying; // Game has started or not started yet
+    private bool isPaused = false; // Game is paused or not - set to not paused initially
 
+    private float audioClipPosition = 0f; // Variable to keep track of the playback position of the audio clip
 
-    // Game has started or not started yet
-    public bool startPlaying;
+    private AudioSource theMusic; // Music in scene
 
-    // Game is paused or not - set to not paused initially
-    private bool isPaused = false;
-
-    // Variable to keep track of the playback position of the audio clip
-    private float audioClipPosition = 0f;
-
-    // Music in scene
-    private AudioSource theMusic;
-
-    // public AudioSource winMusic;
-    // public AudioSource winFX;
-    // public AudioSource loseFX;
-    // public AudioSource missSound;
-
-    // Keeping track of scenes
-    int sceneIndex;
+    int sceneIndex; // Keeping track of scenes
 
     // Screens to show on triggering certain scenarios
-    // public GameObject pauseMenuPanel;
     public GameObject winPanel;
     public GameObject gameOverPanel;
-
-
-    // ------------------------------------------------------------
-    // Methods
-    // ------------------------------------------------------------
 
 
     // Start is called before the first frame update
@@ -88,10 +66,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         isPaused = true;
-
-        // Menu manager will handle showing pause menu
-        // pauseMenuPanel.SetActive(true);
-
+        
         audioClipPosition = theMusic.time;
         theMusic.Pause();
 
@@ -102,9 +77,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1f;
         isPaused = false;
-
-        // Menu manager will handle disabling pause menu
-        // pauseMenuPanel.SetActive(false);
 
         theMusic.time = audioClipPosition;
         theMusic.Play();

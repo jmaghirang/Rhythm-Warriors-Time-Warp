@@ -107,8 +107,9 @@ public class SongManager : MonoBehaviour
         foreach (var lane in lanes) lane.SetTimeStamps(array);
     }
 
-    public void StartSong()
+    public IEnumerator StartSong()
     {
+        yield return new WaitForSeconds(songDelay);
         startMusic = true;
 
         // If background music is playing stop it
