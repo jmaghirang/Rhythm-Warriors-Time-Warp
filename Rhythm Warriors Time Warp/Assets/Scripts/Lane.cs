@@ -12,12 +12,16 @@ public class Lane : MonoBehaviour
 {
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRepresentation; // Note from midi file to translate to a lane
     public GameObject enemyPrefab; 
-
+    public GameObject obstaclePrefab;
     public List<Enemy> enemies = new();
     public List<double> timeStamps = new(); // The times at which the player needs to hit an enemy
+    public List<double> obstacleTimeStamps = new(); // Timestamps for obstacle spawn
+    
 
     int spawnIndex = 0; // Index of current enemy that spawns
     int timeIndex = 0;
+
+    int obstacleSpawnIndex = 0; // Index of current obstacle to spawn
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +50,18 @@ public class Lane : MonoBehaviour
 
                 // Move on to next enemy to be spawned
                 spawnIndex++;
+            }
+        }
+
+        if (obstacleSpawnIndex < obstacleTimeStamps.Count && SongManager.instance.audioSource.isPlaying)
+        {
+            if (SongManager.GetAudioSourceTime() >= obstacleTimeStamps[obstacleSpawnIndex] - SongManager.instance.noteScreenTime)
+            {
+                // Spawn obstacle
+                var obstacle = Instantiate(obstaclePrefab, transform);
+                // Additional settings for obstacles, if needed
+
+                obstacleSpawnIndex++;
             }
         }
 
@@ -100,6 +116,12 @@ public class Lane : MonoBehaviour
             }
         }
     }
+
+    public void SetObstacleTimeStamps(List<double> timestamps)
+    {
+        obstacleTimeStamps = timestamps;
+    }
+
 
     public void RefreshLane()
     {
