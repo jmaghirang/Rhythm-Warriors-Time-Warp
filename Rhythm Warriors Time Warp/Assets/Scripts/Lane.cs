@@ -1,5 +1,7 @@
 using Melanchall.DryWetMidi.Interaction;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 // Code referenced from
@@ -11,7 +13,6 @@ public class Lane : MonoBehaviour
     public GameObject enemyPrefab; 
 
     public List<Enemy> enemies = new();
-
     public List<double> timeStamps = new(); // The times at which the player needs to hit an enemy
 
     int spawnIndex = 0; // Index of current enemy that spawns
@@ -26,11 +27,11 @@ public class Lane : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spawnIndex < timeStamps.Count && SongManager.instance.musicPlaying)
+        if (spawnIndex < timeStamps.Count && SongManager.instance.audioSource.isPlaying)
         {
-            if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.instance.noteTime)
+            if (SongManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - SongManager.instance.noteScreenTime)
             {
-                Debug.Log("Spawn Index: " + spawnIndex + "\n");
+                // Debug.Log("Spawn Index: " + spawnIndex + "\n");
 
                 // Spawn enemy
                 var note = Instantiate(enemyPrefab, transform);
@@ -40,7 +41,7 @@ public class Lane : MonoBehaviour
 
                 // Enemy will know where to position itself so the player can hit
                 note.GetComponent<Enemy>().assignedTime = (float) timeStamps[spawnIndex];
-                Debug.Log("Assigned Time: " + timeStamps[spawnIndex] + "\n");
+                // Debug.Log("Assigned Time: " + timeStamps[spawnIndex] + "\n");
 
                 // Move on to next enemy to be spawned
                 spawnIndex++;
@@ -99,6 +100,14 @@ public class Lane : MonoBehaviour
                 timeStamps.Add((double) metricTimeSpan.Minutes * 60f + metricTimeSpan.Seconds + (double) metricTimeSpan.Milliseconds / 1000f);
             }
         }
+    }
+
+    public void RefreshLane()
+    {
+        enemies.Clear();
+        timeStamps.Clear();
+
+        foreach (Transform child in transform) Destroy(child.gameObject);
     }
 
     private void Hit()

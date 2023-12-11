@@ -26,12 +26,7 @@ public class DialogueManager : MonoBehaviour
     Message[] lines;
     Character[] characters;
 
-    private int index = 0; // Active message
-
-    // Index paused at
-    private int pIndex;
-
-    public bool isDialoguePaused = false;
+    public int index = 0; // Active message
 
     // Input on controller to continue dialogue
     // Set to primary button [X] on left controller
@@ -48,7 +43,7 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (continueButton.action.WasPressedThisFrame() /*Input.GetKeyDown(KeyCode.R)*/ && dialogueBox.activeSelf == true)
+        if (continueButton.action.WasPressedThisFrame() && dialogueBox.activeSelf == true)
         {
             if (isTyping)
             {
@@ -112,24 +107,4 @@ public class DialogueManager : MonoBehaviour
 
         DisplayMessage();
     }
-
-    /*public void PauseDialogue()
-    {
-        isDialoguePaused = true;
-        pIndex = index;
-
-        dialogueBox.SetActive(!isDialoguePaused);
-
-        Debug.Log("Paused index: " + pIndex);
-    }
-
-    public void ResumeDialogue()
-    {
-        isDialoguePaused = false;
-        index = pIndex;
-
-        dialogueBox.SetActive(!isDialoguePaused);
-
-        
-    }*/
 }

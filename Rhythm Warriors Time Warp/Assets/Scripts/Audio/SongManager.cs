@@ -17,9 +17,9 @@ public class SongManager : MonoBehaviour
         instance = this;
     }
 
-    public bool musicPlaying = false;
+    public bool startMusic = false;
 
-    public AudioSource audioSource;
+    public AudioSource audioSource; // song
 
     public Lane[] lanes;
 
@@ -30,21 +30,27 @@ public class SongManager : MonoBehaviour
 
     public string fileLocation; // midi file location
 
-    public float noteTime; // player reaction time; time object will be on screen
+    public float noteScreenTime; // player reaction time; time object will be on screen
     public float noteSpawnZ; // position where objects will spawn
-    public float noteTapZ;  // position where objects will need to be hit
-    public float noteDespawnZ // position where objects will be destroyed if not hit
-    {
-        get
-        {
-            return noteTapZ - (noteSpawnZ - noteTapZ);
-        }
-    }
+    public float noteHitZ;  // position where objects will need to be hit
+    public float noteDespawnZ; // position where objects will be destroyed if not hit
 
     public static MidiFile midiFile;
 
     // Start is called before the first frame update
     void Start()
+    {
+        ReadSong();
+        noteDespawnZ = noteHitZ - (noteSpawnZ - noteHitZ);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void ReadSong()
     {
         if (Application.streamingAssetsPath.StartsWith("jar:file//"))
         {
@@ -56,12 +62,6 @@ public class SongManager : MonoBehaviour
             // If on Windows, Mac,...
             ReadFromFile();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private IEnumerator ReadFromWeb()
@@ -103,18 +103,49 @@ public class SongManager : MonoBehaviour
         var array = new Note[notes.Count];
         notes.CopyTo(array, 0);
         
-        // assign notes in array to respective time stamps
+        // Assign notes in array to respective time stamps
         foreach (var lane in lanes) lane.SetTimeStamps(array);
-
-        // Call function after song delay in seconds
-        Invoke(nameof(StartSong), songDelay);
     }
 
     public void StartSong()
     {
-        audioSource.Play();
-        musicPlaying = true;
-        Debug.Log("Song Started at: " + Time.time);
+        startMusic = true;
+
+        // If background music is playing stop it
+        if (AudioManager.instance.bgMusic.isPlaying)
+        {
+            AudioManager.instance.bgMusic.Pause();
+        }
+
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+        Debug.Log("Song Started");
+    }
+
+    public void StopSong()
+    {
+        startMusic = false;
+
+        audioSource.Stop();
+        Debug.Log("Song Stopped");
+
+        // Restart song and clear lanes
+        RestartSong();
+        Debug.Log("Song Restarted");
+
+        // If there is background music in the scene, resume playing it
+        if (AudioManager.instance.bgMusic)
+        {
+            AudioManager.instance.bgMusic.Play();
+        }
+    }
+
+    public void RestartSong()
+    {
+        foreach (Lane l in lanes) l.RefreshLane();
+        ReadSong();
     }
 
     // Make the time of audio source a double value for preciseness/smoothness

@@ -3,17 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Actions : MonoBehaviour
+public class Actions
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //public static event Action<int> OnDialogueTrigger;
 }

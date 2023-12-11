@@ -23,6 +23,7 @@ public class DialogueAlt : MonoBehaviour
     }
 }
 
+// Serializable so classes can be edited in inspector
 [System.Serializable]
 public class Message
 {

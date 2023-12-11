@@ -11,14 +11,7 @@ public class AudioManager : MonoBehaviour
         instance = this;
     }
 
-
-    // ------------------------------------------------------------
-    // Defining attributes
-    // ------------------------------------------------------------
-
-
-    // Current music playing in scene
-    public Audio currentMusic;
+    public AudioSource bgMusic; // Background/Main music if any
 
     // Win and lose scenario music
     public AudioSource winMusic;
@@ -27,11 +20,6 @@ public class AudioManager : MonoBehaviour
     // Hit and miss SFX
     public AudioSource hitSFX;
     public AudioSource missSFX;
-
-
-    // ------------------------------------------------------------
-    // Methods
-    // ------------------------------------------------------------
 
     // Start is called before the first frame update
     void Start()

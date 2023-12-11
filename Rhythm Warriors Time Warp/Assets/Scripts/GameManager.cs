@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Set music to the audio source defined by the audio manager in scene
-        theMusic = AudioManager.instance.currentMusic.music;
+        theMusic = AudioManager.instance.bgMusic;
 
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         Time.timeScale = 1f;

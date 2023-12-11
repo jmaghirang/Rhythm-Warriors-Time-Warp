@@ -605,7 +605,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   charName: {fileID: 836006249}
   textComponent: {fileID: 268273731}
   textSpeed: 0.03
-  isDialoguePaused: 0
+  index: 0
   continueButton:
     m_UseReference: 1
     m_Action:
@@ -1553,14 +1553,13 @@ GameObject:
   m_Component:
   - component: {fileID: 314550515}
   - component: {fileID: 314550514}
-  - component: {fileID: 314550516}
   m_Layer: 0
   m_Name: Western Outside Loop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &314550514
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1573,7 +1572,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9d43e43bbf828f04ca5778b16831f53e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1672,21 +1671,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1292932084}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &314550516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 314550513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbd2d6e64324fbd4697288f9e7d0c58c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  music: {fileID: 0}
-  BPM: 0
-  volume: 0
 --- !u!1 &340801208
 GameObject:
   m_ObjectHideFlags: 0
@@ -6578,7 +6562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b10fc461c9d7334687e49e83d3c92d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicPlaying: 0
+  startMusic: 0
   audioSource: {fileID: 635182626}
   lanes:
   - {fileID: 966275234}
@@ -6587,9 +6571,10 @@ MonoBehaviour:
   errorMargin: 0.1
   inputDelay: 0
   fileLocation: tutorial.mid
-  noteTime: 1
+  noteScreenTime: 1
   noteSpawnZ: 15
-  noteTapZ: 0.2
+  noteHitZ: 0.25
+  noteDespawnZ: 0
 --- !u!1 &1227203351
 GameObject:
   m_ObjectHideFlags: 0
@@ -6826,7 +6811,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1292932084}
-  - component: {fileID: 1292932083}
+  - component: {fileID: 1292932085}
   m_Layer: 0
   m_Name: Audio Manager
   m_TagString: Untagged
@@ -6834,23 +6819,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1292932083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292932082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3fb0b5daa78eeb42aad041e8e549adc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentMusic: {fileID: 635182628}
-  winMusic: {fileID: 0}
-  loseMusic: {fileID: 0}
-  hitSFX: {fileID: 0}
-  missSFX: {fileID: 0}
 --- !u!4 &1292932084
 Transform:
   m_ObjectHideFlags: 0
@@ -6868,6 +6836,23 @@ Transform:
   - {fileID: 635182627}
   m_Father: {fileID: 1890000021}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1292932085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292932082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3fb0b5daa78eeb42aad041e8e549adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgMusic: {fileID: 314550514}
+  winMusic: {fileID: 0}
+  loseMusic: {fileID: 0}
+  hitSFX: {fileID: 0}
+  missSFX: {fileID: 0}
 --- !u!1 &1301865493
 GameObject:
   m_ObjectHideFlags: 0
@@ -7962,7 +7947,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+  m_ModelPrefab: {fileID: 0}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -9383,7 +9368,7 @@ MonoBehaviour:
   m_UpdateTrackingType: 0
   m_EnableInputTracking: 1
   m_EnableInputActions: 1
-  m_ModelPrefab: {fileID: 109434732395451517, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
+  m_ModelPrefab: {fileID: 0}
   m_ModelParent: {fileID: 0}
   m_Model: {fileID: 0}
   m_AnimateModel: 0
@@ -10792,6 +10777,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1837413929}
   - component: {fileID: 1837413928}
+  - component: {fileID: 1837413930}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -10823,12 +10809,25 @@ Transform:
   m_GameObject: {fileID: 1837413927}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.13237943, y: 1.2164738, z: 2.9473295}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1890000021}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1837413930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837413927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2edee2f8ca3fb62448e8f6de27e27a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rIndex: 0
 --- !u!1 &1856696653
 GameObject:
   m_ObjectHideFlags: 0
@@ -11061,7 +11060,6 @@ GameObject:
   - component: {fileID: 1881640738}
   - component: {fileID: 1881640741}
   - component: {fileID: 1881640740}
-  - component: {fileID: 1881640739}
   - component: {fileID: 1881640742}
   m_Layer: 5
   m_Name: DialogueBox
@@ -11069,7 +11067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1881640738
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11091,51 +11089,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.069999695}
   m_SizeDelta: {x: 1662.434, y: 123.2959}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1881640739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881640737}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb5f1faf520e85a4eba9d5a8d996f4ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textComponent: {fileID: 268273731}
-  lines:
-  - 'Narrator: Amidst the sun-soaked vastness of the Wild West, where the desert
-    winds carry tales of the frontier, lies the town of Frontier Tempus. Here, in
-    this dusty outpost, an unknown hero-in-training, Jules, is summoned to confront
-    a malevolent force that has torn through the fabric of time. '
-  - 'Narrator: Jules, a stranger to these lands, your destiny unfolds beneath the
-    vast, sprawling sky of Frontier Tempus, a town steeped in the echoes of the cowboy
-    era, holding a secret as timeless as the mesas that silhouette the horizon.'
-  - 'Narrator: Frontier Tempus is in turmoil, besieged by temporal terrors that echo
-    the thundering hooves of a stampede. Yet, a lone cowboy, the rugged Jam, stands
-    firm, unknowing of the mysterious hero that has arrived.'
-  - 'Jam: Stranger! The time rift''s stirrin'' up dust, and my town can''t stand
-    against this temporal tempest alone. Whoever you are, we need your help. '
-  - 'Jules: The salvation of Frontier Tempus lies within the fragments of this artifact,
-    Jam. We must face the relentless waves of time-rift creatures together and reclaim
-    what was lost under the big, open sky. '
-  - 'Narrator: Battle through the ages, under the ever-watchful eyes of the Wild
-    West. As you eliminate foes within the rift, the fragments of the artifact will
-    reveal themselves, like hidden treasures waiting to be discovered.'
-  textSpeed: 0.03
-  continueButton:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Continue Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: c18a2e98-6e58-4f18-9f3f-6ce67973790a
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -5449384609717469660, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!114 &1881640740
 MonoBehaviour:
   m_ObjectHideFlags: 0

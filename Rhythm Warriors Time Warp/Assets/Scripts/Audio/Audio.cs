@@ -5,7 +5,6 @@ using UnityEngine.Rendering;
 
 public class Audio : MonoBehaviour
 {
-    // Attributes of audio defined
     public AudioSource music;
     public int BPM;
     public float volume; 
