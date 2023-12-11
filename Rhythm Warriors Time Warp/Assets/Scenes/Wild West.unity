@@ -1971,8 +1971,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteRepresentation: 7
   enemyPrefab: {fileID: 6700346121634771719, guid: 574509bc7ff07244e8acdfc304394c09, type: 3}
+  obstaclePrefab: {fileID: 584837994672686896, guid: 23db36c1b0242f040ba48a6048e24634, type: 3}
   enemies: []
   timeStamps: []
+  obstacleTimeStamps: []
 --- !u!1 &460351349
 GameObject:
   m_ObjectHideFlags: 0
@@ -5142,8 +5144,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteRepresentation: 5
   enemyPrefab: {fileID: 6700346121634771719, guid: 574509bc7ff07244e8acdfc304394c09, type: 3}
+  obstaclePrefab: {fileID: 584837994672686896, guid: 23db36c1b0242f040ba48a6048e24634, type: 3}
   enemies: []
   timeStamps: []
+  obstacleTimeStamps: []
 --- !u!1 &986218956
 GameObject:
   m_ObjectHideFlags: 0
