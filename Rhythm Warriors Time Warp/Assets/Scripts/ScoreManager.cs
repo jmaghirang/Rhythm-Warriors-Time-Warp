@@ -5,16 +5,21 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     private int currentScore = 0;
-    private int comboCount = 0;
-    private int comboMultiplier = 1;
 
-    // update the score based on successful actions
+    public int GetCurrentScore()
+    {
+        return currentScore;
+    }
+    
+    // update the score based on hitting enemy prefab
     public void UpdateScore(int scoreToAdd)
     {
-        currentScore += scoreToAdd * comboMultiplier;
-        // update UI or perform other actions to reflect the changed score
+        currentScore += scoreToAdd; // increase the score by the specified amount
+        Debug.Log("Score updated. Current score: " + currentScore); // debugging
     }
+}
 
+    /* add combos later on
     // increase combo count
     public void IncreaseCombo()
     {
@@ -39,3 +44,4 @@ public class ScoreManager : MonoBehaviour
         }
     }
 }
+*/

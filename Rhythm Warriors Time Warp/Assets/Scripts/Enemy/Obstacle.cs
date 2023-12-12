@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
+    /*
     public float obstacleSpeed = 5f; // speed at which the obstacle moves towards the player
     public int damageAmount = 10; // damage amount when the obstacle hits the player
 
@@ -31,5 +32,5 @@ public class Obstacle : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+*/
 }

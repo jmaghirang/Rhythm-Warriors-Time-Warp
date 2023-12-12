@@ -48,6 +48,17 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             AudioManager.instance.hitSFX.Play();
             Debug.Log("Hit");
+
+            // scoreManager
+            ScoreManager scoreManager = FindObjectOfType<ScoreManager>(); // get reference
+            if (scoreManager != null)
+            {
+                scoreManager.UpdateScore(1); // add one score when the weapon hits the enemy
+            }
+            else
+            {
+                Debug.LogError("ScoreManager not found in the scene!"); // debugging
+            }
         }
     }
     private void OnTriggerExit(Collider other)
