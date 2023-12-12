@@ -8,6 +8,7 @@ public class TutorialSequence : MonoBehaviour
     public int rIndex = 0;
 
     public GameObject weapon;
+    public GameObject healthBar;
 
     // Keeps track of what is called once - very not efficient will change later
     private bool execute1Once = false;
@@ -55,9 +56,8 @@ public class TutorialSequence : MonoBehaviour
     {
         DialogueManager.instance.dialogueBox.SetActive(false);
         weapon.SetActive(true);
-        // Player does stuff
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(5f);
 
         DialogueManager.instance.dialogueBox.SetActive(true);
     }
@@ -65,7 +65,7 @@ public class TutorialSequence : MonoBehaviour
     public IEnumerator DodgeObstacles()
     {
         DialogueManager.instance.dialogueBox.SetActive(false);
-        // Player does stuff
+        // Obstacles appear
 
         yield return new WaitForSeconds(5f);
 
@@ -86,10 +86,11 @@ public class TutorialSequence : MonoBehaviour
     public IEnumerator HealthDrain()
     {
         DialogueManager.instance.dialogueBox.SetActive(false);
-        // UI display
+        healthBar.SetActive(true);
 
         yield return new WaitForSeconds(5f);
 
+        healthBar.SetActive(false);
         DialogueManager.instance.dialogueBox.SetActive(true);
     }
 }

@@ -26,10 +26,14 @@ public class Enemy : MonoBehaviour
         // t = 0 is the spawn location and t = 1 is the despawn location
         float t = (float) (timeSinceInstantiated / (SongManager.instance.noteScreenTime * 2));
        
-        if (t > 1)
+        if (t > 0.5)
         {
             // If the object passes where it is supposed to despawn
+            // Player misses
             Destroy(gameObject);
+
+            AudioManager.instance.missSFX.Play();
+            Debug.Log("Miss");
         }
         else
         {
@@ -45,11 +49,13 @@ public class Enemy : MonoBehaviour
         if (other.CompareTag("Weapon"))
         {
             canBeHit = true;
+
             Destroy(gameObject);
+
             AudioManager.instance.hitSFX.Play();
             Debug.Log("Hit");
 
-            // scoreManager
+            // Score Manager
             ScoreManager scoreManager = FindObjectOfType<ScoreManager>(); // get reference
             if (scoreManager != null)
             {
@@ -58,18 +64,6 @@ public class Enemy : MonoBehaviour
             else
             {
                 Debug.LogError("ScoreManager not found in the scene!"); // debugging
-            }
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (gameObject.activeInHierarchy)
-        {
-            if (other.CompareTag("Weapon"))
-            {
-                canBeHit = false;
-                AudioManager.instance.missSFX.Play();
-                Debug.Log("Miss");
             }
         }
     }
