@@ -30,6 +30,7 @@ public class Enemy : Object
             Destroy(gameObject);
 
             AudioManager.instance.missSFX.Play();
+            GameManager.instance.missCounter++;
             Debug.Log("Miss");
         }
         else

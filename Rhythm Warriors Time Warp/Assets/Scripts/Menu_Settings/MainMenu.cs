@@ -5,19 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public AudioSource audioSource;
     int sceneIndex;
     
+   void Start()
+    {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+    }
+
+
     public void PlayGame()
     {
-        sceneIndex = SceneManager.GetActiveScene (). buildIndex;
         if (sceneIndex == 5) {
             sceneIndex = 0;
         }
         SceneManager.LoadScene (sceneIndex+1);
-
-        audioSource.Play();
-
     }
 
     public void Level1()
@@ -35,14 +36,14 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Level 3");
     }
 
-    public void Start()
-    {
-        sceneIndex = SceneManager.GetActiveScene (). buildIndex;
-    }
-
     public void NewGame()
     {
         SceneManager.LoadScene("Tutorial");
+    }
+
+    public void ReloadMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void QuitGame()

@@ -12,7 +12,7 @@ public class Lane : MonoBehaviour
 {
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRepresentation; // Note from midi file to translate to a lane
 
-    public GameObject prefab;
+    //blic GameObject prefab;
 
     public List<double> timeStamps = new(); // The times at which the player needs to hit an enemy
 

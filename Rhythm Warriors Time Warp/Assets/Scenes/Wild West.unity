@@ -6313,7 +6313,7 @@ GameObject:
   - component: {fileID: 423364427}
   - component: {fileID: 423364426}
   - component: {fileID: 423364428}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6369,7 +6369,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.15
+  m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &425687362
 GameObject:
@@ -6473,7 +6473,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteRepresentation: 7
-  prefab: {fileID: 6700346121634771719, guid: 574509bc7ff07244e8acdfc304394c09, type: 3}
   timeStamps: []
   enemies: []
 --- !u!1001 &435817723
@@ -8761,6 +8760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2e1691713f7eb46b9274f4c988dd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentScore: 0
 --- !u!1 &609477818
 GameObject:
   m_ObjectHideFlags: 0
@@ -14118,7 +14118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteRepresentation: 5
-  prefab: {fileID: 6700346121634771719, guid: 574509bc7ff07244e8acdfc304394c09, type: 3}
   timeStamps: []
   enemies: []
 --- !u!4 &973868841 stripped
@@ -16792,7 +16791,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteRepresentation: 11
-  prefab: {fileID: 584837994672686896, guid: 23db36c1b0242f040ba48a6048e24634, type: 3}
   timeStamps: []
   obstacles: []
 --- !u!1001 &1142599242
@@ -17325,7 +17323,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteRepresentation: 9
-  prefab: {fileID: 584837994672686896, guid: 23db36c1b0242f040ba48a6048e24634, type: 3}
   timeStamps: []
   obstacles: []
 --- !u!1 &1197801596
@@ -18086,6 +18083,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b10fc461c9d7334687e49e83d3c92d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manageEnemies: 0
+  manageObstacles: 0
   startMusic: 0
   audioSource: {fileID: 635182626}
   lanes:
@@ -18095,8 +18094,8 @@ MonoBehaviour:
   errorMargin: 0.1
   inputDelay: 0
   fileLocation: wild west.mid
-  noteScreenTime: 1
-  noteSpawnZ: 15
+  noteScreenTime: 1.2
+  noteSpawnZ: 20
   noteHitZ: 0.25
   noteDespawnZ: 0
 --- !u!114 &1220905871
@@ -18111,6 +18110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b10fc461c9d7334687e49e83d3c92d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manageEnemies: 0
+  manageObstacles: 0
   startMusic: 0
   audioSource: {fileID: 635182626}
   lanes:
@@ -18121,8 +18122,8 @@ MonoBehaviour:
   errorMargin: 0.1
   inputDelay: 0
   fileLocation: wild west obs.mid
-  noteScreenTime: 1
-  noteSpawnZ: 15
+  noteScreenTime: 1.2
+  noteSpawnZ: 20
   noteHitZ: 0.25
   noteDespawnZ: 0
 --- !u!1 &1227203351
@@ -22568,7 +22569,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteRepresentation: 0
-  prefab: {fileID: 584837994672686896, guid: 23db36c1b0242f040ba48a6048e24634, type: 3}
   timeStamps: []
   obstacles: []
 --- !u!1 &1522438745
@@ -28179,7 +28179,7 @@ Transform:
   m_GameObject: {fileID: 1832595482}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28223,7 +28223,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6282b99868c11814a8799501c336bb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 423364426}
   startPlaying: 0
+  missCounter: 0
   winPanel: {fileID: 0}
   gameOverPanel: {fileID: 0}
 --- !u!4 &1837413929

@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
+    public Player player;
 
     public bool startPlaying; // Game has started or not started yet
     private bool isPaused = false; // Game is paused or not - set to not paused initially
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour
     private AudioSource theMusic; // Music in scene
 
     int sceneIndex; // Keeping track of scenes
+
+    public int missCounter = 0;
 
     // Screens to show on triggering certain scenarios
     public GameObject winPanel;
@@ -60,6 +63,17 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        Debug.Log("Misses: " + missCounter);
+
+        if (player.currentHealth < 1 || missCounter > 20)
+        {
+            TriggerGameOver();
+        }
+
+        if (!SongManager.instance.audioSource.isPlaying && !isPaused && ScoreManager.instance.currentScore > 10)
+        {
+            TriggerGameWin();
+        }
     }
 
     private void PauseGame()
@@ -90,6 +104,16 @@ public class GameManager : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("Main Menu");
+    }
+
+    public void TriggerGameOver()
+    {
+        SceneManager.LoadScene("Game Over");
+    }
+
+    public void TriggerGameWin()
+    {
+        SceneManager.LoadScene("Win Screen");
     }
 
     public void QuitGame()

@@ -9,7 +9,7 @@ public class ObstacleLane : Lane
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class ObstacleLane : Lane
                 // Debug.Log("Spawn Index: " + spawnIndex + "\n");
 
                 // Spawn enemy
-                var note = Instantiate(prefab, transform);
+                GameObject note = Instantiate(Resources.Load("Prefabs/Obstacle", typeof(GameObject)), transform) as GameObject;
                 Debug.Log("Obstacle Spawned");
 
                 // Add spawned enemy to list

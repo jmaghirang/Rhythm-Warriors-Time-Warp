@@ -72,7 +72,7 @@ public class EnemyLane : Lane
                 // Debug.Log("Spawn Index: " + spawnIndex + "\n");
 
                 // Spawn enemy
-                var note = Instantiate(prefab, transform);
+                GameObject note = Instantiate(Resources.Load("Prefabs/Enemy", typeof(GameObject)), transform) as GameObject;
                 Debug.Log("Enemy Spawned");
 
                 // Add spawned enemy to list
