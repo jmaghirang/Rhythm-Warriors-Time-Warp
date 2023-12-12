@@ -3,12 +3,9 @@ using UnityEngine;
 // Code referenced from
 // https://youtu.be/ev0HsmgLScg?si=r4zVEzDwRoTi50C9
 
-public class Enemy : MonoBehaviour
+public class Enemy : Object
 {
     public bool canBeHit;
-
-    double timeInstantiated;
-    public float assignedTime; // time the player is supposed to hit it
 
     // Start is called before the first frame update
     void Start()
@@ -24,8 +21,8 @@ public class Enemy : MonoBehaviour
 
         // note time is time between where the note spawns and where it is supposed to be hit; we also need the time between when it's supposed to be hit and when the object is supposed to despawn - hence the *2
         // t = 0 is the spawn location and t = 1 is the despawn location
-        float t = (float) (timeSinceInstantiated / (SongManager.instance.noteScreenTime * 2));
-       
+        float t = (float)(timeSinceInstantiated / (SongManager.instance.noteScreenTime * 2));
+
         if (t > 0.5)
         {
             // If the object passes where it is supposed to despawn
@@ -44,7 +41,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Check collisions with hit box
-    private void OnTriggerEnter(Collider other)
+    public override void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Weapon"))
         {

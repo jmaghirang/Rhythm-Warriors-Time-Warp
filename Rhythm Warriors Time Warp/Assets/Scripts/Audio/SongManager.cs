@@ -17,6 +17,9 @@ public class SongManager : MonoBehaviour
         instance = this;
     }
 
+    public bool manageEnemies;
+    public bool manageObstacles;
+
     public bool startMusic = false;
 
     public AudioSource audioSource; // song

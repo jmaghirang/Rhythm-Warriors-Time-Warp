@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UIElements;
 
 public class TutorialSequence : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class TutorialSequence : MonoBehaviour
 
     public GameObject weapon;
     public GameObject healthBar;
+    public GameObject obstacle;
 
     // Keeps track of what is called once - very not efficient will change later
     private bool execute1Once = false;
@@ -65,10 +67,11 @@ public class TutorialSequence : MonoBehaviour
     public IEnumerator DodgeObstacles()
     {
         DialogueManager.instance.dialogueBox.SetActive(false);
-        // Obstacles appear
+        obstacle.SetActive(true);
 
         yield return new WaitForSeconds(5f);
 
+        obstacle.SetActive(false);
         DialogueManager.instance.dialogueBox.SetActive(true);
     }
 

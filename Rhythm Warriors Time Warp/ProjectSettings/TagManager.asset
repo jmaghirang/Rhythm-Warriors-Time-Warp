@@ -5,8 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Weapon
-  - Slice
-  - Sliceable
   layers:
   - Default
   - TransparentFX
@@ -19,8 +17,8 @@ TagManager:
   - Weapon
   - Controller
   - Enemy
-  - 
-  - 
+  - Obstacle
+  - Environment
   - 
   - 
   - 
