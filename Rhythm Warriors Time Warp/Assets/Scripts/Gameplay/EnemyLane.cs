@@ -72,14 +72,15 @@ public class EnemyLane : Lane
                 // Debug.Log("Spawn Index: " + spawnIndex + "\n");
 
                 // Spawn enemy
-                GameObject note = Instantiate(Resources.Load("Prefabs/Enemy", typeof(GameObject)), transform) as GameObject;
+                GameObject note = Resources.Load("Prefabs/Enemy", typeof(GameObject)) as GameObject;
+                var enemy = Instantiate(note, transform);
                 Debug.Log("Enemy Spawned");
 
                 // Add spawned enemy to list
-                enemies.Add(note.GetComponent<Enemy>());
+                enemies.Add(enemy.GetComponent<Enemy>());
 
                 // Enemy will know where to position itself so the player can hit
-                note.GetComponent<Enemy>().assignedTime = (float)timeStamps[spawnIndex];
+                enemy.GetComponent<Enemy>().assignedTime = (float)timeStamps[spawnIndex];
                 // Debug.Log("Assigned Time: " + timeStamps[spawnIndex] + "\n");
 
                 // Move on to next enemy to be spawned

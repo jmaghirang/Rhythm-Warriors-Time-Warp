@@ -27,14 +27,15 @@ public class ObstacleLane : Lane
                 // Debug.Log("Spawn Index: " + spawnIndex + "\n");
 
                 // Spawn enemy
-                GameObject note = Instantiate(Resources.Load("Prefabs/Obstacle", typeof(GameObject)), transform) as GameObject;
+                GameObject note = Resources.Load("Prefabs/Obstacle", typeof(GameObject)) as GameObject;
+                var obs = Instantiate(note, transform);
                 Debug.Log("Obstacle Spawned");
 
                 // Add spawned enemy to list
-                obstacles.Add(note.GetComponent<Obstacle>());
+                obstacles.Add(obs.GetComponent<Obstacle>());
 
                 // Enemy will know where to position itself so the player can hit
-                note.GetComponent<Obstacle>().assignedTime = (float)timeStamps[spawnIndex];
+                obs.GetComponent<Obstacle>().assignedTime = (float)timeStamps[spawnIndex];
                 // Debug.Log("Assigned Time: " + timeStamps[spawnIndex] + "\n");
 
                 // Move on to next enemy to be spawned

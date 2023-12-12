@@ -2155,8 +2155,8 @@ MonoBehaviour:
   slider: {fileID: 424617395}
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 1, g: 0.41037738, b: 0.41037738, a: 1}
+    key1: {r: 1, g: 0.4190483, b: 0.4190483, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
@@ -11410,6 +11410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 216984974}
   startPlaying: 0
+  isPaused: 0
   missCounter: 0
   winPanel: {fileID: 0}
   gameOverPanel: {fileID: 0}

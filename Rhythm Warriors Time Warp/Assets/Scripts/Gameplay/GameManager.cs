@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public Player player;
 
     public bool startPlaying; // Game has started or not started yet
-    private bool isPaused = false; // Game is paused or not - set to not paused initially
+    public bool isPaused = false; // Game is paused or not - set to not paused initially
 
     private float audioClipPosition = 0f; // Variable to keep track of the playback position of the audio clip
 

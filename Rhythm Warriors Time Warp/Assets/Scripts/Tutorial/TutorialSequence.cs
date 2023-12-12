@@ -80,7 +80,7 @@ public class TutorialSequence : MonoBehaviour
         DialogueManager.instance.dialogueBox.SetActive(false);
         StartCoroutine(SongManager.instance.StartSong());
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitUntil(() => ScoreManager.instance.currentScore == 6);
 
         SongManager.instance.StopSong();
         DialogueManager.instance.dialogueBox.SetActive(true);
@@ -90,6 +90,7 @@ public class TutorialSequence : MonoBehaviour
     {
         DialogueManager.instance.dialogueBox.SetActive(false);
         healthBar.SetActive(true);
+        GameManager.instance.player.TakeDamage(10);
 
         yield return new WaitForSeconds(5f);
 
