@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Code referenced from:
+// https://www.youtube.com/watch?v=BLfNP4Sc_iA&ab_channel=Brackeys
 public class HealthBar : MonoBehaviour
 {
 

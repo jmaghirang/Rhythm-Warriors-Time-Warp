@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 
+// Some code referenced from:
+// https://www.youtube.com/watch?v=TAGZxRMloyU&ab_channel=Brackeys
 public class ScoreDisplay : MonoBehaviour
 {
     private TextMeshProUGUI scoreText;
@@ -13,7 +15,7 @@ public class ScoreDisplay : MonoBehaviour
         scoreManager = FindObjectOfType<ScoreManager>();
         if (scoreManager == null)
         {
-            Debug.LogError("ScoreManager not found in the scene!");
+            Debug.LogError("ScoreManager not found in the scene!"); // debugging
         }
     }
 

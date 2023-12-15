@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Some code referenced from:
+// https://www.youtube.com/watch?v=TAGZxRMloyU&ab_channel=Brackeys
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// this script will be used in the futire to make the buildings move 'towards' the player
 public class BuildingManager : MonoBehaviour
 {
     public GameObject[] buildings; // Array of building GameObjects
