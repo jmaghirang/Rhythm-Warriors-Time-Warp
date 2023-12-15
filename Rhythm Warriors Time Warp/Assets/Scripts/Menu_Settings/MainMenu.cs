@@ -18,10 +18,10 @@ public class MainMenu : MonoBehaviour
         if (sceneIndex == 5) {
             sceneIndex = 0;
         }
-        SceneManager.LoadScene (sceneIndex+1);
+        SceneManager.LoadScene (sceneIndex + 1);
     }
 
-    public void Level1()
+    /*public void Level1()
     {
         SceneManager.LoadScene("Level 1");
     }
@@ -34,7 +34,7 @@ public class MainMenu : MonoBehaviour
     public void Level3()
     {
         SceneManager.LoadScene("Level 3");
-    }
+    }*/
 
     public void NewGame()
     {

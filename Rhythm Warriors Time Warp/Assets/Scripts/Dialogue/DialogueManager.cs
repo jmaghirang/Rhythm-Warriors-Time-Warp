@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-// Code referenced from
+// Some code referenced from
 // https://youtu.be/PswC-HlKZqA?si=o7Q38JtiN-xi6kkS
 
 public class DialogueManager : MonoBehaviour
@@ -19,13 +19,14 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject dialogueBox;
 
-    public TextMeshProUGUI charName;
-    public TextMeshProUGUI textComponent;
-    public float textSpeed;
+    public TextMeshProUGUI charName; // Character name to display
+    public TextMeshProUGUI textComponent; // Message to display
+
+    public float textSpeed; // Speed that message is showing up at
     private bool isTyping = false;
 
-    Message[] lines;
-    Character[] characters;
+    Message[] lines; // List of messages in scene (edited in inspector)
+    Character[] characters;  // List of characters of messages in scene (edited in inspector)
 
     public int index = 0; // Active message
 
@@ -44,6 +45,7 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If the button to continue dialogue is pressed while the dialogue box is active in the scene...
         if (continueButton.action.WasPressedThisFrame() && dialogueBox.activeSelf == true)
         {
             if (isTyping)
@@ -55,6 +57,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
+                // Move onto next message/line
                 NextLine();
             }
         }
@@ -64,6 +67,7 @@ public class DialogueManager : MonoBehaviour
     {
         isTyping = true;
 
+        // For each character in the message, type each character out waiting a certain amount of time before the next character is typed out
         foreach (char c in lines[index].message.ToCharArray())
         {
             textComponent.text += c;
@@ -75,29 +79,36 @@ public class DialogueManager : MonoBehaviour
 
     void NextLine()
     {
+        // Increment the index to the next message
         index++;
 
+        // If we aren't at the end of the list of messages...
         if (index < lines.Length)
         {
+            // Display the message
             DisplayMessage();
         }
         else
         {
+            // Close the dialogue box
             dialogueBox.SetActive(false);
 
-            // Specifically for tutorial scene for demo purposes
+            // This line is specifically for tutorial scene for demo purposes
             SceneManager.LoadScene("Wild West");
         }
     }
 
     void DisplayMessage()
     {
+        // Clear dialogue box if there is any content initally
         textComponent.text = string.Empty;
         charName.text = string.Empty;
 
+        // Get the character name from the current messsage
         Character characterToDisplay = characters[lines[index].charID];
         charName.text = characterToDisplay.name;
 
+        // Start typing the message
         StartCoroutine(TypeLine());
     }
 

@@ -27,7 +27,7 @@ public class DialogueAlt : MonoBehaviour
 [System.Serializable]
 public class Message
 {
-    public int charID;
+    public int charID; //ID of character saying the message
     public string message;
 }
 

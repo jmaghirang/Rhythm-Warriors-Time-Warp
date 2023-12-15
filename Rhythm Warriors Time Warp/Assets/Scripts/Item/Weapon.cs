@@ -6,7 +6,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Weapon : Item
 {
     public bool isEquipped;
-    //public Transform controller;
 
     // Start is called before the first frame update
     void Start()

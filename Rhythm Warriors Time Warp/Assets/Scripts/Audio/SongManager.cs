@@ -55,6 +55,7 @@ public class SongManager : MonoBehaviour
 
     public void ReadSong()
     {
+        // Get MIDI file from streaming assests folder
         if (Application.streamingAssetsPath.StartsWith("jar:file//"))
         {
             // If on Android
@@ -121,11 +122,12 @@ public class SongManager : MonoBehaviour
             AudioManager.instance.bgMusic.Pause();
         }
 
+        // If the song is already playing, don't play
         if (!audioSource.isPlaying)
         {
             audioSource.Play();
+            Debug.Log("Song Started");
         }
-        Debug.Log("Song Started");
     }
 
     public void StopSong()

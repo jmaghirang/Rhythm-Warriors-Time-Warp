@@ -39,7 +39,10 @@ public class GameManager : MonoBehaviour
         // Set music to the audio source defined by the audio manager in scene
         theMusic = AudioManager.instance.bgMusic;
 
+        // Scene index set to current scene
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        // Set time scale to 1
         Time.timeScale = 1f;
     }
 
@@ -63,13 +66,17 @@ public class GameManager : MonoBehaviour
             }
         }
 
+        // Section for demo purpose - will change to be more efficient
+        // Miss counter updated by enemy class
         Debug.Log("Misses: " + missCounter);
 
+        // If player health delpletes or player misses more than 20 times, show game over screen
         if (player.currentHealth < 1 || missCounter > 20)
         {
             TriggerGameOver();
         }
 
+        // If the song has finished playing and the player has reached a score above 10
         if (!SongManager.instance.audioSource.isPlaying && !isPaused && ScoreManager.instance.currentScore > 10)
         {
             TriggerGameWin();
@@ -78,9 +85,11 @@ public class GameManager : MonoBehaviour
 
     private void PauseGame()
     {
+        // Stop the game
         Time.timeScale = 0f;
         isPaused = true;
         
+        // Pause music
         audioClipPosition = theMusic.time;
         theMusic.Pause();
 
@@ -89,9 +98,11 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        // Set time scale back to 1
         Time.timeScale = 1f;
         isPaused = false;
 
+        // Resume music
         theMusic.time = audioClipPosition;
         theMusic.Play();
     }

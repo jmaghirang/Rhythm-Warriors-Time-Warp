@@ -10,6 +10,7 @@ public class ButtonRestrictions : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Disable the buttons so player cannot interact with them
         foreach (Button button in disabledButtons)
         {
             button.interactable = false;

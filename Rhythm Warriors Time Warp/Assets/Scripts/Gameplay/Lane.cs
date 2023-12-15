@@ -12,12 +12,9 @@ public class Lane : MonoBehaviour
 {
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRepresentation; // Note from midi file to translate to a lane
 
-    //blic GameObject prefab;
-
     public List<double> timeStamps = new(); // The times at which the player needs to hit an enemy
 
     protected int spawnIndex = 0; // Index of current enemy that spawns
-    // int timeIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -41,11 +38,12 @@ public class Lane : MonoBehaviour
 
     }
 
+    // Set time stamps (time object will need to be hit)
     public void SetTimeStamps(Note[] array)
     {
         foreach (var obj in array)
         {
-            // If the note name of the enemy (which will be child to a Lane object) is equal to the note specified in the inspector
+            // If the note name of the object (which will be child to a Lane object) is equal to the note specified in the inspector
             if (obj.NoteName == noteRepresentation)
             {
                 // Convert time from midi file tempo map to metric time
