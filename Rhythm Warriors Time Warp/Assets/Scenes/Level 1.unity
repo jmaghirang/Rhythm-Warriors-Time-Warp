@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5569,7 +5569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &715784952
 Transform:
   m_ObjectHideFlags: 0
@@ -7018,7 +7018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1118844336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7031,7 +7031,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6282b99868c11814a8799501c336bb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   startPlaying: 0
+  isPaused: 0
+  missCounter: 0
   winPanel: {fileID: 0}
   gameOverPanel: {fileID: 0}
 --- !u!4 &1118844337
@@ -7146,7 +7149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86789e6f1ae94e545b792194b61de7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
 --- !u!114 &1145870976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7159,8 +7161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752fa145099c28342b227f6c90d7d5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyName: bob
-  canBeHit: 0
 --- !u!1 &1154796796
 GameObject:
   m_ObjectHideFlags: 0
@@ -7831,13 +7831,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352ffd579754d7f4d9dfb45377ea5117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 1145870973}
-  spawnPoints:
-  - {fileID: 1265330694}
-  - {fileID: 1809089146}
-  - {fileID: 1597083996}
-  spawnInterval: 2
-  initialDelay: 2
 --- !u!4 &1217515489
 Transform:
   m_ObjectHideFlags: 0
@@ -8224,7 +8217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1239009136
 Transform:
   m_ObjectHideFlags: 0
@@ -8253,7 +8246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3fb0b5daa78eeb42aad041e8e549adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMusic: {fileID: 1320350035}
+  bgMusic: {fileID: 0}
   winMusic: {fileID: 0}
   loseMusic: {fileID: 0}
   hitSFX: {fileID: 0}
@@ -9818,7 +9811,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1549898526
 Transform:
   m_ObjectHideFlags: 0
@@ -12457,10 +12450,10 @@ SceneRoots:
   - {fileID: 530452564}
   - {fileID: 563988245}
   - {fileID: 963806409}
-  - {fileID: 652980163}
   - {fileID: 512727043}
   - {fileID: 1987915778}
   - {fileID: 1522511217}
   - {fileID: 1198811570}
   - {fileID: 1217515489}
   - {fileID: 1537691084}
+  - {fileID: 652980163}
