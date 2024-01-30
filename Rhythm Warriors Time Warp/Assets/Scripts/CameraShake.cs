@@ -23,6 +23,8 @@ public class CameraShake : MonoBehaviour
         }
 
         originalPosition = cameraTransform.localPosition;
+        
+        Debug.Log("Camera Transform: " + cameraTransform.gameObject.name);
     }
 
     void Update()
@@ -30,7 +32,7 @@ public class CameraShake : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // start the camera shake when the space key is pressed
-            StartShake(0.5f, 0.2f, 10f);
+            StartShake(0.5f, 0.2f, 10.0f);
         }
 
         if (shakeDuration > 0)
