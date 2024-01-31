@@ -1,5 +1,9 @@
 using UnityEngine;
 
+// some code referenced from:
+// https://www.youtube.com/watch?v=9A9yj8KnM8c
+// https://www.zulubo.com/gamedev/2019/1/5/vr-screen-shake-the-art-of-not-throwing-up
+
 public class CameraShake : MonoBehaviour
 {
     public Transform cameraTransform;
@@ -29,6 +33,7 @@ public class CameraShake : MonoBehaviour
 
     void Update()
     {
+        // for testing purposes:
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // start the camera shake when the space key is pressed

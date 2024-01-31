@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    // public reference to the CameraShake script
+    public CameraShake cameraShake;
+
     private void Awake()
     {
         instance = this;
@@ -27,6 +30,8 @@ public class GameManager : MonoBehaviour
     int sceneIndex; // Keeping track of scenes
 
     public int missCounter = 0;
+
+    private int previousMissCounter = 0; // previous value of missCounter
 
     // Screens to show on triggering certain scenarios
     public GameObject winPanel;
@@ -80,6 +85,16 @@ public class GameManager : MonoBehaviour
         if (!SongManager.instance.audioSource.isPlaying && !isPaused && ScoreManager.instance.currentScore > 10)
         {
             TriggerGameWin();
+        }
+
+        // check if missCounter has increased
+        if (missCounter > previousMissCounter)
+        {
+            // if so, start the camera shake
+            cameraShake.StartShake(0.5f, 0.2f, 10.0f);
+            
+            // update previousMissCounter
+            previousMissCounter = missCounter;
         }
     }
 
