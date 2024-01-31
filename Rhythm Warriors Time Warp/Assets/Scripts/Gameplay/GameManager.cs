@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     // public reference to the CameraShake script
     public CameraShake cameraShake;
 
+    // reference to the HapticFeedback script
+    public HapticFeedback hapticFeedback;
+
     private void Awake()
     {
         instance = this;
@@ -90,8 +93,11 @@ public class GameManager : MonoBehaviour
         // check if missCounter has increased
         if (missCounter > previousMissCounter)
         {
-            // if so, start the camera shake
+            // start the camera shake
             cameraShake.StartShake(0.5f, 0.2f, 10.0f);
+
+            // start the haptic feedback
+            hapticFeedback.PlayerGotHit();
             
             // update previousMissCounter
             previousMissCounter = missCounter;
