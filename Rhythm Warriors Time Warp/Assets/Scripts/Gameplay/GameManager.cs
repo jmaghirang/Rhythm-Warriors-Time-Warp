@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     // reference to the HapticFeedback script
     public HapticFeedback hapticFeedback;
 
+    // reference to the MissDisplay script
+    public MissDisplay missDisplay; 
+
+
     private void Awake()
     {
         instance = this;
@@ -52,6 +56,13 @@ public class GameManager : MonoBehaviour
 
         // Set time scale to 1
         Time.timeScale = 1f;
+
+        // Find and assign the MissDisplay script
+        missDisplay = GameObject.FindObjectOfType<MissDisplay>();
+        if (missDisplay == null)
+        {
+            Debug.LogError("MissDisplay script not found in the scene.");
+        }
     }
 
     // Update is called once per frame
@@ -102,6 +113,8 @@ public class GameManager : MonoBehaviour
             // update previousMissCounter
             previousMissCounter = missCounter;
         }
+
+        missDisplay.UpdateMissCount(missCounter);
     }
 
     private void PauseGame()
