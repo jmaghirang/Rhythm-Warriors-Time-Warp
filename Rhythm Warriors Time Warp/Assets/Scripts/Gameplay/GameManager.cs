@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // public reference to the CameraShake script
     public CameraShake cameraShake;
 
@@ -17,13 +22,7 @@ public class GameManager : MonoBehaviour
     public HapticFeedback hapticFeedback;
 
     // reference to the MissDisplay script
-    public MissDisplay missDisplay; 
-
-
-    private void Awake()
-    {
-        instance = this;
-    }
+    //public MissDisplay missDisplay;
 
     public Player player;
 
@@ -36,14 +35,11 @@ public class GameManager : MonoBehaviour
 
     int sceneIndex; // Keeping track of scenes
 
-    public int missCounter = 0;
-
     private int previousMissCounter = 0; // previous value of missCounter
 
     // Screens to show on triggering certain scenarios
     public GameObject winPanel;
     public GameObject gameOverPanel;
-
 
     // Start is called before the first frame update
     void Start()
@@ -58,11 +54,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
 
         // Find and assign the MissDisplay script
-        missDisplay = GameObject.FindObjectOfType<MissDisplay>();
-        if (missDisplay == null)
-        {
-            Debug.LogError("MissDisplay script not found in the scene.");
-        }
+        //missDisplay = GameObject.FindObjectOfType<MissDisplay>();
+        //if (missDisplay == null)
+        //{
+        //    Debug.LogError("MissDisplay script not found in the scene.");
+        //}
     }
 
     // Update is called once per frame
@@ -85,24 +81,20 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // Section for demo purpose - will change to be more efficient
-        // Miss counter updated by enemy class
-        Debug.Log("Misses: " + missCounter);
-
         // If player health delpletes or player misses more than 20 times, show game over screen
-        if (player.currentHealth < 1 || missCounter > 20)
+        if (player.currentHealth < 1 || ScoreManager.instance.GetCurrentMisses() > 20)
         {
             TriggerGameOver();
         }
 
         // If the song has finished playing and the player has reached a score above 10
-        if (!SongManager.instance.audioSource.isPlaying && !isPaused && ScoreManager.instance.currentScore > 10)
+        if (!SongManager.instance.audioSource.isPlaying && !isPaused && ScoreManager.instance.GetCurrentMisses() > 10)
         {
             TriggerGameWin();
         }
 
         // check if missCounter has increased
-        if (missCounter > previousMissCounter)
+        if (ScoreManager.instance.GetCurrentMisses() > previousMissCounter)
         {
             // start the camera shake
             cameraShake.StartShake(0.5f, 0.2f, 10.0f);
@@ -111,10 +103,10 @@ public class GameManager : MonoBehaviour
             hapticFeedback.PlayerGotHit();
             
             // update previousMissCounter
-            previousMissCounter = missCounter;
+            previousMissCounter = ScoreManager.instance.GetCurrentMisses();
         }
 
-        missDisplay.UpdateMissCount(missCounter);
+        //missDisplay.UpdateMissCount(missCounter);
     }
 
     private void PauseGame()

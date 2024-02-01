@@ -15,9 +15,12 @@ public class MissDisplay : MonoBehaviour
         }
     }
 
-    public void UpdateMissCount(int missCount)
+    void Update()
     {
-        // Update missCounterText with the provided miss count
-        missCounterText.text = "Misses: " + missCount;
+        if(ScoreManager.instance != null)
+        {
+            // Update missCounterText with the provided miss count
+            missCounterText.text = "Misses: " + ScoreManager.instance.GetCurrentMisses().ToString();
+        }
     }
 }

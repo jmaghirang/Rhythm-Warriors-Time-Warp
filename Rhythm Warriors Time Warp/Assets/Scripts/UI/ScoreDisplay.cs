@@ -5,15 +5,12 @@ using TMPro;
 // https://www.youtube.com/watch?v=TAGZxRMloyU&ab_channel=Brackeys
 public class ScoreDisplay : MonoBehaviour
 {
+    [SerializeField]
     private TextMeshProUGUI scoreText;
-    private ScoreManager scoreManager;
 
     void Start()
     {
-        scoreText = GetComponent<TextMeshProUGUI>();
-
-        scoreManager = FindObjectOfType<ScoreManager>();
-        if (scoreManager == null)
+        if (ScoreManager.instance == null)
         {
             Debug.LogError("ScoreManager not found in the scene!"); // debugging
         }
@@ -21,9 +18,9 @@ public class ScoreDisplay : MonoBehaviour
 
     void Update()
     {
-        if (scoreManager != null)
+        if (ScoreManager.instance != null)
         {
-            scoreText.text = "Score: " + scoreManager.GetCurrentScore().ToString();
+            scoreText.text = "Score: " + ScoreManager.instance.GetCurrentScore().ToString();
         }
     }
 }

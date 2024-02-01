@@ -6,8 +6,12 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     int sceneIndex;
-    
-   void Start()
+
+    public GameObject loadingScreen;
+    List<AsyncOperation> scenesLoading = new();
+    public ProgressBar progressBar;
+
+    void Start()
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
@@ -21,24 +25,41 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene (sceneIndex + 1);
     }
 
-    /*public void Level1()
+    public void LoadNewGame()
     {
-        SceneManager.LoadScene("Level 1");
+        //SceneManager.LoadScene("Tutorial");
+        loadingScreen.gameObject.SetActive(true);
+
+        scenesLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.TUTORIAL));
+        //scenesLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.WILD_WEST));
+
+        StartCoroutine(GetSceneLoadProgress());
     }
 
-    public void Level2()
+    float totalSceneProgress;
+    public IEnumerator GetSceneLoadProgress()
     {
-        SceneManager.LoadScene("Level 2");
-    }
+        for (int i = 0; i < scenesLoading.Count; i++)
+        {
+            while (!scenesLoading[i].isDone)
+            {
+                totalSceneProgress = 0;
 
-    public void Level3()
-    {
-        SceneManager.LoadScene("Level 3");
-    }*/
+                foreach(AsyncOperation operation in scenesLoading)
+                {
+                    totalSceneProgress += operation.progress;
+                }
 
-    public void NewGame()
-    {
-        SceneManager.LoadScene("Tutorial");
+                totalSceneProgress = (totalSceneProgress / scenesLoading.Count) * 100f; //get percentage
+
+                progressBar.max = 100f;
+                progressBar.current = totalSceneProgress;
+
+                yield return null;
+            }
+        }
+
+        loadingScreen.gameObject.SetActive(false);
     }
 
     public void ReloadMainMenu()

@@ -34,9 +34,7 @@ public class Enemy : Object
             Destroy(gameObject);
 
             // This means player misses
-            AudioManager.instance.missSFX.Play();
-            GameManager.instance.missCounter++;
-            Debug.Log("Miss");
+            ScoreManager.instance.UpdateMisses(1);
         }
         else
         {
@@ -59,14 +57,11 @@ public class Enemy : Object
             // Destroy enemy if it gets hit
             Destroy(gameObject);
 
-            AudioManager.instance.hitSFX.Play();
-            Debug.Log("Hit");
-
             // Update score with score manager
-            ScoreManager scoreManager = FindObjectOfType<ScoreManager>(); // get reference
-            if (scoreManager != null)
+            //ScoreManager scoreManager = FindObjectOfType<ScoreManager>(); // get reference
+            if (ScoreManager.instance != null)
             {
-                scoreManager.UpdateScore(1); // add one score when the weapon hits the enemy
+                ScoreManager.instance.UpdateScore(1); // add one score when the weapon hits the enemy
             }
             else
             {

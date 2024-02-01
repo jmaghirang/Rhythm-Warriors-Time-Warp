@@ -14,19 +14,39 @@ public class ScoreManager : MonoBehaviour
         instance = this;
     }
 
-    public int currentScore = 0;
+    private int currentScore = 0;
+    private int currentMisses = 0;
 
     public int GetCurrentScore()
     {
         return currentScore;
+    }
+
+    public int GetCurrentMisses()
+    {
+        return currentMisses;
     }
     
     // update the score based on hitting enemy prefab
     public void UpdateScore(int scoreToAdd)
     {
         currentScore += scoreToAdd; // increase the score by the specified amount
+
+        AudioManager.instance.hitSFX.Play();
+        Debug.Log("Hit");
         Debug.Log("Score updated. Current score: " + currentScore); // debugging
     }
+
+    public void UpdateMisses(int missesToAdd)
+    {
+        currentMisses += missesToAdd;
+
+        AudioManager.instance.missSFX.Play();
+        Debug.Log("Miss");
+        Debug.Log("Misses updated. Current misses: " + currentMisses);
+    }
+
+
 }
 
     /* add combos later on

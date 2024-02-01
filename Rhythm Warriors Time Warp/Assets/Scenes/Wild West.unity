@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08988392, g: 0.0730543, b: 0.14573301, a: 1}
+  m_IndirectSpecularColor: {r: 0.11182575, g: 0.098137125, b: 0.16251133, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4855,7 +4855,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 89cb99e3e22696848a1cbce7b320f520, type: 3}
+  m_Sprite: {fileID: 21300000, guid: affa059594145a843b81788037b4ee21, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8896,7 +8896,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2e1691713f7eb46b9274f4c988dd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScore: 0
 --- !u!1 &609477818
 GameObject:
   m_ObjectHideFlags: 0
@@ -10450,6 +10449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb8fab373fba8ea42be3765d08c1887d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 1522438748}
 --- !u!4 &692028541 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5b0eadc2bdcb76740a40d9270b7cf83d, type: 3}
@@ -11647,6 +11647,7 @@ GameObject:
   - component: {fileID: 804343219}
   - component: {fileID: 804343221}
   - component: {fileID: 804343220}
+  - component: {fileID: 804343222}
   m_Layer: 5
   m_Name: Miss Panel
   m_TagString: Untagged
@@ -11712,6 +11713,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804343218}
   m_CullTransparentMesh: 1
+--- !u!114 &804343222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804343218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea1072ecc1ed96a43ba2c349d9d39c55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missCounterText: {fileID: 1941102310}
 --- !u!1 &806684751
 GameObject:
   m_ObjectHideFlags: 0
@@ -19883,7 +19897,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 89cb99e3e22696848a1cbce7b320f520, type: 3}
+  m_Sprite: {fileID: 21300000, guid: affa059594145a843b81788037b4ee21, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22882,7 +22896,6 @@ GameObject:
   - component: {fileID: 1522438746}
   - component: {fileID: 1522438749}
   - component: {fileID: 1522438748}
-  - component: {fileID: 1522438747}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -22909,18 +22922,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 10.433998}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1522438747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1522438745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb8fab373fba8ea42be3765d08c1887d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1522438748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28479,7 +28480,7 @@ Transform:
   m_GameObject: {fileID: 1832595482}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -28525,11 +28526,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraShake: {fileID: 2029159730}
   hapticFeedback: {fileID: 174672002}
-  missDisplay: {fileID: 0}
   player: {fileID: 423364426}
   startPlaying: 0
   isPaused: 0
-  missCounter: 0
   winPanel: {fileID: 0}
   gameOverPanel: {fileID: 0}
 --- !u!4 &1837413929
@@ -30521,7 +30520,6 @@ GameObject:
   - component: {fileID: 1941102308}
   - component: {fileID: 1941102311}
   - component: {fileID: 1941102310}
-  - component: {fileID: 1941102312}
   m_Layer: 5
   m_Name: Miss Counter
   m_TagString: Untagged
@@ -30645,19 +30643,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941102307}
   m_CullTransparentMesh: 1
---- !u!114 &1941102312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941102307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea1072ecc1ed96a43ba2c349d9d39c55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missCounterText: {fileID: 1941102310}
 --- !u!1 &1943184213
 GameObject:
   m_ObjectHideFlags: 0
@@ -31041,7 +31026,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 89cb99e3e22696848a1cbce7b320f520, type: 3}
+  m_Sprite: {fileID: 21300000, guid: affa059594145a843b81788037b4ee21, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
