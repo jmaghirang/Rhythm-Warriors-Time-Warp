@@ -7,15 +7,10 @@ public class MainMenu : MonoBehaviour
 {
     int sceneIndex;
 
-    public GameObject loadingScreen;
-    List<AsyncOperation> scenesLoading = new();
-    public ProgressBar progressBar;
-
     void Start()
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
-
 
     public void PlayGame()
     {
@@ -23,51 +18,6 @@ public class MainMenu : MonoBehaviour
             sceneIndex = 0;
         }
         SceneManager.LoadScene (sceneIndex + 1);
-    }
-
-    public void LoadNewGame()
-    {
-        //SceneManager.LoadScene("Tutorial");
-        loadingScreen.gameObject.SetActive(true);
-
-        scenesLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.TUTORIAL));
-
-        StartCoroutine(GetSceneLoadProgress());
-    }
-
-    public void LoadNextScene(SceneIndexes scene)
-    {
-        loadingScreen.gameObject.SetActive(true);
-
-        scenesLoading.Add(SceneManager.LoadSceneAsync((int)scene));
-
-        StartCoroutine(GetSceneLoadProgress());
-    }
-
-    float totalSceneProgress;
-    public IEnumerator GetSceneLoadProgress()
-    {
-        for (int i = 0; i < scenesLoading.Count; i++)
-        {
-            while (!scenesLoading[i].isDone)
-            {
-                totalSceneProgress = 0;
-
-                foreach(AsyncOperation operation in scenesLoading)
-                {
-                    totalSceneProgress += operation.progress;
-                }
-
-                totalSceneProgress = (totalSceneProgress / scenesLoading.Count) * 100f; //get percentage
-
-                progressBar.max = 100f;
-                progressBar.current = totalSceneProgress;
-
-                yield return null;
-            }
-        }
-
-        loadingScreen.gameObject.SetActive(false);
     }
 
     public void ReloadMainMenu()
