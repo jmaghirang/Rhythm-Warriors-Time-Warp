@@ -3,8 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+//https://youtu.be/iXWFTgFNRdM?si=bpeGmg3uO_hTvEJf
+
+public class SceneMgr : MonoBehaviour
 {
+    public static SceneMgr instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     int sceneIndex;
 
     public GameObject loadingScreen;
@@ -14,15 +23,6 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
-    }
-
-
-    public void PlayGame()
-    {
-        if (sceneIndex == 5) {
-            sceneIndex = 0;
-        }
-        SceneManager.LoadScene (sceneIndex + 1);
     }
 
     public void LoadNewGame()
@@ -53,7 +53,7 @@ public class MainMenu : MonoBehaviour
             {
                 totalSceneProgress = 0;
 
-                foreach(AsyncOperation operation in scenesLoading)
+                foreach (AsyncOperation operation in scenesLoading)
                 {
                     totalSceneProgress += operation.progress;
                 }
@@ -77,7 +77,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log ("QUIT!");
+        Debug.Log("QUIT!");
         Application.Quit();
     }
 }

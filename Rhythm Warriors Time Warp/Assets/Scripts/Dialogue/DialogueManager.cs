@@ -94,7 +94,7 @@ public class DialogueManager : MonoBehaviour
             dialogueBox.SetActive(false);
 
             // This line is specifically for tutorial scene for demo purposes
-            SceneManager.LoadScene("Wild West");
+            SceneMgr.instance.LoadNextScene(SceneIndexes.WILD_WEST);
         }
     }
 
