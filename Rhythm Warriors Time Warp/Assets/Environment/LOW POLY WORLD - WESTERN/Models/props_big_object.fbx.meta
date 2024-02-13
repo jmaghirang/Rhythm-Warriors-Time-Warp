@@ -1,0 +1,194 @@
+fileFormatVersion: 2
+guid: e2eb6f54b1285aa448c6bc4027a51bbd
+timeCreated: 1504019685
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: cart
+    100002: cart.001
+    100004: cart_2
+    100006: cart_3
+    100008: cart_r
+    100010: cart_r_2
+    100012: gallows
+    100014: log_1
+    100016: log_2
+    100018: //RootNode
+    100020: water_tower.001
+    100022: wheel.001
+    100024: wheel.002
+    100026: wheel.003
+    100028: wheel.004
+    100030: wheel.005
+    100032: wheel.006
+    100034: wheel.007
+    100036: wheel.008
+    100038: wind
+    100040: wind_stand
+    100042: wind_tail
+    100044: wire
+    100046: wire_2
+    400000: cart
+    400002: cart.001
+    400004: cart_2
+    400006: cart_3
+    400008: cart_r
+    400010: cart_r_2
+    400012: gallows
+    400014: log_1
+    400016: log_2
+    400018: //RootNode
+    400020: water_tower.001
+    400022: wheel.001
+    400024: wheel.002
+    400026: wheel.003
+    400028: wheel.004
+    400030: wheel.005
+    400032: wheel.006
+    400034: wheel.007
+    400036: wheel.008
+    400038: wind
+    400040: wind_stand
+    400042: wind_tail
+    400044: wire
+    400046: wire_2
+    2300000: cart
+    2300002: cart.001
+    2300004: cart_2
+    2300006: cart_3
+    2300008: cart_r
+    2300010: cart_r_2
+    2300012: gallows
+    2300014: log_1
+    2300016: log_2
+    2300018: water_tower.001
+    2300020: wheel.001
+    2300022: wheel.002
+    2300024: wheel.003
+    2300026: wheel.004
+    2300028: wheel.005
+    2300030: wheel.006
+    2300032: wheel.007
+    2300034: wheel.008
+    2300036: wind
+    2300038: wind_stand
+    2300040: wind_tail
+    2300042: wire
+    2300044: wire_2
+    3300000: cart
+    3300002: cart.001
+    3300004: cart_2
+    3300006: cart_3
+    3300008: cart_r
+    3300010: cart_r_2
+    3300012: gallows
+    3300014: log_1
+    3300016: log_2
+    3300018: water_tower.001
+    3300020: wheel.001
+    3300022: wheel.002
+    3300024: wheel.003
+    3300026: wheel.004
+    3300028: wheel.005
+    3300030: wheel.006
+    3300032: wheel.007
+    3300034: wheel.008
+    3300036: wind
+    3300038: wind_stand
+    3300040: wind_tail
+    3300042: wire
+    3300044: wire_2
+    4300000: cart.001
+    4300002: wheel.004
+    4300004: wheel.003
+    4300006: gallows
+    4300008: water_tower.001
+    4300010: wind_stand
+    4300012: wind_tail
+    4300014: wind
+    4300016: wire_2
+    4300018: wire
+    4300020: log_2
+    4300022: log_1
+    4300024: cart_3
+    4300026: cart_2
+    4300028: wheel.008
+    4300030: wheel.007
+    4300032: cart_r_2
+    4300034: wheel.006
+    4300036: wheel.005
+    4300038: cart
+    4300040: cart_r
+    4300042: wheel.002
+    4300044: wheel.001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
