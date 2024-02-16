@@ -5,6 +5,7 @@ using UnityEngine;
 public enum SceneIndexes
 {
     MAIN_MENU = 0,
-    TUTORIAL = 1,
-    WILD_WEST = 2
+    INTRO = 1,
+    TUTORIAL = 2,
+    WILD_WEST = 3
 }

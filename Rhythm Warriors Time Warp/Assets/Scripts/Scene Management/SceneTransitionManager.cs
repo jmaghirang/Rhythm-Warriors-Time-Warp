@@ -5,32 +5,39 @@ using UnityEngine.SceneManagement;
 
 //https://youtu.be/iXWFTgFNRdM?si=bpeGmg3uO_hTvEJf
 
-public class SceneMgr : MonoBehaviour
+public class SceneTransitionManager : MonoBehaviour
 {
-    public static SceneMgr instance;
+    public static SceneTransitionManager instance;
 
     private void Awake()
     {
         instance = this;
     }
 
-    int sceneIndex;
+    public FadeScreen fadeScreen;
 
-    public GameObject loadingScreen;
     List<AsyncOperation> scenesLoading = new();
+    public GameObject loadingScreen;
     public ProgressBar progressBar;
 
-    void Start()
+    public void GoToScene(SceneIndexes scene)
     {
-        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        StartCoroutine(GoToSceneRoutine((int)scene));
+    }
+
+    IEnumerator GoToSceneRoutine(int sceneIndex)
+    {
+        fadeScreen.FadeOut();
+        yield return new WaitForSeconds(fadeScreen.fadeDuration);
+
+        SceneManager.LoadScene(sceneIndex);
     }
 
     public void LoadNewGame()
     {
-        //SceneManager.LoadScene("Tutorial");
         loadingScreen.gameObject.SetActive(true);
 
-        scenesLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.TUTORIAL));
+        scenesLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.INTRO));
 
         StartCoroutine(GetSceneLoadProgress());
     }
@@ -45,7 +52,7 @@ public class SceneMgr : MonoBehaviour
     }
 
     float totalSceneProgress;
-    public IEnumerator GetSceneLoadProgress()
+    IEnumerator GetSceneLoadProgress()
     {
         for (int i = 0; i < scenesLoading.Count; i++)
         {
