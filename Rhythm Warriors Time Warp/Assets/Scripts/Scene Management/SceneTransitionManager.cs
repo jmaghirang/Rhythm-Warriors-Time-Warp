@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-//https://youtu.be/iXWFTgFNRdM?si=bpeGmg3uO_hTvEJf
+//https://youtu.be/YMj2qPq9CP8?si=n6UHdqirqBW4lNVj
 
 public class SceneTransitionManager : MonoBehaviour
 {
@@ -16,70 +18,44 @@ public class SceneTransitionManager : MonoBehaviour
 
     public FadeScreen fadeScreen;
 
-    List<AsyncOperation> scenesLoading = new();
-    public GameObject loadingScreen;
-    public ProgressBar progressBar;
+    public GameObject loadingIndicator;
+    private ProgressBar progressBar;
 
-    public void GoToScene(SceneIndexes scene)
+    private void Start()
     {
-        StartCoroutine(GoToSceneRoutine((int)scene));
+        progressBar = loadingIndicator.GetComponent<ProgressBar>();
     }
 
-    IEnumerator GoToSceneRoutine(int sceneIndex)
+    public void LoadNextScene(int sceneIndex)
+    {
+        StartCoroutine(LoadNextSceneRoutine(sceneIndex));
+    }
+
+    IEnumerator LoadNextSceneRoutine(int sceneIndex)
     {
         fadeScreen.FadeOut();
+
         yield return new WaitForSeconds(fadeScreen.fadeDuration);
 
-        SceneManager.LoadScene(sceneIndex);
+        loadingIndicator.SetActive(true);
+        StartCoroutine(GetSceneLoadProgress(sceneIndex));
     }
 
-    public void LoadNewGame()
+    IEnumerator GetSceneLoadProgress(int sceneIndex)
     {
-        loadingScreen.gameObject.SetActive(true);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
-        scenesLoading.Add(SceneManager.LoadSceneAsync((int)SceneIndexes.INTRO));
-
-        StartCoroutine(GetSceneLoadProgress());
-    }
-
-    public void LoadNextScene(SceneIndexes scene)
-    {
-        loadingScreen.gameObject.SetActive(true);
-
-        scenesLoading.Add(SceneManager.LoadSceneAsync((int)scene));
-
-        StartCoroutine(GetSceneLoadProgress());
-    }
-
-    float totalSceneProgress;
-    IEnumerator GetSceneLoadProgress()
-    {
-        for (int i = 0; i < scenesLoading.Count; i++)
+        while (!operation.isDone)
         {
-            while (!scenesLoading[i].isDone)
-            {
-                totalSceneProgress = 0;
+            float sceneProgress = operation.progress * 100f; // Get percentage
 
-                foreach (AsyncOperation operation in scenesLoading)
-                {
-                    totalSceneProgress += operation.progress;
-                }
+            progressBar.max = 100f;
+            progressBar.current = sceneProgress;
 
-                totalSceneProgress = (totalSceneProgress / scenesLoading.Count) * 100f; //get percentage
-
-                progressBar.max = 100f;
-                progressBar.current = totalSceneProgress;
-
-                yield return null;
-            }
+            yield return null;
         }
 
-        loadingScreen.gameObject.SetActive(false);
-    }
-
-    public void ReloadMainMenu()
-    {
-        SceneManager.LoadScene("Main Menu");
+        loadingIndicator.SetActive(false);
     }
 
     public void QuitGame()

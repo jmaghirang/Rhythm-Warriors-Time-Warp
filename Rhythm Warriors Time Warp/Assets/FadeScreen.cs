@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+//https://youtu.be/JCyJ26cIM0Y?si=bf14vEAU_-TZafnZ
+
 public class FadeScreen : MonoBehaviour
 {
     public bool fadeOnStart = true;
-    public float fadeDuration = 2;
+    public float fadeDuration = 3;
     public Color fadeColor;
     private Renderer rend;
 

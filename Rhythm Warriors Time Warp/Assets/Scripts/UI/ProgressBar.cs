@@ -11,6 +11,7 @@ public class ProgressBar : MonoBehaviour
     public double min;
     public double max;
     public double current;
+
     public Image mask;
     public Image fill;
     public Color color;
