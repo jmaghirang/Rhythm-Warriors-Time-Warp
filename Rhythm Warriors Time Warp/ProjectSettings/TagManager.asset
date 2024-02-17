@@ -19,8 +19,8 @@ TagManager:
   - Enemy
   - Obstacle
   - Environment
-  - 
-  - 
+  - UI Collider
+  - Pointer
   - 
   - 
   - 
