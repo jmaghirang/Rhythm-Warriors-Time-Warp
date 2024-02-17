@@ -10,6 +10,9 @@ EditorBuildSettings:
     guid: cb8e20fa0ab5ac74e9589b87a11d198c
   - enabled: 1
     path: Assets/Scenes/Intro.unity
+    guid: 08be0a645345035469ec0d239e4d6059
+  - enabled: 0
+    path: Assets/Scenes/Intro Trash.unity
     guid: e32b4ceb5eeee00469423d61e8c4d6d4
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity

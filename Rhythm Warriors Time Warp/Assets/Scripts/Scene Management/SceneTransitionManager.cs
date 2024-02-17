@@ -35,7 +35,7 @@ public class SceneTransitionManager : MonoBehaviour
     {
         fadeScreen.FadeOut();
 
-        yield return new WaitForSeconds(fadeScreen.fadeDuration);
+        yield return new WaitForSeconds(fadeScreen.fadeDuration + 2f);
 
         loadingIndicator.SetActive(true);
         StartCoroutine(GetSceneLoadProgress(sceneIndex));
@@ -43,6 +43,9 @@ public class SceneTransitionManager : MonoBehaviour
 
     IEnumerator GetSceneLoadProgress(int sceneIndex)
     {
+        progressBar.current = 0;
+        progressBar.min = 0;
+
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
         while (!operation.isDone)
@@ -57,6 +60,9 @@ public class SceneTransitionManager : MonoBehaviour
 
         loadingIndicator.SetActive(false);
     }
+
+    //
+
 
     public void QuitGame()
     {
