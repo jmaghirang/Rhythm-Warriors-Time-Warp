@@ -13,7 +13,7 @@ public class VRUIOperations : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        TrigExit.instance.currentCollder = GetComponent<VRUIOperations>();
+        TrigExit.instance.currentCollider = GetComponent<VRUIOperations>();
         OnEnter.Invoke();
     }
 }
