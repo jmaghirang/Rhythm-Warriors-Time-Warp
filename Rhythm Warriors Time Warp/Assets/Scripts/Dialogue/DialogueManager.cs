@@ -39,7 +39,7 @@ public class DialogueManager : MonoBehaviour
     void Update()
     {
         // If the button to continue dialogue is pressed while the dialogue box is active in the scene...
-        if (ControlManager.instance.continueButton.action.WasPressedThisFrame() && dialogueBox.activeSelf == true)
+        if (ControlManager.instance.continueButton.action.WasPressedThisFrame() && !GameManager.instance.isPaused && dialogueBox.activeSelf == true)
         {
             if (isTyping)
             {
@@ -52,6 +52,7 @@ public class DialogueManager : MonoBehaviour
             {
                 // Move onto next message/line
                 NextLine();
+                MenuManager.instance.ShowMenu(dialogueBox);
             }
         }
 
