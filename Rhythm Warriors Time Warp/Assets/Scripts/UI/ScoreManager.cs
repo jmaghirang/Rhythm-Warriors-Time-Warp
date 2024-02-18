@@ -76,7 +76,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (!SongManager.instance.audioSource.isPlaying && !GameManager.instance.isPaused && GetCurrentScore() > 10)
         {
-            GameManager.instance.TriggerGameOver();
+            GameManager.instance.TriggerGameWin();
         }
     }
 

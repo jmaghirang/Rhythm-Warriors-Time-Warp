@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.11182575, g: 0.098137125, b: 0.16251133, a: 1}
+  m_IndirectSpecularColor: {r: 0.11194962, g: 0.09827769, b: 0.16267753, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1814,6 +1814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 551512410}
   spawnDistance: 0.5
+  pauseMenu: {fileID: 0}
 --- !u!4 &103311780 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5b0eadc2bdcb76740a40d9270b7cf83d, type: 3}
@@ -4304,18 +4305,6 @@ MonoBehaviour:
   textComponent: {fileID: 268273731}
   textSpeed: 0.03
   index: 0
-  continueButton:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Continue Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 9f70b09b-8e6f-4417-978d-40a116dd6708
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: -5449384609717469660, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &255877797
 GameObject:
   m_ObjectHideFlags: 0
@@ -4332,7 +4321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &255877798
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9099,6 +9088,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2e1691713f7eb46b9274f4c988dd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraShake: {fileID: 0}
+  hapticFeedback: {fileID: 0}
 --- !u!1 &609477818
 GameObject:
   m_ObjectHideFlags: 0
@@ -15781,7 +15772,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1043837608
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17191,7 +17182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e043fdb6cd4a14dbb06fb2451fca83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 1247642148}
   pauseButton:
     m_UseReference: 1
     m_Action:
@@ -17204,6 +17194,18 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -2803419620064494838, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  continueButton:
+    m_UseReference: 0
+    m_Action:
+      m_Name: 
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: f53b85f7-2737-4627-b275-81781799f851
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!1001 &1117182204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28937,13 +28939,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6282b99868c11814a8799501c336bb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraShake: {fileID: 2029159730}
-  hapticFeedback: {fileID: 174672002}
   player: {fileID: 423364426}
   startPlaying: 0
   isPaused: 0
-  winPanel: {fileID: 0}
-  gameOverPanel: {fileID: 0}
 --- !u!4 &1837413929
 Transform:
   m_ObjectHideFlags: 0
