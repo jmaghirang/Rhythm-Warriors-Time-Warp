@@ -3,7 +3,7 @@ using System.Collections;
 
 public class WeaponTutorial : MonoBehaviour
 {
-    public Dialogue dialogue; // reference to the dialogue system
+    public DialogueOld dialogue; // reference to the dialogue system
     public GameObject tutorialUI; // reference to the tutorial UI
     public GameObject dummyEnemy;
     public GameObject dummyEnemyAttacked;

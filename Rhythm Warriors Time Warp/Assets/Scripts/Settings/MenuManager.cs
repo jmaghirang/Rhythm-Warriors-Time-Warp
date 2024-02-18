@@ -22,6 +22,8 @@ public class MenuManager : MonoBehaviour
     // Distance menu will spawn from player's head
     public float spawnDistance = 0.5f;
 
+    public GameObject pauseMenu;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +34,7 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        OrientMenu(pauseMenu);
     }
 
     public void ShowMenu(GameObject m)
@@ -48,5 +50,14 @@ public class MenuManager : MonoBehaviour
 
         // Menu is at the right orientation
         m.transform.forward *= -1;
+    }
+
+    public void TriggerPauseMenu()
+    {
+        // Menu will be shown or put away depending on it's currently showing up or not
+        pauseMenu.SetActive(!pauseMenu.activeSelf);
+
+        // Position of pauseMenu will be spawned at the position of where the player is looking
+        ShowMenu(pauseMenu);
     }
 }

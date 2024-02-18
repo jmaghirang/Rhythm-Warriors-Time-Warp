@@ -27,14 +27,7 @@ public class DialogueManager : MonoBehaviour
 
     Message[] lines; // List of messages in scene (edited in inspector)
     Character[] characters;  // List of characters of messages in scene (edited in inspector)
-
-    public int index = 0; // Active message
-
-    // Input on controller to continue dialogue
-    // Set to primary button [X] on left controller
-    // With XR Device Simulator, it is Shift + B
-    public InputActionProperty continueButton;
-
+    public int index = 0; // Index of active message
 
     // Start is called before the first frame update
     void Start()
@@ -46,7 +39,7 @@ public class DialogueManager : MonoBehaviour
     void Update()
     {
         // If the button to continue dialogue is pressed while the dialogue box is active in the scene...
-        if (continueButton.action.WasPressedThisFrame() && dialogueBox.activeSelf == true)
+        if (ControlManager.instance.continueButton.action.WasPressedThisFrame() && dialogueBox.activeSelf == true)
         {
             if (isTyping)
             {
@@ -61,6 +54,8 @@ public class DialogueManager : MonoBehaviour
                 NextLine();
             }
         }
+
+        MenuManager.instance.OrientMenu(dialogueBox);
     }
 
     IEnumerator TypeLine()
@@ -94,7 +89,7 @@ public class DialogueManager : MonoBehaviour
             dialogueBox.SetActive(false);
 
             // This line is specifically for tutorial scene for demo purposes
-            SceneTransitionManager.instance.LoadNextScene((int)SceneIndexes.WILD_WEST);
+            // SceneTransitionManager.instance.LoadNextScene((int)SceneIndexes.WILD_WEST);
         }
     }
 
@@ -119,6 +114,7 @@ public class DialogueManager : MonoBehaviour
         characters = chars;
 
         dialogueBox.SetActive(true);
+        MenuManager.instance.ShowMenu(dialogueBox);
 
         DisplayMessage();
     }

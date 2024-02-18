@@ -15,15 +15,6 @@ public class GameManager : MonoBehaviour
         instance = this;
     }
 
-    // public reference to the CameraShake script
-    public CameraShake cameraShake;
-
-    // reference to the HapticFeedback script
-    public HapticFeedback hapticFeedback;
-
-    // reference to the MissDisplay script
-    //public MissDisplay missDisplay;
-
     public Player player;
 
     public bool startPlaying; // Game has started or not started yet
@@ -33,44 +24,26 @@ public class GameManager : MonoBehaviour
 
     private AudioSource theMusic; // Music in scene
 
-    int sceneIndex; // Keeping track of scenes
-
-    private int previousMissCounter = 0; // previous value of missCounter
-
-    // Screens to show on triggering certain scenarios
-    public GameObject winPanel;
-    public GameObject gameOverPanel;
-
     // Start is called before the first frame update
     void Start()
     {
         // Set music to the audio source defined by the audio manager in scene
         theMusic = AudioManager.instance.bgMusic;
 
-        // Scene index set to current scene
-        sceneIndex = SceneManager.GetActiveScene().buildIndex;
-
         // Set time scale to 1
         Time.timeScale = 1f;
-
-        // Find and assign the MissDisplay script
-        //missDisplay = GameObject.FindObjectOfType<MissDisplay>();
-        //if (missDisplay == null)
-        //{
-        //    Debug.LogError("MissDisplay script not found in the scene.");
-        //}
     }
 
     // Update is called once per frame
     void Update()
     {
         // Handling pausing and resuming game
-        // Input to trigger pause menu set to menu button on left controller
-        // If the menu button was pressed, game pause/unpause
-        if (ControlManager.instance.pauseButton.action.WasPressedThisFrame() /*Input.GetKeyDown(KeyCode.P)*/)
+        if (ControlManager.instance.pauseButton.action.WasPressedThisFrame())
         {
-            if (isPaused)
-            {
+            MenuManager.instance.TriggerPauseMenu();
+
+            if (isPaused) 
+            { 
                 // If the game is already paused, the game will be resumed 
                 ResumeGame();
             }
@@ -80,33 +53,6 @@ public class GameManager : MonoBehaviour
                 PauseGame();
             }
         }
-
-        // If player health delpletes or player misses more than 20 times, show game over screen
-        if (player.currentHealth < 1 || ScoreManager.instance.GetCurrentMisses() > 20)
-        {
-            TriggerGameOver();
-        }
-
-        // If the song has finished playing and the player has reached a score above 10
-        if (!SongManager.instance.audioSource.isPlaying && !isPaused && ScoreManager.instance.GetCurrentMisses() > 10)
-        {
-            TriggerGameWin();
-        }
-
-        // check if missCounter has increased
-        if (ScoreManager.instance.GetCurrentMisses() > previousMissCounter)
-        {
-            // start the camera shake
-            cameraShake.StartShake(0.5f, 0.2f, 10.0f);
-
-            // start the haptic feedback
-            hapticFeedback.PlayerGotHit();
-            
-            // update previousMissCounter
-            previousMissCounter = ScoreManager.instance.GetCurrentMisses();
-        }
-
-        //missDisplay.UpdateMissCount(missCounter);
     }
 
     private void PauseGame()
@@ -133,24 +79,14 @@ public class GameManager : MonoBehaviour
         theMusic.Play();
     }
 
-    public void RestartGame()
-    {
-        SceneManager.LoadScene(sceneIndex);
-    }
-
-    public void LoadMainMenu()
-    {
-        SceneManager.LoadScene("Main Menu");
-    }
-
     public void TriggerGameOver()
     {
-        SceneManager.LoadScene("Game Over");
+        SceneTransitionManager.instance.LoadNextScene(5);
     }
 
     public void TriggerGameWin()
     {
-        SceneManager.LoadScene("Win Screen");
+        SceneTransitionManager.instance.LoadNextScene(4);
     }
 
     public void QuitGame()

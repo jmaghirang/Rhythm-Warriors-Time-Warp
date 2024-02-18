@@ -21,9 +21,12 @@ public class SceneTransitionManager : MonoBehaviour
     public GameObject loadingIndicator;
     private ProgressBar progressBar;
 
+    private int currentSceneIndex;
+
     private void Start()
     {
         progressBar = loadingIndicator.GetComponent<ProgressBar>();
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     public void LoadNextScene(int sceneIndex)
@@ -63,6 +66,15 @@ public class SceneTransitionManager : MonoBehaviour
 
     //
 
+    public void RestartGame()
+    {
+        LoadNextScene(currentSceneIndex);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        LoadNextScene((int)SceneIndexes.MAIN_MENU);
+    }
 
     public void QuitGame()
     {
