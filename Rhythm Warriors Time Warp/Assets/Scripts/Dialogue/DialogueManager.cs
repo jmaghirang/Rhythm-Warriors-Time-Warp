@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering.PostProcessing;
 
 // Some code referenced from
 // https://youtu.be/PswC-HlKZqA?si=o7Q38JtiN-xi6kkS
@@ -96,7 +97,7 @@ public class DialogueManager : MonoBehaviour
 
     void DisplayMessage()
     {
-        // Clear dialogue box if there is any content initally
+        // Clear dialogue box if there is any content initially
         textComponent.text = string.Empty;
         charName.text = string.Empty;
 
@@ -119,4 +120,18 @@ public class DialogueManager : MonoBehaviour
 
         DisplayMessage();
     }
+}
+
+[System.Serializable]
+public class Message
+{
+    public string message; // The actual text of the message
+    public int charID;     // ID of the character speaking this message
+}
+
+[System.Serializable]
+public class Character
+{
+    public string name; // Name of the character
+    // You can add more properties here if needed
 }
