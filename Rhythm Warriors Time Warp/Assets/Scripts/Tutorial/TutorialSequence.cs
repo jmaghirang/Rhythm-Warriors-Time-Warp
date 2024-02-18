@@ -30,7 +30,7 @@ public class TutorialSequence : MonoBehaviour
         // Keeping track of the current dialogue showing
         rIndex = DialogueManager.instance.index;
 
-        // bool variables to make sure each corouting runs exactly once
+        // Bool variables to make sure each coroutine runs exactly once
         if (!execute1Once && rIndex == 8)
         {
             // If dialgoue to instruct user to swing weapon is reached, show the weapon to the player and give them time to swing the weapon

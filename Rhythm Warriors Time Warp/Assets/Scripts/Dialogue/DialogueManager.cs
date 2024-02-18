@@ -30,6 +30,8 @@ public class DialogueManager : MonoBehaviour
     Character[] characters;  // List of characters of messages in scene (edited in inspector)
     public int index = 0; // Index of active message
 
+    public List<int> pauseIndexes = new(); // List of instances at when dialogue needs to be paused in a scene
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +41,7 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // If the button to continue dialogue is pressed while the dialogue box is active in the scene...
+        // If the button to continue dialogue is pressed while the dialogue box is active in the scene and the game is not paused...
         if (ControlManager.instance.continueButton.action.WasPressedThisFrame() && !GameManager.instance.isPaused && dialogueBox.activeSelf == true)
         {
             if (isTyping)
@@ -51,12 +53,13 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                // Move onto next message/line
+                // Move onto next message/line and position dialogue box in front of player
                 NextLine();
                 MenuManager.instance.ShowMenu(dialogueBox);
             }
         }
 
+        // Always make the dialogue box rotate to face the player
         MenuManager.instance.OrientMenu(dialogueBox);
     }
 
@@ -115,23 +118,19 @@ public class DialogueManager : MonoBehaviour
         lines = msgs;
         characters = chars;
 
-        dialogueBox.SetActive(true);
-        MenuManager.instance.ShowMenu(dialogueBox);
+        DisplayDialogueBox();
 
         DisplayMessage();
     }
-}
 
-[System.Serializable]
-public class Message
-{
-    public string message; // The actual text of the message
-    public int charID;     // ID of the character speaking this message
-}
+    public void PauseDialogue()
+    {
+        dialogueBox.SetActive(false);
+    }
 
-[System.Serializable]
-public class Character
-{
-    public string name; // Name of the character
-    // You can add more properties here if needed
+    public void DisplayDialogueBox()
+    {
+        dialogueBox.SetActive(true);
+        MenuManager.instance.ShowMenu(dialogueBox);
+    }
 }

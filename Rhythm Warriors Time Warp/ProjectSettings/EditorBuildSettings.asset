@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: cb8e20fa0ab5ac74e9589b87a11d198c
   - enabled: 1
-    path: Assets/Scenes/Intro.unity
+    path: Assets/Scenes/Intro/Intro.unity
     guid: 08be0a645345035469ec0d239e4d6059
   - enabled: 0
     path: Assets/Scenes/Intro Trash.unity

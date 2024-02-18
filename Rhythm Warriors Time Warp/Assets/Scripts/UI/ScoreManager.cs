@@ -66,7 +66,7 @@ public class ScoreManager : MonoBehaviour
 
     public void LoseCondition()
     {
-        if (GameManager.instance.player.currentHealth < 1 || GetCurrentMisses() > 20)
+        if (GameManager.instance.player.currentHealth < 1 || currentMisses > 20)
         {
             GameManager.instance.TriggerGameOver();
         }
@@ -74,7 +74,7 @@ public class ScoreManager : MonoBehaviour
 
     public void WinCondition()
     {
-        if (!SongManager.instance.audioSource.isPlaying && !GameManager.instance.isPaused && GetCurrentScore() > 10)
+        if (!SongManager.instance.audioSource.isPlaying && !GameManager.instance.isPaused && currentScore > 10)
         {
             GameManager.instance.TriggerGameWin();
         }
@@ -92,7 +92,7 @@ public class ScoreManager : MonoBehaviour
             hapticFeedback.PlayerGotHit();
 
             // update previousMissCounter
-            previousMissCounter = ScoreManager.instance.GetCurrentMisses();
+            previousMissCounter = currentMisses;
         }
     }
 }
