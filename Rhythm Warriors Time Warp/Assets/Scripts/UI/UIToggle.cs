@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UIToggle : MonoBehaviour
+public class UIToggle : MonoBehaviour, IPointerClickHandler
 {
     private RectTransform rectTransform;
     private Canvas canvas;
     private CanvasGroup canvasGroup;
+
+    // we'll add a section for this under the settings menu
+    private bool uiCustomizationMode = false;
 
     private void Awake()
     {
@@ -16,20 +19,29 @@ public class UIToggle : MonoBehaviour
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData)
     {
-        canvasGroup.alpha = 0.6f;
-        canvasGroup.blocksRaycasts = false;
+        if (uiCustomizationMode)
+        {
+            // handle UI customization mode
+            // implement logic to allow dragging and rearranging UI elements
+        }
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public void SetUICustomizationMode(bool mode)
     {
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
-    }
+        uiCustomizationMode = mode;
 
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        canvasGroup.alpha = 1f;
-        canvasGroup.blocksRaycasts = true;
+        // enable or disable interaction based on mode
+        if (mode)
+        {
+            canvasGroup.alpha = 0.6f;
+            canvasGroup.blocksRaycasts = false;
+        }
+        else
+        {
+            canvasGroup.alpha = 1f;
+            canvasGroup.blocksRaycasts = true;
+        }
     }
 }
