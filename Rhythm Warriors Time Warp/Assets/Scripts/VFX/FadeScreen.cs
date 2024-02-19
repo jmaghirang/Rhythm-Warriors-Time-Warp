@@ -9,7 +9,8 @@ public class FadeScreen : MonoBehaviour
 {
     public bool fadeOnStart = true;
     public float fadeDuration = 3;
-    public Color fadeColor;
+    public Color fadeInColor;
+    public Color fadeOutColor;
     private Renderer rend;
 
     // Start is called before the first frame update
@@ -25,20 +26,20 @@ public class FadeScreen : MonoBehaviour
 
     public void FadeIn()
     {
-        Fade(1, 0);
+        Fade(fadeInColor, 1, 0);
     }
 
     public void FadeOut()
     {
-        Fade(0, 1);
+        Fade(fadeOutColor, 0, 1);
     }
 
-    public void Fade(float alphaIn, float alphaOut)
+    public void Fade(Color fadeColor, float alphaIn, float alphaOut)
     {
-        StartCoroutine(FadeRoutine(alphaIn, alphaOut));
+        StartCoroutine(FadeRoutine(fadeColor, alphaIn, alphaOut));
     }
 
-    IEnumerator FadeRoutine(float alphaIn, float alphaOut)
+    IEnumerator FadeRoutine(Color fadeColor, float alphaIn, float alphaOut)
     {
         float timer = 0;
         // How long fade will last
