@@ -9,9 +9,12 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        AudioSource sfx = GetComponent<AudioSource>();
+
         if (other.CompareTag("Player"))
         {
             doorAnimator.SetBool("character_nearby", true);
+            sfx.Play();
         }
     }
 }

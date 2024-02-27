@@ -14,6 +14,8 @@ public class EnemyLane : Lane
     // List of enemies in a scene
     public List<Enemy> enemies = new();
 
+    public string enemyType;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,7 +81,7 @@ public class EnemyLane : Lane
                 // Debug.Log("Spawn Index: " + spawnIndex + "\n");
 
                 // Spawn object at timestamp - screentime
-                GameObject note = Resources.Load("Prefabs/Enemy", typeof(GameObject)) as GameObject;
+                GameObject note = Resources.Load("Prefabs/" + enemyType, typeof(GameObject)) as GameObject;
                 var enemy = Instantiate(note, transform);
                 Debug.Log("Enemy Spawned");
 

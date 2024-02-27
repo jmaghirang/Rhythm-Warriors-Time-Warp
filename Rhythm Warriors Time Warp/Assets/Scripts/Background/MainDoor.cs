@@ -9,7 +9,7 @@ public class MainDoor : Door
     {
         if (other.CompareTag("Player"))
         {
-            IntroSequence.destinationReached = true;
+            IntroSequence.destinationReached = true;         
         }
     }
 }

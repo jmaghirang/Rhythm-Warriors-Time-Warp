@@ -35,7 +35,8 @@ public class DialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        MenuManager.instance.ShowMenu(dialogueBox);
+        MenuManager.instance.OrientMenu(dialogueBox);
     }
 
     // Update is called once per frame
