@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.11182575, g: 0.098137125, b: 0.16251133, a: 1}
+  m_IndirectSpecularColor: {r: 0.11194962, g: 0.09827769, b: 0.16267753, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3454,14 +3454,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a05efd7bf9997142826b597f48b2ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  OnExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
 --- !u!1001 &259816533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5539,6 +5531,7 @@ MonoBehaviour:
   noteRepresentation: 7
   timeStamps: []
   enemies: []
+  enemyType: 
 --- !u!1001 &435817723
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11210,6 +11203,7 @@ MonoBehaviour:
   noteRepresentation: 5
   timeStamps: []
   enemies: []
+  enemyType: 
 --- !u!4 &973868841 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 35986e7858bdf134cb284502fad2bea5, type: 3}
@@ -12089,14 +12083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a05efd7bf9997142826b597f48b2ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnEnter:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  OnExit:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
 --- !u!61 &1043837610
 BoxCollider2D:
   m_ObjectHideFlags: 0
