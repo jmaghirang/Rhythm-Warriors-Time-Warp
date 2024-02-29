@@ -63,7 +63,7 @@ public class TutorialSequence : MonoBehaviour
     public IEnumerator SwingWeapon()
     {
         // Make the dialogue box go away
-        DialogueManager.instance.dialogueBox.SetActive(false);
+        DialogueManager.instance.dialogueBox.UI.SetActive(false);
         // Show the player the weapon in their hand
         weapon.SetActive(true);
 
@@ -71,12 +71,12 @@ public class TutorialSequence : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         // Make the dialgoue box reappear
-        DialogueManager.instance.dialogueBox.SetActive(true);
+        DialogueManager.instance.dialogueBox.UI.SetActive(true);
     }
 
     public IEnumerator DodgeObstacles()
     {
-        DialogueManager.instance.dialogueBox.SetActive(false);
+        DialogueManager.instance.dialogueBox.UI.SetActive(false);
         // Show the player an obstacle in front of them
         obstacle.SetActive(true);
 
@@ -85,26 +85,26 @@ public class TutorialSequence : MonoBehaviour
 
         // Make the obstacle go away
         obstacle.SetActive(false);
-        DialogueManager.instance.dialogueBox.SetActive(true);
+        DialogueManager.instance.dialogueBox.UI.SetActive(true);
     }
 
     public IEnumerator HitEnemies()
     {
-        DialogueManager.instance.dialogueBox.SetActive(false);
+        DialogueManager.instance.dialogueBox.UI.SetActive(false);
         // Simulate rhythm gameplay
-        StartCoroutine(SongManager.instance.StartSong());
+        SongManager.instance.StartSong();
 
         // Wait until the player has hit a certain amount of enemies
         yield return new WaitUntil(() => ScoreManager.instance.GetCurrentScore() == 6);
 
         // Stop the song to stop gameplay
         SongManager.instance.StopSong();
-        DialogueManager.instance.dialogueBox.SetActive(true);
+        DialogueManager.instance.dialogueBox.UI.SetActive(true);
     }
 
     public IEnumerator HealthDrain()
     {
-        DialogueManager.instance.dialogueBox.SetActive(false);
+        DialogueManager.instance.dialogueBox.UI.SetActive(false);
         // Show player what a health bar looks like
         healthBar.SetActive(true);
         // Deplete the health bar a bit to demonstrate to player
@@ -115,6 +115,6 @@ public class TutorialSequence : MonoBehaviour
 
         // Make health bar go away
         healthBar.SetActive(false);
-        DialogueManager.instance.dialogueBox.SetActive(true);
+        DialogueManager.instance.dialogueBox.UI.SetActive(true);
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 // Code referenced from
@@ -8,13 +9,13 @@ public class Enemy : Object
     // If the enemy can be hit - i don't think this does anything rn
     public bool canBeHit;
 
+    public GameObject vfx;
+
     // Start is called before the first frame update
     void Start()
     {
         // Get the time at which the enemy is instantiated
         timeInstantiated = SongManager.GetAudioSourceTime();
-        // Set the enemy prefab mesh renderer to be false intially to contain visual anomalies
-        GetComponentInChildren<MeshRenderer>().enabled = false;
     }
 
     // Update is called once per frame
@@ -27,11 +28,17 @@ public class Enemy : Object
         // t = 0 is the spawn location and t = 1 is the despawn location, so t = 0.5 is where the enemy is supposed to be hit by player
         float t = (float)(timeSinceInstantiated / (SongManager.instance.noteScreenTime * 2));
 
+        // Set the enemy prefab mesh renderer to be false intially to contain visual anomalies
+        GetComponent<MeshRenderer>().enabled = false;
+
         // If the enemy is past the point of where it's supposed to be hit...
         if (t > 0.5)
         {
             // If the object passes where it is supposed to despawn
             Destroy(gameObject);
+
+            // Instantiate(vfx, transform.position, Quaternion.identity);
+            // Destroy(vfx);
 
             // This means player misses
             ScoreManager.instance.UpdateMisses(1);
@@ -42,8 +49,17 @@ public class Enemy : Object
             // Move along two points - from spawn point to despawn point
             transform.localPosition = Vector3.Lerp(Vector3.forward * SongManager.instance.noteSpawnZ, Vector3.forward * SongManager.instance.noteDespawnZ, t);
             // Enable the enemy prefab mesh to be visible
-            GetComponentInChildren<MeshRenderer>().enabled = true;
+            GetComponent<MeshRenderer>().enabled = true;
         }
+    }
+
+    IEnumerator TriggerEffects()
+    {
+        GameObject hitFX = Instantiate(vfx, transform.position, Quaternion.identity);
+
+        yield return new WaitForSeconds(2);
+
+        Destroy(hitFX);
     }
 
     // Check collisions
@@ -56,6 +72,7 @@ public class Enemy : Object
 
             // Destroy enemy if it gets hit
             Destroy(gameObject);
+            StartCoroutine(TriggerEffects());
 
             // Update score with score manager
             //ScoreManager scoreManager = FindObjectOfType<ScoreManager>(); // get reference

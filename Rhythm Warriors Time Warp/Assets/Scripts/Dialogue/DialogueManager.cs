@@ -18,7 +18,7 @@ public class DialogueManager : MonoBehaviour
         instance = this;
     }
 
-    public GameObject dialogueBox;
+    public Menu dialogueBox;
 
     public TextMeshProUGUI charName; // Character name to display
     public TextMeshProUGUI textComponent; // Message to display
@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
     void Update()
     {
         // If the button to continue dialogue is pressed while the dialogue box is active in the scene and the game is not paused...
-        if (ControlManager.instance.continueButton.action.WasPressedThisFrame() && !GameManager.instance.isPaused && dialogueBox.activeSelf == true)
+        if (ControlManager.instance.continueButton.action.WasPressedThisFrame() && !GameManager.instance.isPaused && dialogueBox.UI.activeSelf == true)
         {
             if (isTyping)
             {
@@ -92,7 +92,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             // Close the dialogue box
-            dialogueBox.SetActive(false);
+            dialogueBox.UI.SetActive(false);
 
             // This line is specifically for tutorial scene for demo purposes
             // SceneTransitionManager.instance.LoadNextScene((int)SceneIndexes.WILD_WEST);
@@ -126,12 +126,12 @@ public class DialogueManager : MonoBehaviour
 
     public void PauseDialogue()
     {
-        dialogueBox.SetActive(false);
+        dialogueBox.UI.SetActive(false);
     }
 
     public void DisplayDialogueBox()
     {
-        dialogueBox.SetActive(true);
+        dialogueBox.UI.SetActive(true);
         MenuManager.instance.ShowMenu(dialogueBox);
     }
 }

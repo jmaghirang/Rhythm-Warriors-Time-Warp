@@ -7,7 +7,7 @@ public class Lvl1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SongManager.instance.StartSong());
+        SongManager.instance.StartSong();
     }
 
     // Update is called once per frame

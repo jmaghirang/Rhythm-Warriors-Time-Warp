@@ -82,7 +82,7 @@ public class EnemyLane : Lane
 
                 // Spawn object at timestamp - screentime
                 GameObject note = Resources.Load("Prefabs/" + enemyType, typeof(GameObject)) as GameObject;
-                var enemy = Instantiate(note, transform);
+                var enemy = Instantiate(note, new Vector3(transform.localPosition.x, transform.localPosition.y, SongManager.instance.noteSpawnZ), note.transform.rotation, transform);
                 Debug.Log("Enemy Spawned");
 
                 // Add spawned enemy to list
@@ -107,15 +107,4 @@ public class EnemyLane : Lane
 
         foreach (Transform child in transform) Destroy(child.gameObject);
     }
-
-    // Used when accuracy is implemented
-    /*private void Hit()
-    {
-        AudioManager.instance.hitSFX.Play();
-    }
-
-    private void Miss()
-    {
-        AudioManager.instance.missSFX.Play();
-    }*/
 }

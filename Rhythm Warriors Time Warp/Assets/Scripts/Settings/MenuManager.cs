@@ -19,10 +19,7 @@ public class MenuManager : MonoBehaviour
     // Position rotation of player's head
     public Transform playerCamera;
 
-    // Distance menu will spawn from player's head
-    public float spawnDistance = 0.5f;
-
-    public GameObject pauseMenu;
+    public Menu pauseMenu;
 
     /* 
     // add these when they're added in the settings menu
@@ -62,25 +59,26 @@ public class MenuManager : MonoBehaviour
         OrientMenu(pauseMenu);
     }
 
-    public void ShowMenu(GameObject m)
+    public void ShowMenu(Menu m)
     {
         // Position of menu will be spawned at the position of where the player is looking
-        m.transform.position = playerCamera.position + new Vector3(playerCamera.forward.x, 0, playerCamera.forward.z).normalized * spawnDistance;
+        // Spawn distance is distance menu will spawn from player's head
+        m.UI.transform.position = playerCamera.position + new Vector3(playerCamera.forward.x, 0, playerCamera.forward.z).normalized * m.spawnDistance;
     }
 
-    public void OrientMenu(GameObject m)
+    public void OrientMenu(Menu m)
     {
         // Menu will always face the position of the player's head
-        m.transform.LookAt(new Vector3(playerCamera.position.x, m.transform.position.y, playerCamera.transform.position.z));
+        m.UI.transform.LookAt(new Vector3(playerCamera.position.x, m.UI.transform.position.y, playerCamera.transform.position.z));
 
         // Menu is at the right orientation
-        m.transform.forward *= -1;
+        m.UI.transform.forward *= -1;
     }
 
     public void TriggerPauseMenu()
     {
         // Menu will be shown or put away depending on it's currently showing up or not
-        pauseMenu.SetActive(!pauseMenu.activeSelf);
+        pauseMenu.UI.SetActive(!pauseMenu.UI.activeSelf);
 
         // Position of pauseMenu will be spawned at the position of where the player is looking
         ShowMenu(pauseMenu);

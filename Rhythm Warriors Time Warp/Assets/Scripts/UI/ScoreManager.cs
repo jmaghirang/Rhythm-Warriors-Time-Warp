@@ -28,8 +28,8 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-        LoseCondition();
-        WinCondition();
+        //LoseCondition();
+        //WinCondition();
         OnMiss();
     }
 
