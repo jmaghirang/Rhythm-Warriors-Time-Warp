@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 4322713130233591189}
   - component: {fileID: 3617606680730760518}
   - component: {fileID: 2864482790039856987}
+  - component: {fileID: -8093766816135122794}
   m_Layer: 5
   m_Name: Dialogue Box
   m_TagString: Untagged
@@ -237,6 +238,20 @@ MonoBehaviour:
     message: As long as the pay is good, I guess.
   characters:
   - name: Me
+--- !u!114 &-8093766816135122794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4135175838917137598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d04bd0e68a98e83498113b2829bcd368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnDistance: 1
+  UI: {fileID: 0}
 --- !u!1 &8563210383339291238
 GameObject:
   m_ObjectHideFlags: 0
