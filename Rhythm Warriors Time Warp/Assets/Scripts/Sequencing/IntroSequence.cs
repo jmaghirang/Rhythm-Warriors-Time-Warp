@@ -11,7 +11,6 @@ public class IntroSequence : MonoBehaviour
 
     private bool execute1Once = false;
     private bool execute2Once = false;
-    private bool execute3Once = false;
 
     private int index;
 
@@ -25,6 +24,7 @@ public class IntroSequence : MonoBehaviour
     void Update()
     {
         index = DialogueManager.instance.index;
+        GameManager.instance.player.isSpeaking = true;
 
         if (!execute1Once && index == ExecuteIndex(0))
         {

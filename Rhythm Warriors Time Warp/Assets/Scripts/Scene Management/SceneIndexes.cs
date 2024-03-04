@@ -6,6 +6,7 @@ public enum SceneIndexes
 {
     MAIN_MENU = 0,
     INTRO = 1,
-    TUTORIAL = 2,
-    WILD_WEST = 3
+    VILLAGE = 2,
+    TUTORIAL = 3,
+    WILD_WEST = 4
 }

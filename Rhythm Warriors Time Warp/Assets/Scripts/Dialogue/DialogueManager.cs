@@ -18,7 +18,11 @@ public class DialogueManager : MonoBehaviour
         instance = this;
     }
 
+    // Dialogue Box UI
     public Menu dialogueBox;
+
+    // NPC
+    public NPC npc;
 
     public TextMeshProUGUI charName; // Character name to display
     public TextMeshProUGUI textComponent; // Message to display
@@ -30,13 +34,14 @@ public class DialogueManager : MonoBehaviour
     Character[] characters;  // List of characters of messages in scene (edited in inspector)
     public int index = 0; // Index of active message
 
-    public List<int> pauseIndexes = new(); // List of instances at when dialogue needs to be paused in a scene
+    public List<int> pauseIndexes = new(); // List of instances at when dialogue needs to be paused/adjusted in a scene
+
+    public bool endOfDialogue = false; // Boolean signifying end of dialogue/messages
 
     // Start is called before the first frame update
     void Start()
     {
-        MenuManager.instance.ShowMenu(dialogueBox);
-        MenuManager.instance.OrientMenu(dialogueBox);
+
     }
 
     // Update is called once per frame
@@ -56,7 +61,6 @@ public class DialogueManager : MonoBehaviour
             {
                 // Move onto next message/line and position dialogue box in front of player
                 NextLine();
-                MenuManager.instance.ShowMenu(dialogueBox);
             }
         }
 
@@ -91,11 +95,10 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            // End of messages
             // Close the dialogue box
             dialogueBox.UI.SetActive(false);
-
-            // This line is specifically for tutorial scene for demo purposes
-            // SceneTransitionManager.instance.LoadNextScene((int)SceneIndexes.WILD_WEST);
+            endOfDialogue = true;
         }
     }
 
@@ -109,17 +112,18 @@ public class DialogueManager : MonoBehaviour
         Character characterToDisplay = characters[lines[index].charID];
         charName.text = characterToDisplay.name;
 
+        // Show the dialogue box in front of player
+        DisplayDialogueBox();
+
         // Start typing the message
         StartCoroutine(TypeLine());
     }
 
-    public void ShowDialogue(Message[] msgs, Character[] chars)
+    public void DisplayDialogue(Message[] msgs, Character[] chars)
     {
         // Initialize values
         lines = msgs;
         characters = chars;
-
-        DisplayDialogueBox();
 
         DisplayMessage();
     }
@@ -131,7 +135,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayDialogueBox()
     {
+        MenuManager.instance.ShowDialogue(dialogueBox);
         dialogueBox.UI.SetActive(true);
-        MenuManager.instance.ShowMenu(dialogueBox);
     }
 }

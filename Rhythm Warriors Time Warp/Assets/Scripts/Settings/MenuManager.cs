@@ -19,7 +19,12 @@ public class MenuManager : MonoBehaviour
     // Position rotation of player's head
     public Transform playerCamera;
 
+    // Pause menu
     public Menu pauseMenu;
+
+    // NPC and Player 
+    private NPC n;
+    private Player p;
 
     /* 
     // add these when they're added in the settings menu
@@ -73,6 +78,27 @@ public class MenuManager : MonoBehaviour
 
         // Menu is at the right orientation
         m.UI.transform.forward *= -1;
+    }
+
+    public void ShowDialogue(Menu m)
+    {
+        n = DialogueManager.instance.npc;
+        p = GameManager.instance.player;
+
+        // Position of "menu" will be spawned a position depending on which character is speaking
+        // Concerning dialogue
+        if (n.isSpeaking && !p.isSpeaking)
+        {
+            // Position of menu will be spawned in front of the npc speaking and is faced towards the player
+            m.UI.transform.position = n.transform.position + new Vector3(playerCamera.forward.x, 0, playerCamera.forward.z).normalized * -(m.spawnDistance + 0.5f);
+        }
+        else
+        {
+            if (!n.isSpeaking && p.isSpeaking)
+            {
+                ShowMenu(m);
+            }
+        }
     }
 
     public void TriggerPauseMenu()

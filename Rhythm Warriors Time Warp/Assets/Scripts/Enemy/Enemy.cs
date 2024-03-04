@@ -28,7 +28,7 @@ public class Enemy : Object
         // t = 0 is the spawn location and t = 1 is the despawn location, so t = 0.5 is where the enemy is supposed to be hit by player
         float t = (float)(timeSinceInstantiated / (SongManager.instance.noteScreenTime * 2));
 
-        // Set the enemy prefab mesh renderer to be false intially to contain visual anomalies
+        // Set the enemy prefab mesh renderer to be false intially to contain visual anomalies causing issues with collisions
         GetComponent<MeshRenderer>().enabled = false;
 
         // If the enemy is past the point of where it's supposed to be hit...
@@ -46,8 +46,9 @@ public class Enemy : Object
         else
         {
             // Otherwise...
-            // Move along two points - from spawn point to despawn point
+            // Move along two points in a straight line - from spawn point to despawn point
             transform.localPosition = Vector3.Lerp(Vector3.forward * SongManager.instance.noteSpawnZ, Vector3.forward * SongManager.instance.noteDespawnZ, t);
+
             // Enable the enemy prefab mesh to be visible
             GetComponent<MeshRenderer>().enabled = true;
         }

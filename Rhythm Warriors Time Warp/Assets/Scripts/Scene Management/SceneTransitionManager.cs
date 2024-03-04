@@ -75,10 +75,4 @@ public class SceneTransitionManager : MonoBehaviour
     {
         LoadNextScene((int)SceneIndexes.MAIN_MENU);
     }
-
-    public void QuitGame()
-    {
-        Debug.Log("QUIT!");
-        Application.Quit();
-    }
 }

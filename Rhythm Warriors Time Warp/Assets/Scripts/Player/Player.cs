@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
 	public int currentHealth;
 	public HealthBar healthBar;
 
+	public bool isSpeaking = true;
+
     // Start is called before the first frame update
     void Start()
     {

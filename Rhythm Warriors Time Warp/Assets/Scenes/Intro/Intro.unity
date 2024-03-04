@@ -4714,6 +4714,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 251141410}
+  isSpeaking: 1
 --- !u!114 &563988253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8336,11 +8337,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueBox: {fileID: 1340419714}
+  npc: {fileID: 1016345601}
   charName: {fileID: 2074805841}
   textComponent: {fileID: 1688098710}
   textSpeed: 0.03
   index: 0
   pauseIndexes: 0400000007000000
+  endOfDialogue: 0
 --- !u!1001 &856723298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9907,7 +9910,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartGame
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1938381004909853451, guid: 77be867f85928244591f522184ef3124, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -14986,8 +14990,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1016345598}
-  - component: {fileID: 1016345599}
   - component: {fileID: 1016345600}
+  - component: {fileID: 1016345601}
   m_Layer: 0
   m_Name: Sequence Manager
   m_TagString: Untagged
@@ -15010,18 +15014,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1628999349}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1016345599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1016345597}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8c9aff40309afb41bb30d412f4b4401, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1016345600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15029,13 +15021,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1016345597}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de60d1bdcd109974f9fa982addf42287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   warpSound: {fileID: 1518019746}
   portal: {fileID: 655187711}
+--- !u!114 &1016345601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1016345597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8a8e657eed30b843adaa620cee4fcbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSpeaking: 0
 --- !u!4 &1020026287 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 499840, guid: 9d79238e340446545b920b58f2cd9574, type: 3}
@@ -27098,7 +27103,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -8093766816135122794, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:

@@ -19,7 +19,7 @@ public class Dialogue : MonoBehaviour
 
     public void StartDialogue()
     {
-       DialogueManager.instance.ShowDialogue(messages, characters);
+       DialogueManager.instance.DisplayDialogue(messages, characters);
     }
 }
 
