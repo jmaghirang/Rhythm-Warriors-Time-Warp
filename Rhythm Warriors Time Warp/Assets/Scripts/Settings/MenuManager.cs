@@ -26,36 +26,10 @@ public class MenuManager : MonoBehaviour
     private NPC n;
     private Player p;
 
-    /* 
-    // add these when they're added in the settings menu
-    public GameObject customizationSection; // reference to the customization section in the pause menu???
-    private bool customizationMode = false; // flag to indicate if the customization mode is enabled
-
-    public UIToggle uiToggle; // toggle for the UI toggle (score, misses, health bar, progress)
-    public Toggle edgeBlurToggle; // toggle for the edge blur
-    public Toggle motionBlurToggle; // toggle for the motion blur
-    public PostProcessVolume postProcessVolume; // reference to the post processing volume component
-    public Toggle cameraShakeToggle; // toggle for camera shake
-    public Toggle hapticFeedbackToggle; // toggle for haptic feedback
-    */
-
     // Start is called before the first frame update
     void Start()
     {
-        /* load player preferences
-        uiToggleToggle.isOn = PlayerPrefs.GetInt("UIToggleEnabled", 1) == 1;
-        edgeBlurToggle.isOn = PlayerPrefs.GetInt("EdgeBlurEnabled", 1) == 1;
-        motionBlurToggle.isOn = PlayerPrefs.GetInt("MotionBlurEnabled", 1) == 1;
-        cameraShakeToggle.isOn = PlayerPrefs.GetInt("CameraShakeEnabled", 1) == 1;
-        hapticFeedbackToggle.isOn = PlayerPrefs.GetInt("HapticFeedbackEnabled", 1) == 1;
-
-        // apply the initial settings for edge blur, motion blur, and UI toggle
-        ToggleUIToggle(uiToggleToggle.isOn);
-        ToggleEdgeBlur(edgeBlurToggle.isOn);
-        ToggleMotionBlur(motionBlurToggle.isOn);
-        ToggleCameraShake(cameraShakeToggle.isOn);
-        ToggleHapticFeedback(hapticFeedbackToggle.isOn);
-        */
+    
     }
 
     // Update is called once per frame
@@ -109,45 +83,4 @@ public class MenuManager : MonoBehaviour
         // Position of pauseMenu will be spawned at the position of where the player is looking
         ShowMenu(pauseMenu);
     }
-
-    /* 
-    // add when the UI and motion blur toggles are added in settings
-
-    public void ToggleUIToggle(bool isEnabled)
-    {
-        PlayerPrefs.SetInt("UIToggleEnabled", isEnabled ? 1 : 0);
-        // apply UI toggle setting to the game
-        // code to enable/disable UI toggle
-        uiToggle.gameObject.SetActive(isEnabled);
-    }
-
-    public void ToggleEdgeBlur(bool isEnabled)
-    {
-        PlayerPrefs.SetInt("EdgeBlurEnabled", isEnabled ? 1 : 0);
-        // apply edge blur setting to the game
-        // code to enable/disable edge blur
-    }
-
-    public void ToggleMotionBlur(bool isEnabled)
-    {
-        PlayerPrefs.SetInt("MotionBlurEnabled", isEnabled ? 1 : 0);
-        // apply motion blur setting to the game
-        // code to enable/disable motion blur
-        postProcessVolume.profile.motionBlur.enabled = isEnabled;
-    }
-
-    public void ToggleCameraShake(bool isEnabled)
-    {
-        PlayerPrefs.SetInt("CameraShakeEnabled", isEnabled ? 1 : 0);
-        // apply camera shake setting to the game
-        // code to enable/disable camera shake
-    }
-
-    public void ToggleHapticFeedback(bool isEnabled)
-    {
-        PlayerPrefs.SetInt("HapticFeedbackEnabled", isEnabled ? 1 : 0);
-        // apply haptic feedback setting to the game
-        // code to enable/disable haptic feedback
-    }
-    */
 }

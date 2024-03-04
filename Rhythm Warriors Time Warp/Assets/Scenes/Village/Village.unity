@@ -26837,7 +26837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dab0e838d9d381946bf8115ca79fd565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueBox: {fileID: 4295290869466248416}
+  dialogueBox: {fileID: 1340419714}
   npc: {fileID: 310871022}
   charName: {fileID: 2074805841}
   textComponent: {fileID: 1688098710}
@@ -41901,6 +41901,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6202216460614094931, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
   m_PrefabInstance: {fileID: 4295290869466248415}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1340419714 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7531871788703225667, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
+  m_PrefabInstance: {fileID: 4295290869466248415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340419712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d04bd0e68a98e83498113b2829bcd368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1348754051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54475,7 +54486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 567043019}
-  pauseMenu: {fileID: 5221170231078184049}
+  pauseMenu: {fileID: 2013434338}
 --- !u!1001 &1738426434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63401,6 +63412,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2443468253488308423, guid: 77be867f85928244591f522184ef3124, type: 3}
   m_PrefabInstance: {fileID: 5221170231078184048}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2013434338 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2943738605899825065, guid: 77be867f85928244591f522184ef3124, type: 3}
+  m_PrefabInstance: {fileID: 5221170231078184048}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359851056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d04bd0e68a98e83498113b2829bcd368, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2015672930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67235,17 +67257,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
---- !u!114 &4295290869466248416 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -8093766816135122794, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
-  m_PrefabInstance: {fileID: 4295290869466248415}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1340419712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d04bd0e68a98e83498113b2829bcd368, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5221170231078184048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67258,6 +67269,18 @@ PrefabInstance:
       propertyPath: UI
       value: 
       objectReference: {fileID: 359851056}
+    - target: {fileID: 91415139495910499, guid: 77be867f85928244591f522184ef3124, type: 3}
+      propertyPath: contMove
+      value: 
+      objectReference: {fileID: 563988247}
+    - target: {fileID: 91415139495910499, guid: 77be867f85928244591f522184ef3124, type: 3}
+      propertyPath: contRotation
+      value: 
+      objectReference: {fileID: 563988250}
+    - target: {fileID: 91415139495910499, guid: 77be867f85928244591f522184ef3124, type: 3}
+      propertyPath: snapRotation
+      value: 
+      objectReference: {fileID: 563988249}
     - target: {fileID: 1209790740247255400, guid: 77be867f85928244591f522184ef3124, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -67362,22 +67385,23 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2087691614}
+    - target: {fileID: 6683869516694754738, guid: 77be867f85928244591f522184ef3124, type: 3}
+      propertyPath: contMove
+      value: 
+      objectReference: {fileID: 563988247}
+    - target: {fileID: 6683869516694754738, guid: 77be867f85928244591f522184ef3124, type: 3}
+      propertyPath: contRotation
+      value: 
+      objectReference: {fileID: 563988250}
+    - target: {fileID: 6683869516694754738, guid: 77be867f85928244591f522184ef3124, type: 3}
+      propertyPath: snapRotation
+      value: 
+      objectReference: {fileID: 563988249}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77be867f85928244591f522184ef3124, type: 3}
---- !u!114 &5221170231078184049 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -1938381004909853451, guid: 77be867f85928244591f522184ef3124, type: 3}
-  m_PrefabInstance: {fileID: 5221170231078184048}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 359851056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d04bd0e68a98e83498113b2829bcd368, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
