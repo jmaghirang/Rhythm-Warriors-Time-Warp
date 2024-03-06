@@ -4273,7 +4273,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495673323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.01499}
+  m_LocalPosition: {x: 0, y: 0, z: 0.015}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19230,6 +19230,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 567043019}
     m_Modifications:
     - target: {fileID: 738814571489152696, guid: 5373cdd4272cd0b499291bcbe745d19d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 738814571489152696, guid: 5373cdd4272cd0b499291bcbe745d19d, type: 3}
       propertyPath: fadeDuration
       value: 3
       objectReference: {fileID: 0}
@@ -19287,7 +19291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5082237226922532662, guid: 5373cdd4272cd0b499291bcbe745d19d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.015
+      value: 0.016
       objectReference: {fileID: 0}
     - target: {fileID: 5082237226922532662, guid: 5373cdd4272cd0b499291bcbe745d19d, type: 3}
       propertyPath: m_LocalRotation.w
