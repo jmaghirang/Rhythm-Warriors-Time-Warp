@@ -1,0 +1,188 @@
+fileFormatVersion: 2
+guid: 5359b1ad521aec04eaca459368351131
+timeCreated: 1504697092
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: 1
+    100002: 2
+    100004: apple_1
+    100006: apple_2
+    100008: axe
+    100010: axe2
+    100012: bottle_1
+    100014: bottle_2
+    100016: bottle_3
+    100018: bottle_4
+    100020: bullet
+    100022: Camera
+    100024: cap_1
+    100026: cap_2
+    100028: case
+    100030: d1
+    100032: d2
+    100034: Lamp
+    100036: plate
+    100038: //RootNode
+    100040: revolver_1
+    100042: revolver_2
+    100044: tube
+    100046: vat
+    400000: 1
+    400002: 2
+    400004: apple_1
+    400006: apple_2
+    400008: axe
+    400010: axe2
+    400012: bottle_1
+    400014: bottle_2
+    400016: bottle_3
+    400018: bottle_4
+    400020: bullet
+    400022: Camera
+    400024: cap_1
+    400026: cap_2
+    400028: case
+    400030: d1
+    400032: d2
+    400034: Lamp
+    400036: plate
+    400038: //RootNode
+    400040: revolver_1
+    400042: revolver_2
+    400044: tube
+    400046: vat
+    2300000: 1
+    2300002: 2
+    2300004: apple_1
+    2300006: apple_2
+    2300008: axe
+    2300010: axe2
+    2300012: bottle_1
+    2300014: bottle_2
+    2300016: bottle_3
+    2300018: bottle_4
+    2300020: bullet
+    2300022: cap_1
+    2300024: cap_2
+    2300026: case
+    2300028: d1
+    2300030: d2
+    2300032: plate
+    2300034: revolver_1
+    2300036: revolver_2
+    2300038: tube
+    2300040: vat
+    3300000: 1
+    3300002: 2
+    3300004: apple_1
+    3300006: apple_2
+    3300008: axe
+    3300010: axe2
+    3300012: bottle_1
+    3300014: bottle_2
+    3300016: bottle_3
+    3300018: bottle_4
+    3300020: bullet
+    3300022: cap_1
+    3300024: cap_2
+    3300026: case
+    3300028: d1
+    3300030: d2
+    3300032: plate
+    3300034: revolver_1
+    3300036: revolver_2
+    3300038: tube
+    3300040: vat
+    4300000: tube
+    4300002: axe2
+    4300004: axe
+    4300006: revolver_2
+    4300008: 2
+    4300010: case
+    4300012: bullet
+    4300014: revolver_1
+    4300016: 1
+    4300018: plate
+    4300020: apple_2
+    4300022: apple_1
+    4300024: vat
+    4300026: bottle_4
+    4300028: cap_1
+    4300030: d2
+    4300032: d1
+    4300034: bottle_3
+    4300036: cap_2
+    4300038: bottle_2
+    4300040: bottle_1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

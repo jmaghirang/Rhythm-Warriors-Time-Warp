@@ -26,6 +26,7 @@ public class SceneTransitionManager : MonoBehaviour
     private void Start()
     {
         progressBar = loadingIndicator.GetComponent<ProgressBar>();
+
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
@@ -38,33 +39,40 @@ public class SceneTransitionManager : MonoBehaviour
     {
         fadeScreen.FadeOut();
 
-        yield return new WaitForSeconds(fadeScreen.fadeDuration + 2f);
+        yield return new WaitForSeconds(fadeScreen.fadeDuration);
 
-        loadingIndicator.SetActive(true);
         StartCoroutine(GetSceneLoadProgress(sceneIndex));
     }
 
     IEnumerator GetSceneLoadProgress(int sceneIndex)
     {
-        progressBar.current = 0;
-        progressBar.min = 0;
+        loadingIndicator.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
+        progressBar.current = 0;
+
         while (!operation.isDone)
         {
-            float sceneProgress = operation.progress * 100f; // Get percentage
+            yield return new WaitForEndOfFrame();
+
+            float sceneProgress = Mathf.Clamp01(operation.progress / 0.09f);
 
             progressBar.max = 100f;
-            progressBar.current = sceneProgress;
+            progressBar.current = sceneProgress * 100f;
 
-            yield return null;
+            if (operation.progress >= 0.9f)
+            {
+                progressBar.current = sceneProgress * 100f;
+                yield return new WaitForEndOfFrame();
+            }
+
+            Debug.Log("Current: " + progressBar.current);
+            Debug.Log("Fill: " + progressBar.mask.fillAmount);
         }
-
-        loadingIndicator.SetActive(false);
     }
-
-    //
 
     public void RestartGame()
     {

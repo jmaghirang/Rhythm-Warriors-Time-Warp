@@ -1,0 +1,10 @@
+Most models use the Color Palette as a texture. Thus, many models will only use one texture in a scene. 
+This will boost the performance of your project since hundreds of useless draw calls will be avoided.
+
+
+If the colors of some models should not fit your scene, there are plenty of custom materials and colors available here. 
+You can drag the material/color of your choice onto each model in order to change its color. 
+
+
+Of course, you can import your own materials into the project as well or create your own color-material that might be
+missing here. Just right-click -> create Material and Choose a color. 

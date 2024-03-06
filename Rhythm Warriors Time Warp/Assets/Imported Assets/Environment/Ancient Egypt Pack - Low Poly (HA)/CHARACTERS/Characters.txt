@@ -1,0 +1,9 @@
+All characters have multiple poses and multiple textures sets available.
+
+Place a character into the scene and drag the specific material that fits best for you onto the mesh.
+
+
+The characters are not animated. However, you can use the various poses to give life to static scenes 
+Just open the 'poses' folder for the character, drag it into the scene and apply its texture onto him.
+(like in the sample screenshots)
+

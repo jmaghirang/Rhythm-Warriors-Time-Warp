@@ -1,0 +1,19 @@
+Thank you for purchasing the Low Poly Egypt Pack!
+
+You can immediately start with creating your first environment. 
+Open the Prefabs folder, take a look at the variety of assets and then start
+placing them onto a Terrain!
+
+
+In order to have results like in the screenshots, I recommend you to use the Post Processing Stack, which
+is available for free on Unity (you should consider watching a Youtube Tutorial or reading it's documentation
+if you're a beginner)
+
+ 
+I hope you'll have fun creating interesting and beautiful scenes, landscapes, cities, and battles.
+
+
+If you should have any questions or requests for future updates, feel free to contact us at halberstram.art@gmail.com
+
+
+Have fun!
