@@ -10,12 +10,10 @@ public class Settings : MonoBehaviour
 {
     public TeleportationProvider teleMove;
     public ActionBasedContinuousMoveProvider contMove;
-
     public ActionBasedSnapTurnProvider snapRotation;
     public ActionBasedContinuousTurnProvider contRotation;
 
     public CameraShake camShake;
-
     public HapticFeedback hapticFeedback;
 
     public Toggle teleMoveToggle;
@@ -23,9 +21,10 @@ public class Settings : MonoBehaviour
     public Toggle snapRotationToggle;
     public Toggle contRotationToggle;
 
-    /*
     public Toggle camShakeToggle;
     public Toggle hapticFeedbackToggle;
+
+    /*
     public Toggle edgeBlurToggle;
     public Toggle motionBlurToggle;
     */
@@ -47,9 +46,12 @@ public class Settings : MonoBehaviour
          uiToggleToggle.isOn = PlayerPrefs.GetInt("UIToggleEnabled", 1) == 1;
          edgeBlurToggle.isOn = PlayerPrefs.GetInt("EdgeBlurEnabled", 1) == 1;
          motionBlurToggle.isOn = PlayerPrefs.GetInt("MotionBlurEnabled", 1) == 1;
-         cameraShakeToggle.isOn = PlayerPrefs.GetInt("CameraShakeEnabled", 1) == 1;
-         hapticFeedbackToggle.isOn = PlayerPrefs.GetInt("HapticFeedbackEnabled", 1) == 1;
-    
+        */
+
+         //camShakeToggle.isOn = PlayerPrefs.GetInt("CameraShakeEnabled", 1) == 1;
+         //hapticFeedbackToggle.isOn = PlayerPrefs.GetInt("HapticFeedbackEnabled", 1) == 1;
+            
+         /*
          // apply the initial settings for edge blur, motion blur, and UI toggle
          ToggleUIToggle(uiToggleToggle.isOn);
          ToggleEdgeBlur(edgeBlurToggle.isOn);
@@ -63,6 +65,9 @@ public class Settings : MonoBehaviour
     void Update()
     {
         ToggleRotation(snapRotationToggle.isOn);
+
+        ToggleCameraShake(camShakeToggle.isOn);
+        ToggleHapticFeedback(hapticFeedbackToggle.isOn);
     }
 
     public void ToggleRotation(bool defaultSetting)
@@ -82,6 +87,27 @@ public class Settings : MonoBehaviour
             {
                 snapRotation.enabled = true;
                 contRotation.enabled = false;
+            }
+        }
+    }
+
+    public void ToggleMovement(bool defaultSetting)
+    {
+        // Continuous will be on by default
+        PlayerPrefs.SetInt("ContinuousMovementEnabled", defaultSetting ? 1 : 0);
+        PlayerPrefs.SetInt("TeleportationEnabled", defaultSetting ? 0 : 1);
+
+        if (teleMoveToggle.isOn)
+        {
+            teleMove.enabled = true;
+            contMove.enabled = false;
+        }
+        else
+        {
+            if (contMoveToggle.isOn)
+            {
+                contMove.enabled = true;
+                teleMove.enabled = false;
             }
         }
     }
@@ -111,19 +137,37 @@ public class Settings : MonoBehaviour
         // code to enable/disable motion blur
         postProcessVolume.profile.motionBlur.enabled = isEnabled;
     }
+    */
 
-    public void ToggleCameraShake(bool isEnabled)
+    public void ToggleCameraShake(bool defaultSetting)
     {
-        PlayerPrefs.SetInt("CameraShakeEnabled", isEnabled ? 1 : 0);
+        PlayerPrefs.SetInt("CameraShakeEnabled", defaultSetting ? 1 : 0);
         // apply camera shake setting to the game
         // code to enable/disable camera shake
+
+        if (camShakeToggle.isOn)
+        {
+            camShake.enabled = true;
+        }
+        else
+        {
+            camShake.enabled = false;
+        }
     }
 
-    public void ToggleHapticFeedback(bool isEnabled)
+    public void ToggleHapticFeedback(bool defaultSetting)
     {
-        PlayerPrefs.SetInt("HapticFeedbackEnabled", isEnabled ? 1 : 0);
+        PlayerPrefs.SetInt("HapticFeedbackEnabled", defaultSetting ? 1 : 0);
         // apply haptic feedback setting to the game
         // code to enable/disable haptic feedback
+
+        if (hapticFeedbackToggle.isOn)
+        {
+            hapticFeedback.enabled = true;
+        }
+        else
+        {
+            hapticFeedback.enabled = false;
+        }
     }
-    */
 }

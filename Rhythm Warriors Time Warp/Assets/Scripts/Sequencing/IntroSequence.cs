@@ -6,7 +6,7 @@ public class IntroSequence : MonoBehaviour
 {
     public AudioSource warpSound;
 
-    public GameObject portal;
+    public Portal portal;
     static public bool destinationReached = false;
 
     private bool execute1Once = false;
@@ -37,7 +37,6 @@ public class IntroSequence : MonoBehaviour
             StartCoroutine(PlayerInvestigates());
             execute2Once = true;
         }
-
     }
 
     private int ExecuteIndex(int i)
@@ -49,7 +48,7 @@ public class IntroSequence : MonoBehaviour
     {
         DialogueManager.instance.PauseDialogue();
 
-        portal.SetActive(true);
+        portal.gameObject.SetActive(true);
         warpSound.Play();
         Debug.Log("Portal Appeared");
 
