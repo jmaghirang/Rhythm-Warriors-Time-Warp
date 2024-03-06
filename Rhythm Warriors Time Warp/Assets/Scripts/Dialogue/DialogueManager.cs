@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour
 
     public TextMeshProUGUI charName; // Character name to display
     public TextMeshProUGUI textComponent; // Message to display
+    public GameObject indicateContinue; // Image to display to user to help them know the control to continue dialogue
 
     public float textSpeed; // Speed that message is showing up at
     private bool isTyping = false;
@@ -56,6 +57,8 @@ public class DialogueManager : MonoBehaviour
                 StopAllCoroutines();
                 textComponent.text = lines[index].message;
                 isTyping = false;
+
+                indicateContinue.SetActive(true);
             }
             else
             {
@@ -80,6 +83,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         isTyping = false;
+        indicateContinue.SetActive(true);
     }
 
     void NextLine()
@@ -107,6 +111,8 @@ public class DialogueManager : MonoBehaviour
         // Clear dialogue box if there is any content initially
         textComponent.text = string.Empty;
         charName.text = string.Empty;
+        // Set continue indicator to false
+        indicateContinue.SetActive(false);
 
         // Get the character name from the current messsage
         Character characterToDisplay = characters[lines[index].charID];
