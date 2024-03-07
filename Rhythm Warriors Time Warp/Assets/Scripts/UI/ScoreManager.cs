@@ -30,7 +30,7 @@ public class ScoreManager : MonoBehaviour
     {
         //LoseCondition();
         //WinCondition();
-        OnMiss();
+        //OnMiss();
     }
 
     public int GetCurrentScore()
@@ -57,16 +57,14 @@ public class ScoreManager : MonoBehaviour
     {
         currentMisses += missesToAdd;
 
-        AudioManager.instance.missSFX.Play();
-        Debug.Log("Miss");
-        Debug.Log("Misses updated. Current misses: " + currentMisses);
+        OnMiss();
     }
 
     //////
 
     public void LoseCondition()
     {
-        if (GameManager.instance.player.currentHealth < 1 || currentMisses > 20)
+        if (GameManager.instance.player.currentHealth < 1)
         {
             GameManager.instance.TriggerGameOver();
         }
@@ -94,6 +92,12 @@ public class ScoreManager : MonoBehaviour
             // update previousMissCounter
             previousMissCounter = currentMisses;
         }
+
+        GameManager.instance.player.TakeDamage(2);
+        AudioManager.instance.missSFX.Play();
+
+        Debug.Log("Miss");
+        Debug.Log("Misses updated. Current misses: " + currentMisses);
     }
 }
 

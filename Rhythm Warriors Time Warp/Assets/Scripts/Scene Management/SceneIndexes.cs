@@ -8,5 +8,7 @@ public enum SceneIndexes
     INTRO = 1,
     VILLAGE = 2,
     TUTORIAL = 3,
-    WILD_WEST = 4
+    VILLAGE_AFTER_TUTORIAL = 4,
+    WILD_WEST = 5,
+    FEUDAL_JAPAN = 6,
 }

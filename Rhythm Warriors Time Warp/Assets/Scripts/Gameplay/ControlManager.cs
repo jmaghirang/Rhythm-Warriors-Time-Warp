@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ControlManager : MonoBehaviour
 {
@@ -12,6 +14,9 @@ public class ControlManager : MonoBehaviour
     {
         instance = this;
     }
+
+    public XRRayInteractor leftController;
+    public XRRayInteractor rightController;
 
     // Input on controller to trigger pause menu
     // Set to menu button on left controller
@@ -23,13 +28,14 @@ public class ControlManager : MonoBehaviour
     // With XR Device Simulator, it is Shift + B
     public InputActionProperty continueButton;
 
+    // XR Device Simulator, Space + B
     public InputActionProperty hideButton;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame

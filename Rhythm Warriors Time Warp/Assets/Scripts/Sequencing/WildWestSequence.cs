@@ -44,7 +44,8 @@ public class WildWestSequence : MonoBehaviour
 
     IEnumerator CollectFragment()
     {
-        yield return new WaitForSeconds(2f);
+        //ControlManager.instance.leftController.enabled = true;
+        ControlManager.instance.rightController.enabled = true;
 
         DialogueManager.instance.dialogueBox.UI.SetActive(false);
 

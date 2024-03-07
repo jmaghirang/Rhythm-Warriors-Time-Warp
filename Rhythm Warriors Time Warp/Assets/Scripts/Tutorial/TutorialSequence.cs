@@ -74,7 +74,7 @@ public class TutorialSequence : MonoBehaviour
 
         if (DialogueManager.instance.endOfDialogue)
         {
-            SceneTransitionManager.instance.LoadNextScene((int)SceneIndexes.VILLAGE);
+            SceneTransitionManager.instance.LoadNextScene((int)SceneIndexes.VILLAGE_AFTER_TUTORIAL);
             DialogueManager.instance.endOfDialogue = false;
         }
     }
