@@ -1,18 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Slot : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public XRGrabInteractable ItemInSlot;
+    private MeshRenderer slotRenderer;
+    private Color originalColor;
+
     void Start()
     {
-        
+        slotRenderer = GetComponent<MeshRenderer>();
+        originalColor = slotRenderer.material.color;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
-        
+        if (ItemInSlot != null) return;
+
+        XRGrabInteractable interactable = other.GetComponent<XRGrabInteractable>();
+
+        if (interactable == null) return;
+
+        if (interactable.isSelected)
+        {
+            InsertItem(interactable);
+        }
+    }
+
+    void InsertItem(XRGrabInteractable interactable)
+    {
+        interactable.transform.SetParent(transform);
+        interactable.transform.localPosition = Vector3.zero;
+        interactable.transform.localRotation = Quaternion.identity;
+        ItemInSlot = interactable;
+        slotRenderer.material.color = Color.gray;
+    }
+
+    public void ResetColor()
+    {
+        slotRenderer.material.color = originalColor;
     }
 }

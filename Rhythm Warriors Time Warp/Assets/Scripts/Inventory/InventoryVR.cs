@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR;
+
 
 public class InventoryVR : MonoBehaviour
 {
@@ -29,7 +31,7 @@ public class InventoryVR : MonoBehaviour
                 foreach (var interactable in interactables)
                 {
                     // Make the object interactable or non-interactable based on UI state
-                    interactable.interactionLayerMask = UIActive ? LayerMask.GetMask("UI") : LayerMask.GetMask("Default");
+                    interactable.interactionLayers = UIActive ? LayerMask.GetMask("UI") : LayerMask.GetMask("Default");
                 }
             }
         }
