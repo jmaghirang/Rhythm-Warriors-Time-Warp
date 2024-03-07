@@ -83,4 +83,9 @@ public class SceneTransitionManager : MonoBehaviour
     {
         SceneManager.LoadScene((int)SceneIndexes.MAIN_MENU);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
