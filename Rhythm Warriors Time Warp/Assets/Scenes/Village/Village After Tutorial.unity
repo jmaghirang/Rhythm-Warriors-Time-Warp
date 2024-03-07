@@ -48149,18 +48149,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 738814571489152696, guid: 5373cdd4272cd0b499291bcbe745d19d, type: 3}
       propertyPath: fadeInColor.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 738814571489152696, guid: 5373cdd4272cd0b499291bcbe745d19d, type: 3}
       propertyPath: fadeInColor.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 738814571489152696, guid: 5373cdd4272cd0b499291bcbe745d19d, type: 3}
       propertyPath: fadeInColor.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 738814571489152696, guid: 5373cdd4272cd0b499291bcbe745d19d, type: 3}
       propertyPath: fadeOutColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 738814571489152696, guid: 5373cdd4272cd0b499291bcbe745d19d, type: 3}
+      propertyPath: fadeOutColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 738814571489152696, guid: 5373cdd4272cd0b499291bcbe745d19d, type: 3}
+      propertyPath: fadeOutColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 738814571489152696, guid: 5373cdd4272cd0b499291bcbe745d19d, type: 3}
+      propertyPath: fadeOutColor.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5082237226922532662, guid: 5373cdd4272cd0b499291bcbe745d19d, type: 3}
@@ -55342,7 +55354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0937a864281a24a803baef277928a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneIndex: 4
+  nextSceneIndex: 5
 --- !u!54 &1765603400
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -67553,9 +67565,9 @@ SceneRoots:
   - {fileID: 530452564}
   - {fileID: 563988245}
   - {fileID: 1628999349}
+  - {fileID: 1765603396}
   - {fileID: 512727043}
   - {fileID: 1987915778}
   - {fileID: 836809199}
-  - {fileID: 1765603396}
   - {fileID: 230499917}
   - {fileID: 310871021}

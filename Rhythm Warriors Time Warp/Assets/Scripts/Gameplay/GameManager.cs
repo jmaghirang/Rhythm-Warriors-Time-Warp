@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (ScoreManager.instance.CheckLoseCondition())
+        if (player.currentHealth < 1)
         {
             MenuManager.instance.TriggerGameOverPanel();
 

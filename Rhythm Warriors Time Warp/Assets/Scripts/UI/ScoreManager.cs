@@ -58,20 +58,6 @@ public class ScoreManager : MonoBehaviour
         OnMiss();
     }
 
-    //////
-
-    public bool CheckLoseCondition()
-    {
-        if (GameManager.instance.player.currentHealth < 1)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
     public void OnMiss()
     {
         // check if missCounter has increased

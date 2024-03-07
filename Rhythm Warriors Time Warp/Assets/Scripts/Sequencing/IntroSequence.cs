@@ -61,8 +61,8 @@ public class IntroSequence : MonoBehaviour
     {
         DialogueManager.instance.PauseDialogue();
 
-        AudioManager.instance.bgMusic.volume -= 0.1f;
-        AudioManager.instance.bgMusic.priority += 20;
+        AudioManager.instance.bgMusic.volume += 0.1f;
+        //AudioManager.instance.bgMusic.priority += 20;
 
         yield return new WaitUntil(() => destinationReached);
 
