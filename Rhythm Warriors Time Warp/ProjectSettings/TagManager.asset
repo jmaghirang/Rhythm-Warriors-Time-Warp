@@ -9,6 +9,7 @@ TagManager:
   - Sliceable
   - Enemy
   - Grabbable
+  - Artifact
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - UI Collider
   - Pointer
   - PostProcessing
-  - 
+  - Artifact
   - 
   - 
   - 

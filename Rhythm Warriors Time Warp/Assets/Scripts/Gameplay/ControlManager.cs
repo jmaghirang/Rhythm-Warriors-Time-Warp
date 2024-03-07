@@ -23,6 +23,8 @@ public class ControlManager : MonoBehaviour
     // With XR Device Simulator, it is Shift + B
     public InputActionProperty continueButton;
 
+    public InputActionProperty hideButton;
+
 
     // Start is called before the first frame update
     void Start()
