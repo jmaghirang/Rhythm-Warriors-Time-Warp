@@ -19,7 +19,7 @@ public class InventoryVR : MonoBehaviour
     {
         InputDevice leftHandDevice = InputDevices.GetDeviceAtXRNode(XRNode.LeftHand);
 
-        if (leftHandDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonState) && primaryButtonState)
+        if (leftHandDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonState) && secondaryButtonState)
         {
             UIActive = !UIActive;
             Inventory.SetActive(UIActive);
@@ -30,7 +30,6 @@ public class InventoryVR : MonoBehaviour
                 
                 foreach (var interactable in interactables)
                 {
-                    // Make the object interactable or non-interactable based on UI state
                     interactable.interactionLayers = UIActive ? LayerMask.GetMask("UI") : LayerMask.GetMask("Default");
                 }
             }
