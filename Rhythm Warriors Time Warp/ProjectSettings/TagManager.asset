@@ -8,6 +8,7 @@ TagManager:
   - Main Entrance
   - Sliceable
   - Enemy
+  - Grabbable
   layers:
   - Default
   - TransparentFX
