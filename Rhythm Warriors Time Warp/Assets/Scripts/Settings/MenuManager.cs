@@ -22,6 +22,9 @@ public class MenuManager : MonoBehaviour
     // Pause menu
     public Menu pauseMenu;
 
+    // Game Over Panel
+    public Menu gameOverMenu;
+
     // NPC and Player 
     private NPC n;
     private Player p;
@@ -73,6 +76,15 @@ public class MenuManager : MonoBehaviour
                 ShowMenu(m);
             }
         }
+    }
+
+    public void TriggerGameOverPanel()
+    {
+        // Menu will be shown or put away depending on it's currently showing up or not
+        gameOverMenu.UI.SetActive(true);
+
+        // Position of pauseMenu will be spawned at the position of where the player is looking
+        //ShowMenu(gameOverMenu);
     }
 
     public void TriggerPauseMenu()

@@ -56,12 +56,21 @@ public class GameManager : MonoBehaviour
                 PauseGame();
             }
         }
+
+        if (ScoreManager.instance.CheckLoseCondition())
+        {
+            MenuManager.instance.TriggerGameOverPanel();
+
+            TriggerGameOver();
+        }
     }
 
     private void PauseGame()
     {
         ControlManager.instance.leftController.enabled = true;
         ControlManager.instance.rightController.enabled = true;
+
+        VFXManager.instance.DisableEffects();
 
         // Stop the game
         Time.timeScale = 0f;
@@ -79,6 +88,8 @@ public class GameManager : MonoBehaviour
         ControlManager.instance.leftController.enabled = false;
         ControlManager.instance.rightController.enabled = false;
 
+        VFXManager.instance.EnableEffects();
+
         // Set time scale back to 1
         Time.timeScale = 1f;
         isPaused = false;
@@ -90,12 +101,13 @@ public class GameManager : MonoBehaviour
 
     public void TriggerGameOver()
     {
-        SceneTransitionManager.instance.LoadNextScene(7);
-    }
+        ControlManager.instance.leftController.enabled = true;
+        ControlManager.instance.rightController.enabled = true;
 
-    public void TriggerGameWin()
-    {
-        SceneTransitionManager.instance.LoadNextScene(8);
+        VFXManager.instance.DisableEffects();
+
+        Time.timeScale = 0f;
+        SongManager.instance.StopSong();
     }
 
     public void QuitGame()

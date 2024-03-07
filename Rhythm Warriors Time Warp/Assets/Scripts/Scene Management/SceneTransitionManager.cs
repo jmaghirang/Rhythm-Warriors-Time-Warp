@@ -76,11 +76,11 @@ public class SceneTransitionManager : MonoBehaviour
 
     public void RestartGame()
     {
-        LoadNextScene(currentSceneIndex);
+        SceneManager.LoadScene(currentSceneIndex);
     }
 
     public void ReturnToMainMenu()
     {
-        LoadNextScene((int)SceneIndexes.MAIN_MENU);
+        SceneManager.LoadScene((int)SceneIndexes.MAIN_MENU);
     }
 }

@@ -28,9 +28,7 @@ public class ScoreManager : MonoBehaviour
 
     void Update()
     {
-        //LoseCondition();
-        //WinCondition();
-        //OnMiss();
+        
     }
 
     public int GetCurrentScore()
@@ -62,19 +60,15 @@ public class ScoreManager : MonoBehaviour
 
     //////
 
-    public void LoseCondition()
+    public bool CheckLoseCondition()
     {
         if (GameManager.instance.player.currentHealth < 1)
         {
-            GameManager.instance.TriggerGameOver();
+            return true;
         }
-    }
-
-    public void WinCondition()
-    {
-        if (!SongManager.instance.audioSource.isPlaying && !GameManager.instance.isPaused && currentScore > 10)
+        else
         {
-            GameManager.instance.TriggerGameWin();
+            return false;
         }
     }
 
