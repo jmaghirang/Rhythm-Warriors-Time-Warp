@@ -37558,7 +37558,7 @@ MonoBehaviour:
   fileLocation: Wild West MIDI/wild west enemies.mid
   noteScreenTime: 3
   noteSpawnZ: 80
-  noteHitZ: 1.25
+  noteHitZ: 1
   noteDespawnZ: 0
 --- !u!1 &758894856
 GameObject:
@@ -77654,7 +77654,7 @@ GameObject:
   - component: {fileID: 1733270470}
   - component: {fileID: 1733270469}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Hit Position Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77740,7 +77740,7 @@ Transform:
   m_GameObject: {fileID: 1733270468}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.5}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 11.334181, y: 0.058924, z: 0.049488}
   m_ConstrainProportionsScale: 0
   m_Children: []

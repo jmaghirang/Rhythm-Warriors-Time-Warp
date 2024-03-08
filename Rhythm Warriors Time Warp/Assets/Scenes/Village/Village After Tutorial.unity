@@ -9076,7 +9076,7 @@ GameObject:
   - component: {fileID: 310871018}
   - component: {fileID: 310871022}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Villager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67567,7 +67567,7 @@ SceneRoots:
   - {fileID: 1628999349}
   - {fileID: 1765603396}
   - {fileID: 512727043}
-  - {fileID: 1987915778}
   - {fileID: 836809199}
   - {fileID: 230499917}
   - {fileID: 310871021}
+  - {fileID: 1987915778}
