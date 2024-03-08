@@ -804,7 +804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assignedTime: 0
   canBeHit: 0
-  vfx: {fileID: 7385635063262165958, guid: f156ac1497c0ece4bb5cb200ec97951c, type: 3}
+  vfx: {fileID: 977248069560124803, guid: 532dee85cccc423458357bb5216b96cc, type: 3}
 --- !u!1 &8807479332320497351
 GameObject:
   m_ObjectHideFlags: 0

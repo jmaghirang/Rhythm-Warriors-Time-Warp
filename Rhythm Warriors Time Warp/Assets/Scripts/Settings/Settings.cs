@@ -66,8 +66,15 @@ public class Settings : MonoBehaviour
     {
         ToggleRotation(snapRotationToggle.isOn);
 
-        ToggleCameraShake(camShakeToggle.isOn);
-        ToggleHapticFeedback(hapticFeedbackToggle.isOn);
+        if (camShake.gameObject.activeSelf)
+        {
+            ToggleCameraShake(camShakeToggle.isOn);
+        }
+        
+        if (hapticFeedback.gameObject.activeSelf)
+        {
+            ToggleHapticFeedback(hapticFeedbackToggle.isOn);
+        }
     }
 
     public void ToggleRotation(bool defaultSetting)

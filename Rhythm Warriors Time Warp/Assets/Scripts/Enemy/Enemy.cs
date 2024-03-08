@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.VFX;
 
 // Code referenced from
 // https://youtu.be/ev0HsmgLScg?si=r4zVEzDwRoTi50C9
@@ -54,15 +55,6 @@ public class Enemy : Object
         }
     }
 
-    IEnumerator TriggerEffects()
-    {
-        GameObject hitFX = Instantiate(vfx, transform.position, Quaternion.identity);
-
-        yield return new WaitForSeconds(2);
-
-        Destroy(hitFX);
-    }
-
     // Check collisions
     public override void OnTriggerEnter(Collider other)
     {
@@ -71,9 +63,9 @@ public class Enemy : Object
         {
             canBeHit = true;
 
+            VFXManager.instance.TriggerVFX(this);
             // Destroy enemy if it gets hit
             Destroy(gameObject);
-            StartCoroutine(TriggerEffects());
 
             // Update score with score manager
             //ScoreManager scoreManager = FindObjectOfType<ScoreManager>(); // get reference

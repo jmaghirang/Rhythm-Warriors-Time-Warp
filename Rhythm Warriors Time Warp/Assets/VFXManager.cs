@@ -26,6 +26,20 @@ public class VFXManager : MonoBehaviour
         
     }
 
+    public void TriggerVFX(Enemy enemy)
+    {
+        StartCoroutine(TriggerEffectsRoutine(enemy));
+    }
+
+    public IEnumerator TriggerEffectsRoutine(Enemy enemy)
+    {
+        GameObject hitFX = Instantiate(enemy.vfx, Vector3.up + enemy.transform.position, Quaternion.identity);
+
+        yield return new WaitForSeconds(1f);
+
+        Destroy(hitFX);
+    }
+
     public void DisableEffects()
     {
         foreach(var effect in effects)
