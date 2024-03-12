@@ -52,15 +52,14 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4523926242616386592
-Transform:
+  m_IsActive: 0
+--- !u!224 &4523926242616386592
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45652500248628712}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -70,6 +69,11 @@ Transform:
   - {fileID: 7110222203438314276}
   m_Father: {fileID: 8032940366636584374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8647199543704409614
 MonoBehaviour:
   m_ObjectHideFlags: 10
@@ -11131,7 +11135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3910442736384612553
 Transform:
   m_ObjectHideFlags: 0
@@ -15187,14 +15191,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8032940366636584374}
     m_Modifications:
+    - target: {fileID: 134464589376388288, guid: cc5f4043c786c204fa1e482aac7f06dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1199111168069927819, guid: cc5f4043c786c204fa1e482aac7f06dc, type: 3}
       propertyPath: m_Name
       value: Settings Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199111168069927819, guid: cc5f4043c786c204fa1e482aac7f06dc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1429477297492659778, guid: cc5f4043c786c204fa1e482aac7f06dc, type: 3}
+      propertyPath: layout.Size.X.Raw
+      value: 1.6067479
       objectReference: {fileID: 0}
     - target: {fileID: 1755273418113220823, guid: cc5f4043c786c204fa1e482aac7f06dc, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 45652500248628712}
+    - target: {fileID: 2886869873560407601, guid: cc5f4043c786c204fa1e482aac7f06dc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5764508861975994967, guid: cc5f4043c786c204fa1e482aac7f06dc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -18141,6 +18161,10 @@ PrefabInstance:
     - target: {fileID: 1516692684421754174, guid: 63642b4043b807b4481f08a9f6627195, type: 3}
       propertyPath: m_Name
       value: Buttons
+      objectReference: {fileID: 0}
+    - target: {fileID: 1516692684421754174, guid: 63642b4043b807b4481f08a9f6627195, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

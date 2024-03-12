@@ -1,11 +1,11 @@
-using Nova;
-using NovaSamples.UIControls;
+//using Nova;
+//using NovaSamples.UIControls;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-//using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class SettingsTabs : MonoBehaviour
 {
@@ -20,10 +20,10 @@ public class SettingsTabs : MonoBehaviour
         for (int i = 0; i < tabs.Count; i++)
         {
             int t = i;
-            tabs[t].OnClicked.AddListener(() => DisplayContent(contents[t]));
+            tabs[t].onClick.AddListener(() => DisplayContent(contents[t]));
         }
 
-        back.OnClicked.AddListener(() => gameObject.SetActive(false));
+        back.onClick.AddListener(() => gameObject.SetActive(false));
     }
 
     // Update is called once per frame

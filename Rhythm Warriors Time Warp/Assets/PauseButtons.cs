@@ -10,8 +10,8 @@ public class PauseButtons : SettingsTabs
         for (int i = 0; i < tabs.Count; i++)
         {
             int t = i;
-            tabs[t].OnClicked.AddListener(() => DisplayContent(contents[t]));
-            tabs[t].OnClicked.AddListener(() => gameObject.SetActive(false));
+            tabs[t].onClick.AddListener(() => DisplayContent(contents[t]));
+            tabs[t].onClick.AddListener(() => gameObject.SetActive(false));
         }
     }
 
