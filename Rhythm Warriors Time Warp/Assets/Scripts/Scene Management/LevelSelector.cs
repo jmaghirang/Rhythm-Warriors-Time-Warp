@@ -20,6 +20,8 @@ public class LevelSelector : MonoBehaviour
     public Button next;
     public Button prev;
 
+    public Button confirm;
+
     [SerializeField]
     private int i = 0;
 
@@ -39,6 +41,7 @@ public class LevelSelector : MonoBehaviour
 
         next.onClick.AddListener(() => NextLevel(selectedLevels));
         prev.onClick.AddListener(() => PrevLevel(selectedLevels));
+        confirm.onClick.AddListener(() => GoToLevel());
     }
 
     // Update is called once per frame
@@ -75,6 +78,14 @@ public class LevelSelector : MonoBehaviour
         }
     }
 
+    public void ResetSelectedLevels()
+    {
+        for (int j = 0; j < selectedLevels.Count; j++)
+        {
+            selectedLevels[j] = false;
+        }
+    }
+
     public void SetTitles(GameObject activeTitle)
     {
         foreach (Canvas c in levelTitles)
@@ -104,27 +115,46 @@ public class LevelSelector : MonoBehaviour
 
     public void NextLevel(List<bool> levels)
     {
+        ResetSelectedLevels();
+
         if (i >= 4)
         {
             i = 0;
+            levels[i] = true;
         }
-
-        levels[i] = false;
-        levels[i + 1] = true;
-
-        i++;
+        else
+        {
+            levels[i + 1] = true;
+            i++;
+        }
     }
 
     public void PrevLevel(List<bool> levels)
     {
+        ResetSelectedLevels();
+
         if (i <= 0)
         {
             i = 4;
+            levels[i] = true;
+        }
+        else
+        {
+            levels[i - 1] = true;
+            i--;
+        }
+    }
+
+    public void GoToLevel()
+    {
+        if (selectedLevels[0])
+        {
+            SceneTransitionManager.instance.LoadNextScene((int)SceneIndexes.WILD_WEST);
         }
 
-        levels[i] = false;
-        levels[i - 1] = true;
-
-        i--;
+        else if (selectedLevels[2])
+        {
+            SceneTransitionManager.instance.LoadNextScene((int)SceneIndexes.FEUDAL_JAPAN);
+        }
     }
 }
