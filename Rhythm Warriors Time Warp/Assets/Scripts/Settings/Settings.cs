@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
-//using UnityEngine.UI;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
-using NovaSamples.UIControls;
+//using NovaSamples.UIControls;
 
 public class Settings : MonoBehaviour
 {
@@ -84,14 +84,14 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetInt("SnapRotationEnabled", defaultSetting ? 1 : 0);
         PlayerPrefs.SetInt("ContinuousRotationEnabled", defaultSetting ? 0 : 1);
 
-        if (contRotationToggle.ToggledOn)
+        if (contRotationToggle.isOn)
         {
             contRotation.enabled = true;
             snapRotation.enabled = false;
         }
         else
         {
-            if (snapRotationToggle.ToggledOn)
+            if (snapRotationToggle.isOn)
             {
                 snapRotation.enabled = true;
                 contRotation.enabled = false;
@@ -105,14 +105,14 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetInt("ContinuousMovementEnabled", defaultSetting ? 1 : 0);
         PlayerPrefs.SetInt("TeleportationEnabled", defaultSetting ? 0 : 1);
 
-        if (teleMoveToggle.ToggledOn)
+        if (teleMoveToggle.isOn)
         {
             teleMove.enabled = true;
             contMove.enabled = false;
         }
         else
         {
-            if (contMoveToggle.ToggledOn)
+            if (contMoveToggle.isOn)
             {
                 contMove.enabled = true;
                 teleMove.enabled = false;
@@ -153,7 +153,7 @@ public class Settings : MonoBehaviour
         // apply camera shake setting to the game
         // code to enable/disable camera shake
 
-        if (camShakeToggle.ToggledOn)
+        if (camShakeToggle.isOn)
         {
             camShake.enabled = true;
         }
@@ -169,7 +169,7 @@ public class Settings : MonoBehaviour
         // apply haptic feedback setting to the game
         // code to enable/disable haptic feedback
 
-        if (hapticFeedbackToggle.ToggledOn)
+        if (hapticFeedbackToggle.isOn)
         {
             hapticFeedback.enabled = true;
         }
