@@ -27,9 +27,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ControlManager.instance.leftController.enabled = false;
-        ControlManager.instance.rightController.enabled = false;
-
         // Set music to the audio source defined by the audio manager in scene
         theMusic = AudioManager.instance.bgMusic;
 
@@ -67,9 +64,6 @@ public class GameManager : MonoBehaviour
 
     private void PauseGame()
     {
-        ControlManager.instance.leftController.enabled = true;
-        ControlManager.instance.rightController.enabled = true;
-
         VFXManager.instance.DisableEffects();
 
         // Stop the game
@@ -85,9 +79,6 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        ControlManager.instance.leftController.enabled = false;
-        ControlManager.instance.rightController.enabled = false;
-
         VFXManager.instance.EnableEffects();
 
         // Set time scale back to 1
@@ -101,9 +92,6 @@ public class GameManager : MonoBehaviour
 
     public void TriggerGameOver()
     {
-        ControlManager.instance.leftController.enabled = true;
-        ControlManager.instance.rightController.enabled = true;
-
         VFXManager.instance.DisableEffects();
 
         Time.timeScale = 0f;

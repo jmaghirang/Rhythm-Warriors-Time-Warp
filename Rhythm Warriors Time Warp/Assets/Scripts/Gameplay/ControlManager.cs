@@ -15,9 +15,6 @@ public class ControlManager : MonoBehaviour
         instance = this;
     }
 
-    public XRRayInteractor leftController;
-    public XRRayInteractor rightController;
-
     // Input on controller to trigger pause menu
     // Set to menu button on left controller
     // With XR Device Simulator, it is Shift + M

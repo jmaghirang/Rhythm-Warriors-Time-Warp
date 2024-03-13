@@ -44,9 +44,6 @@ public class WildWestSequence : MonoBehaviour
 
     IEnumerator CollectFragment()
     {
-        //ControlManager.instance.leftController.enabled = true;
-        ControlManager.instance.rightController.enabled = true;
-
         DialogueManager.instance.dialogueBox.UI.SetActive(false);
 
         fragment.gameObject.SetActive(true);

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +23,8 @@ public class LevelSelector : MonoBehaviour
 
     public Button confirm;
 
-    [SerializeField]
+    public TextMeshProUGUI levelText;
+
     private int i = 0;
 
     // Start is called before the first frame update
@@ -51,30 +53,40 @@ public class LevelSelector : MonoBehaviour
         {
             SetLevel("westSelected");
             SetTitles(levelTitles[0].gameObject);
+
+            levelText.text = "The Wild West";
         }
 
         else if (selectedLevels[1])
         {
             SetLevel("japanSelected");
             SetTitles(levelTitles[1].gameObject);
+
+            levelText.text = "Feudal Japan";
         }
 
         else if (selectedLevels[2])
         {
             SetLevel("greeceSelected");
             SetTitles(levelTitles[2].gameObject);
+
+            levelText.text = "Ancient Greece";
         }
 
         else if (selectedLevels[3])
         {
             SetLevel("egyptSelected");
             SetTitles(levelTitles[3].gameObject);
+
+            levelText.text = "Ancient Egypt";
         }
 
         else if (selectedLevels[4])
         {
             SetLevel("futureSelected");
             SetTitles(levelTitles[4].gameObject);
+
+            levelText.text = "The Future";
         }
     }
 
