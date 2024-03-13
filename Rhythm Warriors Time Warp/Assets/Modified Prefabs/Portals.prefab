@@ -94,7 +94,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8653663557406302670
 RectTransform:
   m_ObjectHideFlags: 0
@@ -441,7 +441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1284641034552675080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -676,6 +676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3656980367824913328}
   - component: {fileID: 8227066301763398187}
+  - component: {fileID: 1150469702468103532}
   m_Layer: 0
   m_Name: Portals
   m_TagString: Untagged
@@ -724,6 +725,30 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1150469702468103532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5861212194702133637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443e261347da01247930e11f82e3eb14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelTitles:
+  - {fileID: 2233637127957441340}
+  - {fileID: 7915613522287064793}
+  - {fileID: 4654425580957833501}
+  - {fileID: 2995091299384301828}
+  - {fileID: 2284063987598433544}
+  selectedLevels: 
+  levelSelectAnimator: {fileID: 8227066301763398187}
+  next: {fileID: 0}
+  prev: {fileID: 0}
+  confirm: {fileID: 0}
+  i: 0
 --- !u!1 &5961345770328421672
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5172630544991419274
 RectTransform:
   m_ObjectHideFlags: 0
@@ -865,7 +890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4113897454912848109
 RectTransform:
   m_ObjectHideFlags: 0
