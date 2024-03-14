@@ -11,6 +11,7 @@ public class PauseButtons : SettingsTabs
         {
             int t = i;
             tabs[t].onClick.AddListener(() => DisplayContent(contents[t]));
+            tabs[t].onClick.AddListener(() => sfx.Play());
             tabs[t].onClick.AddListener(() => gameObject.SetActive(false));
         }
     }

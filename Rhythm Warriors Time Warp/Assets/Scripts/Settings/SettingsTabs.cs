@@ -15,6 +15,8 @@ public class SettingsTabs : MonoBehaviour
     public GameObject pauseScreen;
     public Button back;
 
+    public AudioSource sfx;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,10 +24,12 @@ public class SettingsTabs : MonoBehaviour
         {
             int t = i;
             tabs[t].onClick.AddListener(() => DisplayContent(contents[t]));
+            tabs[t].onClick.AddListener(() => sfx.Play());
         }
 
         back.onClick.AddListener(() => gameObject.SetActive(false));
         back.onClick.AddListener(() => pauseScreen.SetActive(true));
+        back.onClick.AddListener(() => sfx.Play());
     }
 
     // Update is called once per frame
