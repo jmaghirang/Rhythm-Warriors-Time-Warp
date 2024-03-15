@@ -250,8 +250,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84e043fdb6cd4a14dbb06fb2451fca83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftController: {fileID: 0}
-  rightController: {fileID: 0}
   pauseButton:
     m_UseReference: 1
     m_Action:
@@ -466,6 +464,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6540876462160088346}
+  - {fileID: 8170922086407313715}
   - {fileID: 9160580495245086579}
   - {fileID: 6915746515436096728}
   - {fileID: 6630906087209984031}
@@ -477,6 +476,64 @@ Transform:
   - {fileID: 6880178356819983150}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6252547135678260699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8170922086407313715}
+  - component: {fileID: 7163915012416345610}
+  m_Layer: 0
+  m_Name: Settings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8170922086407313715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252547135678260699}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4845879988007282577}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7163915012416345610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252547135678260699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff6782bb4242df41887790cec0fdc76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleMove: {fileID: 0}
+  contMove: {fileID: 0}
+  snapRotation: {fileID: 0}
+  contRotation: {fileID: 0}
+  camShake: {fileID: 0}
+  hapticFeedback: {fileID: 0}
+  teleMoveToggle: {fileID: 0}
+  contMoveToggle: {fileID: 0}
+  snapRotationToggle: {fileID: 0}
+  contRotationToggle: {fileID: 0}
+  cameraShakeToggle: {fileID: 0}
+  hapticFeedbackToggle: {fileID: 0}
+  uiToggle: {fileID: 0}
+  postProcessVolume: {fileID: 0}
 --- !u!1 &6273365774075448987
 GameObject:
   m_ObjectHideFlags: 0

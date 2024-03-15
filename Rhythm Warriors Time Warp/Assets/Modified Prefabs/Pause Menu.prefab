@@ -197,6 +197,7 @@ MonoBehaviour:
   - {fileID: 6788196957611279929}
   pauseScreen: {fileID: 2865525441260866715}
   back: {fileID: 780413562841414273}
+  sfx: {fileID: 0}
 --- !u!114 &3898138333245233098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,18 +210,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff6782bb4242df41887790cec0fdc76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleMove: {fileID: 0}
-  contMove: {fileID: 0}
-  snapRotation: {fileID: 0}
-  contRotation: {fileID: 0}
-  camShake: {fileID: 0}
+  player: {fileID: 0}
+  cameraShake: {fileID: 0}
   hapticFeedback: {fileID: 0}
   teleMoveToggle: {fileID: 4134063650623775718}
   contMoveToggle: {fileID: 3260830542360523263}
   snapRotationToggle: {fileID: 3397784514525136676}
   contRotationToggle: {fileID: 8518718455370119357}
-  camShakeToggle: {fileID: 8382565974524513939}
   hapticFeedbackToggle: {fileID: 6546056620176767654}
+  cameraShakeToggle: {fileID: 8382565974524513939}
+  edgeBlurToggle: {fileID: 613492453018968567}
+  motionBlurToggle: {fileID: 3334841624869946624}
   uiToggle: {fileID: 0}
   postProcessVolume: {fileID: 0}
 --- !u!1 &92584305502103864
@@ -4452,6 +4452,7 @@ MonoBehaviour:
   - {fileID: 79561979765272318}
   pauseScreen: {fileID: 0}
   back: {fileID: 0}
+  sfx: {fileID: 0}
 --- !u!1 &2888337409826802312
 GameObject:
   m_ObjectHideFlags: 0
@@ -7074,6 +7075,7 @@ MonoBehaviour:
   - {fileID: 1128079798839323988}
   pauseScreen: {fileID: 2865525441260866715}
   back: {fileID: 1457442661702218093}
+  sfx: {fileID: 0}
 --- !u!1 &4443363714000514322
 GameObject:
   m_ObjectHideFlags: 0
@@ -7677,7 +7679,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.061131943, y: 0.061131943, z: 0.061131943}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7173456753263728549}
@@ -12398,6 +12400,7 @@ MonoBehaviour:
   - {fileID: 4187942987303000942}
   pauseScreen: {fileID: 2865525441260866715}
   back: {fileID: 1546972160268870575}
+  sfx: {fileID: 0}
 --- !u!1 &7459345476015026313
 GameObject:
   m_ObjectHideFlags: 0

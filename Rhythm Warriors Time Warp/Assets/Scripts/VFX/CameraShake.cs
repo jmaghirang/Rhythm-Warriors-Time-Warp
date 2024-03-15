@@ -34,11 +34,11 @@ public class CameraShake : MonoBehaviour
     void Update()
     {
         // for testing purposes:
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             // start the camera shake when the space key is pressed
             StartShake(0.5f, 0.2f, 10.0f);
-        }
+        }*/
 
         if (shakeDuration > 0)
         {
