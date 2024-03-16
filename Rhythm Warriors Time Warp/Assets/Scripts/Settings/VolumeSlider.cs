@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class VolumeSlider : MonoBehaviour
 {
     // Variable declaration
     public AudioMixer mixer;
 
-    // When the slider is changed apply the volume change
-    public void setLevel(float val)
+    void Start()
     {
-        mixer.SetFloat("Volume", val);
+        
+    }
 
+    // When the slider is changed apply the volume change
+    public void SetLevel(float val)
+    {
+        // Master volume
+        mixer.SetFloat("Volume", Mathf.Log(val) * 20);
     }
 }

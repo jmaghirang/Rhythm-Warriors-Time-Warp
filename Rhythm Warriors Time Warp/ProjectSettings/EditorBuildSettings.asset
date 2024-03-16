@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Scenes/Main Menu/Main Menu.unity
     guid: cb8e20fa0ab5ac74e9589b87a11d198c
   - enabled: 1
     path: Assets/Scenes/Intro/Intro.unity
@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Village/Village After Tutorial.unity
     guid: 0864bb45ce588c140ba6547170628c6d
   - enabled: 1
-    path: Assets/Scenes/Levels/Wild West.unity
+    path: Assets/Scenes/Levels/Wild West/Wild West.unity
     guid: a2a6791da2054d64abd0c6f755f3e8e5
   - enabled: 1
     path: Assets/Scenes/Levels/Feudal Japan.unity

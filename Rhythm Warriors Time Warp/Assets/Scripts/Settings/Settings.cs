@@ -16,6 +16,10 @@ public class Settings : MonoBehaviour
     private ActionBasedSnapTurnProvider snapRotation;
     private ActionBasedContinuousTurnProvider contRotation;
 
+    public Slider volume;
+
+    public Offset offset;
+
     public CameraShake cameraShake;
     public HapticFeedback hapticFeedback;
 
@@ -59,6 +63,10 @@ public class Settings : MonoBehaviour
         contRotationToggle.isOn = PlayerPrefs.GetInt("ContinuousRotationEnabled", 0) == 1;
         snapRotationToggle.isOn = PlayerPrefs.GetInt("SnapRotationEnabled", 1) == 1;
 
+        volume.value = PlayerPrefs.GetFloat("MasterVolume", 1);
+
+        offset.offsetValue = PlayerPrefs.GetInt("Offset", 0);
+
         cameraShakeToggle.isOn = PlayerPrefs.GetInt("CameraShakeEnabled", 1) == 1;
         hapticFeedbackToggle.isOn = PlayerPrefs.GetInt("HapticFeedbackEnabled", 1) == 1;
 
@@ -77,6 +85,10 @@ public class Settings : MonoBehaviour
 
         ToggleCameraShake(cameraShakeToggle.isOn);
         ToggleHapticFeedback(hapticFeedbackToggle.isOn);
+
+        SetVolume();
+
+        SetOffset();
     }
 
     public void ToggleRotation(bool defaultSetting)
@@ -113,6 +125,16 @@ public class Settings : MonoBehaviour
             contMove.enabled = true;
             teleMove.enabled = false;
         }
+    }
+
+    public void SetVolume()
+    {
+        PlayerPrefs.SetFloat("MasterVolume", volume.value);
+    }
+
+    public void SetOffset()
+    {
+        PlayerPrefs.SetInt("Offset", offset.offsetValue);
     }
 
     public void ToggleCameraShake(bool defaultSetting)
