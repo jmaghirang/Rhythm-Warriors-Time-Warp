@@ -25,7 +25,8 @@ public class Artifact : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        // reset the material of the artifact in the inventory UI
+        InventoryUIManager.instance.UpdateArtifactMaterial(false);
     }
 
     // Update is called once per frame

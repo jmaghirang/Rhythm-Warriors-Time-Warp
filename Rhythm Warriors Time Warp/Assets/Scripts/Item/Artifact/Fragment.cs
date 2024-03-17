@@ -26,5 +26,6 @@ public class Fragment : MonoBehaviour
     public void FragmentCollected()
     {
         isCollected = true;
+        InventoryUIManager.instance.UpdateArtifactMaterial(isCollected);
     }
 }
