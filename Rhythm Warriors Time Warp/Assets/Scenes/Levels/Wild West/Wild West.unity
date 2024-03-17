@@ -7604,8 +7604,20 @@ PrefabInstance:
       value: 095b8293-6863-4267-8bfa-edb4d36edfb2
       objectReference: {fileID: 0}
     - target: {fileID: 6513711426493924375, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: inventoryButton.m_Reference
+      value: 
+      objectReference: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+    - target: {fileID: 6513711426493924375, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: continueButton.m_Action.m_Id
       value: f53b85f7-2737-4627-b275-81781799f851
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513711426493924375, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: inventoryButton.m_UseReference
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513711426493924375, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: inventoryButton.m_Action.m_Name
+      value: Inventory Button
       objectReference: {fileID: 0}
     - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: offset
@@ -7687,6 +7699,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4845879988007282577, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 88642531}
+    - targetCorrespondingSourceObject: {fileID: 4845879988007282577, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1764558748}
     - targetCorrespondingSourceObject: {fileID: 9160580495245086579, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1759207587}
@@ -75868,6 +75883,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1764374264}
   m_Mesh: {fileID: 4300026, guid: 8d4c9acac35ea7742aace216af47f78b, type: 3}
+--- !u!1 &1764558747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1764558748}
+  - component: {fileID: 1764558749}
+  m_Layer: 0
+  m_Name: Inventory Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1764558748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764558747}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 82795743}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1764558749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764558747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f15956d0c7fe144db6c20a77b9af39f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryUI: {fileID: 1847818750}
 --- !u!1001 &1776263760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77817,6 +77877,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4093368313270954, guid: 8d2ab5f38927230449863d7c12a7f82d, type: 3}
   m_PrefabInstance: {fileID: 1844059231}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1847818750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3549437265815622640, guid: 88fcbb9198b78c5498e823ef11cc10a8, type: 3}
+  m_PrefabInstance: {fileID: 2109804215}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1849461225
 PrefabInstance:
