@@ -150,7 +150,7 @@ public class LevelSelector : MonoBehaviour
 
     public void NextLevel(List<bool> levels)
     {
-        StopAllCoroutines();
+        //StopAllCoroutines();
 
         ResetSelectedLevels();
 
@@ -171,7 +171,7 @@ public class LevelSelector : MonoBehaviour
 
     public void PrevLevel(List<bool> levels)
     {
-        StopAllCoroutines();
+        //StopAllCoroutines();
 
         ResetSelectedLevels();
 

@@ -7579,6 +7579,10 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5886472671932083953, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -3838317202343642923, guid: b780475c6a32b104a9217ac8821e2c8d, type: 2}
     - target: {fileID: 6147432146076196785, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: m_Name
       value: Managers
@@ -7702,12 +7706,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4845879988007282577, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1764558748}
-    - targetCorrespondingSourceObject: {fileID: 9160580495245086579, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1759207587}
-    - targetCorrespondingSourceObject: {fileID: 9160580495245086579, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1877241647}
     - targetCorrespondingSourceObject: {fileID: 9160580495245086579, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1953397467}
@@ -12465,7 +12463,7 @@ AudioSource:
   m_GameObject: {fileID: 195119979}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -108196358589260550, guid: b780475c6a32b104a9217ac8821e2c8d, type: 2}
   m_audioClip: {fileID: 8300000, guid: 983aae8fdff6727469851aa7829c3413, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -75468,7 +75466,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 82795748}
+  m_Father: {fileID: 1953397467}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1759207588
 AudioSource:
@@ -75479,7 +75477,7 @@ AudioSource:
   m_GameObject: {fileID: 1759207586}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -108196358589260550, guid: b780475c6a32b104a9217ac8821e2c8d, type: 2}
   m_audioClip: {fileID: 8300000, guid: 0e20fc7db39b3884ca34b886a6319954, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -75898,6 +75896,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1764558748}
   - component: {fileID: 1764558749}
+  - component: {fileID: 1764558750}
   m_Layer: 0
   m_Name: Inventory Manager
   m_TagString: Untagged
@@ -75933,6 +75932,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 1847818750}
+--- !u!114 &1764558750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764558747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 059e0aee960c8964e905b1c789ab4352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectedMaterial: {fileID: 2100000, guid: fa51f2540e7ca82489d695cd45956551, type: 2}
+  notCollectedMaterial: {fileID: 2100000, guid: 007ecd2250870084e88521d74e1ddda3, type: 2}
+  artifactRenderer: {fileID: 1490244454}
 --- !u!1001 &1776263760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78992,7 +79006,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 82795748}
+  m_Father: {fileID: 1953397467}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1877241648
 AudioSource:
@@ -79003,7 +79017,7 @@ AudioSource:
   m_GameObject: {fileID: 1877241646}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -108196358589260550, guid: b780475c6a32b104a9217ac8821e2c8d, type: 2}
   m_audioClip: {fileID: 8300000, guid: 4fd923a6063911046ae81f3dd34c2946, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -82521,6 +82535,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 195119981}
+  - {fileID: 1759207587}
+  - {fileID: 1877241647}
   m_Father: {fileID: 82795748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1955259751

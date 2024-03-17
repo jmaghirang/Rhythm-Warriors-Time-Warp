@@ -37511,7 +37511,7 @@ AudioSource:
   m_GameObject: {fileID: 1221774153}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -108196358589260550, guid: b780475c6a32b104a9217ac8821e2c8d, type: 2}
   m_audioClip: {fileID: 8300000, guid: 983aae8fdff6727469851aa7829c3413, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -58408,6 +58408,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: ce2bdc71de8221046b5109f02c551f46, type: 3}
+    - target: {fileID: 5886472671932083953, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -3838317202343642923, guid: b780475c6a32b104a9217ac8821e2c8d, type: 2}
     - target: {fileID: 6147432146076196785, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: m_Name
       value: Managers
