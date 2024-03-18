@@ -1,11 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering.LookDev;
+using UnityEngine.Rendering.Universal;
 using UnityEngine;
 
-
-// Some code referenced from:
-// https://www.youtube.com/watch?v=TAGZxRMloyU&ab_channel=Brackeys
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
@@ -20,6 +18,9 @@ public class ScoreManager : MonoBehaviour
 
     // reference to the HapticFeedback script
     public HapticFeedback hapticFeedback;
+
+    // reference to the PostProcessingController script
+    public PostProcessingController postProcessingController;
 
     private int currentScore = 0;
     private int currentMisses = 0;
@@ -69,6 +70,9 @@ public class ScoreManager : MonoBehaviour
             // start the haptic feedback
             hapticFeedback.PlayerGotHit();
 
+            // start the vignette effect
+            postProcessingController.StartVignetteEffect();
+
             // update previousMissCounter
             previousMissCounter = currentMisses;
         }
@@ -80,30 +84,3 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("Misses updated. Current misses: " + currentMisses);
     }
 }
-
-    /* add combos later on
-    // increase combo count
-    public void IncreaseCombo()
-    {
-        comboCount++;
-        UpdateComboMultiplier(); // Update the combo multiplier when the combo count increases
-    }
-
-    // reset combo count
-    public void ResetCombo()
-    {
-        comboCount = 0;
-        comboMultiplier = 1;
-    }
-
-    // update combo multiplier based on combo count
-    private void UpdateComboMultiplier()
-    {
-        // combo multiplier based on the combo count
-        if (comboCount >= 5)
-        {
-            comboMultiplier = 2;
-        }
-    }
-}
-*/

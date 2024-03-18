@@ -64295,6 +64295,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8454106317991877304, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
+      propertyPath: m_RendererIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454106317991877304, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
       objectReference: {fileID: 0}
