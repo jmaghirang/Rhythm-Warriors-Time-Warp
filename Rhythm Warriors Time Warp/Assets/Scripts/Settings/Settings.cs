@@ -34,7 +34,9 @@ public class Settings : MonoBehaviour
     public Toggle edgeBlurToggle;
     public Toggle motionBlurToggle;
 
-    public UIToggle uiToggle; // toggle for the UI toggle (score, misses, health bar, progress)
+    public Toggle panelsToggle; // toggle for both the score and miss panels
+    public GameObject scorePanel; // reference to the score panel
+    public GameObject missPanel; // reference to the miss panel
 
     public PostProcessVolume postProcessVolume; // reference to the post processing volume component
 
@@ -70,11 +72,11 @@ public class Settings : MonoBehaviour
         cameraShakeToggle.isOn = PlayerPrefs.GetInt("CameraShakeEnabled", 1) == 1;
         hapticFeedbackToggle.isOn = PlayerPrefs.GetInt("HapticFeedbackEnabled", 1) == 1;
 
+        panelsToggle.isOn = PlayerPrefs.GetInt("PanelsEnabled", 1) == 1;
+
         /*
         // apply the initial settings for edge blur, motion blur, and UI toggle
-        ToggleUIToggle(uiToggleToggle.isOn);
         ToggleEdgeBlur(edgeBlurToggle.isOn);
-        ToggleMotionBlur(motionBlurToggle.isOn);
         */
     }
 
@@ -89,6 +91,8 @@ public class Settings : MonoBehaviour
         SetVolume();
 
         SetOffset();
+
+        TogglePanels(panelsToggle.isOn);
     }
 
     public void ToggleRotation(bool defaultSetting)
@@ -169,31 +173,22 @@ public class Settings : MonoBehaviour
         }
     }
 
-
-    /* 
-    // add when the UI and motion blur toggles are added in settings
-
-    public void ToggleUIToggle(bool isEnabled)
+    public void TogglePanels(bool isEnabled)
     {
-        PlayerPrefs.SetInt("UIToggleEnabled", isEnabled ? 1 : 0);
-        // apply UI toggle setting to the game
-        // code to enable/disable UI toggle
-        uiToggle.gameObject.SetActive(isEnabled);
+        // save the setting
+        PlayerPrefs.SetInt("PanelsEnabled", isEnabled ? 1 : 0);
+
+        scorePanel.SetActive(isEnabled);
+        missPanel.SetActive(isEnabled);
     }
 
+    /* 
+    // add when the motion blur toggles are added in settings
     public void ToggleEdgeBlur(bool isEnabled)
     {
         PlayerPrefs.SetInt("EdgeBlurEnabled", isEnabled ? 1 : 0);
         // apply edge blur setting to the game
         // code to enable/disable edge blur
-    }
-
-    public void ToggleMotionBlur(bool isEnabled)
-    {
-        PlayerPrefs.SetInt("MotionBlurEnabled", isEnabled ? 1 : 0);
-        // apply motion blur setting to the game
-        // code to enable/disable motion blur
-        postProcessVolume.profile.motionBlur.enabled = isEnabled;
     }
     */
 }
