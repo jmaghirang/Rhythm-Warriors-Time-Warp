@@ -1,0 +1,293 @@
+fileFormatVersion: 2
+guid: 3fe451c1dfdea284c81a2261b83a51e1
+timeCreated: 1540049949
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: arrow
+    100002: back
+    100004: body
+    100006: bucket
+    100008: cloth_01
+    100010: cloth_02
+    100012: cloth_03
+    100014: cloth_04
+    100016: cloth_05
+    100018: cloth_front
+    100020: head
+    100022: joint14
+    100024: joint14 1
+    100026: joint17
+    100028: joint17 1
+    100030: joint19
+    100032: joint25
+    100034: joint26
+    100036: joint27
+    100038: joint28
+    100040: joint29
+    100042: joint30
+    100044: joint5
+    100046: joint9
+    100048: joint9 1
+    100050: L_arm_01
+    100052: L_arm_02
+    100054: L_arm_02 1
+    100056: L_arm_05
+    100058: L_arm_toe_01
+    100060: L_arm_toe_01 1
+    100062: L_arm_toe_02
+    100064: L_arm_toe_02 1
+    100066: L_foot
+    100068: L_foot 1
+    100070: L_hand_01
+    100072: L_hand_01 1
+    100074: L_leg_01
+    100076: L_leg_02
+    100078: L_leg_02 1
+    100080: L_leg_03
+    100082: luk
+    100084: main_bone
+    100086: pelvis
+    100088: //RootNode
+    100090: torso
+    400000: arrow
+    400002: back
+    400004: body
+    400006: bucket
+    400008: cloth_01
+    400010: cloth_02
+    400012: cloth_03
+    400014: cloth_04
+    400016: cloth_05
+    400018: cloth_front
+    400020: head
+    400022: joint14
+    400024: joint14 1
+    400026: joint17
+    400028: joint17 1
+    400030: joint19
+    400032: joint25
+    400034: joint26
+    400036: joint27
+    400038: joint28
+    400040: joint29
+    400042: joint30
+    400044: joint5
+    400046: joint9
+    400048: joint9 1
+    400050: L_arm_01
+    400052: L_arm_02
+    400054: L_arm_02 1
+    400056: L_arm_05
+    400058: L_arm_toe_01
+    400060: L_arm_toe_01 1
+    400062: L_arm_toe_02
+    400064: L_arm_toe_02 1
+    400066: L_foot
+    400068: L_foot 1
+    400070: L_hand_01
+    400072: L_hand_01 1
+    400074: L_leg_01
+    400076: L_leg_02
+    400078: L_leg_02 1
+    400080: L_leg_03
+    400082: luk
+    400084: main_bone
+    400086: pelvis
+    400088: //RootNode
+    400090: torso
+    7400000: Samurai_bow_atack_2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Samurai_bow_atack_2
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: main_bone
+        weight: 1
+      - path: main_bone/body
+        weight: 1
+      - path: main_bone/body/back
+        weight: 1
+      - path: main_bone/body/back/torso
+        weight: 1
+      - path: main_bone/body/back/torso/bucket
+        weight: 1
+      - path: main_bone/body/back/torso/bucket/arrow
+        weight: 1
+      - path: main_bone/body/back/torso/head
+        weight: 1
+      - path: main_bone/body/back/torso/head/joint5
+        weight: 1
+      - path: main_bone/body/back/torso/L_arm_01
+        weight: 1
+      - path: main_bone/body/back/torso/L_arm_01/L_arm_02
+        weight: 1
+      - path: main_bone/body/back/torso/L_arm_01/L_arm_02/L_hand_01
+        weight: 1
+      - path: main_bone/body/back/torso/L_arm_01/L_arm_02/L_hand_01/joint30
+        weight: 1
+      - path: main_bone/body/back/torso/L_arm_01/L_arm_02/L_hand_01/L_arm_toe_01
+        weight: 1
+      - path: main_bone/body/back/torso/L_arm_01/L_arm_02/L_hand_01/L_arm_toe_01/joint17
+        weight: 1
+      - path: main_bone/body/back/torso/L_arm_01/L_arm_02/L_hand_01/L_arm_toe_02
+        weight: 1
+      - path: main_bone/body/back/torso/L_arm_01/L_arm_02/L_hand_01/L_arm_toe_02/joint14
+        weight: 1
+      - path: main_bone/body/back/torso/L_arm_05
+        weight: 1
+      - path: main_bone/body/back/torso/L_arm_05/L_arm_02 1
+        weight: 1
+      - path: main_bone/body/back/torso/L_arm_05/L_arm_02 1/L_hand_01 1
+        weight: 1
+      - path: main_bone/body/back/torso/L_arm_05/L_arm_02 1/L_hand_01 1/L_arm_toe_01
+          1
+        weight: 1
+      - path: main_bone/body/back/torso/L_arm_05/L_arm_02 1/L_hand_01 1/L_arm_toe_01
+          1/joint17 1
+        weight: 1
+      - path: main_bone/body/back/torso/L_arm_05/L_arm_02 1/L_hand_01 1/L_arm_toe_02
+          1
+        weight: 1
+      - path: main_bone/body/back/torso/L_arm_05/L_arm_02 1/L_hand_01 1/L_arm_toe_02
+          1/joint14 1
+        weight: 1
+      - path: main_bone/body/pelvis
+        weight: 1
+      - path: main_bone/body/pelvis/cloth_01
+        weight: 1
+      - path: main_bone/body/pelvis/cloth_01/joint25
+        weight: 1
+      - path: main_bone/body/pelvis/cloth_02
+        weight: 1
+      - path: main_bone/body/pelvis/cloth_02/joint26
+        weight: 1
+      - path: main_bone/body/pelvis/cloth_03
+        weight: 1
+      - path: main_bone/body/pelvis/cloth_03/joint27
+        weight: 1
+      - path: main_bone/body/pelvis/cloth_04
+        weight: 1
+      - path: main_bone/body/pelvis/cloth_04/joint28
+        weight: 1
+      - path: main_bone/body/pelvis/cloth_05
+        weight: 1
+      - path: main_bone/body/pelvis/cloth_05/joint29
+        weight: 1
+      - path: main_bone/body/pelvis/cloth_front
+        weight: 1
+      - path: main_bone/body/pelvis/cloth_front/joint19
+        weight: 1
+      - path: main_bone/body/pelvis/L_leg_01
+        weight: 1
+      - path: main_bone/body/pelvis/L_leg_01/L_leg_02
+        weight: 1
+      - path: main_bone/body/pelvis/L_leg_01/L_leg_02/L_foot
+        weight: 1
+      - path: main_bone/body/pelvis/L_leg_01/L_leg_02/L_foot/joint9
+        weight: 1
+      - path: main_bone/body/pelvis/L_leg_03
+        weight: 1
+      - path: main_bone/body/pelvis/L_leg_03/L_leg_02 1
+        weight: 1
+      - path: main_bone/body/pelvis/L_leg_03/L_leg_02 1/L_foot 1
+        weight: 1
+      - path: main_bone/body/pelvis/L_leg_03/L_leg_02 1/L_foot 1/joint9 1
+        weight: 1
+      - path: main_bone/luk
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
