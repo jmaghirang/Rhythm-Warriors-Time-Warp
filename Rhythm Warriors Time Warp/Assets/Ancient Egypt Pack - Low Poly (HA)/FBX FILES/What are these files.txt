@@ -1,0 +1,3 @@
+This are the source files for most of the prefabs and meshes. 
+If youre just trying the build a scene/environment, you should better take a look into the Prefabs folder and
+use those.
