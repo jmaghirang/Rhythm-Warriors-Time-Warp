@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 48645237}
   - component: {fileID: 48645235}
   m_Layer: 0
-  m_Name: Feudal Japan
+  m_Name: Ancient Egypt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,7 +566,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1b157012a05a63e4fae4c210855330ee, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8e8e190d0f88707469a8483793cadb7a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -14407,7 +14407,7 @@ MonoBehaviour:
   songDelay: 0
   errorMargin: 0.2
   inputDelay: 0
-  fileLocation: Feudal Japan MIDI/Japan Notes.mid
+  fileLocation: Ancient Egypt Midi/ancient egypt notes.mid
   noteScreenTime: 3
   noteSpawnZ: 80
   noteHitZ: 1
@@ -15177,7 +15177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   min: 0
-  max: 119.14449310302734
+  max: 183.74530029296875
   current: 0
   mask: {fileID: 534271290}
   fill: {fileID: 322829770}
@@ -27100,7 +27100,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6703387068018367568, guid: b9c49b95055b26f4081942646edb9a76, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -65.3
+      value: -66
       objectReference: {fileID: 0}
     - target: {fileID: 6703387068018367568, guid: b9c49b95055b26f4081942646edb9a76, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27108,7 +27108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6703387068018367568, guid: b9c49b95055b26f4081942646edb9a76, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.2
+      value: 15.3
       objectReference: {fileID: 0}
     - target: {fileID: 6703387068018367568, guid: b9c49b95055b26f4081942646edb9a76, type: 3}
       propertyPath: m_LocalRotation.w
