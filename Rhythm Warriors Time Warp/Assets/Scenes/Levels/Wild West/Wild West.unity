@@ -4367,6 +4367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraShake: {fileID: 82795745}
   hapticFeedback: {fileID: 82795744}
+  postProcessingController: {fileID: 0}
 --- !u!1001 &53997196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7689,7 +7690,7 @@ PrefabInstance:
       objectReference: {fileID: 1852979290}
     - target: {fileID: 7370059009483149131, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7621777869537744996, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: cameraTransform
