@@ -68,6 +68,7 @@ public class InventoryManager : MonoBehaviour
         return inventoryData.isArtifactCollected;
     }
 
+    /* add back in when we have a button to toggle inventory
     void OnDestroy()
     {
         // unregister the inventory button action
@@ -76,4 +77,5 @@ public class InventoryManager : MonoBehaviour
             inventoryButton.action.performed -= _ => ToggleInventory();
         }
     }
+    */
 }

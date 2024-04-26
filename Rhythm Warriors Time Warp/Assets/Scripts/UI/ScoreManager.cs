@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour
     public HapticFeedback hapticFeedback;
 
     // reference to the PostProcessingController script
-    public PostProcessingController postProcessingController;
+    // public PostProcessingController postProcessingController;
 
     private int currentScore = 0;
     private int currentMisses = 0;
@@ -71,7 +71,7 @@ public class ScoreManager : MonoBehaviour
             hapticFeedback.PlayerGotHit();
 
             // start the vignette effect
-            postProcessingController.StartVignetteEffect();
+            // postProcessingController.StartVignetteEffect();
 
             // update previousMissCounter
             previousMissCounter = currentMisses;
