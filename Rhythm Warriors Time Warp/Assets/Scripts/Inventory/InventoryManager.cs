@@ -57,15 +57,34 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void CollectArtifact()
+    // this method is called when an artifact is collected
+    // it accepts an artifact id as a parameter
+    public void CollectArtifact(string artifactID)
     {
-        inventoryData.isArtifactCollected = true;
+        // if the artifact id is not in the dictionary, add it and set the value to true
+        if (!inventoryData.artifactsCollected.ContainsKey(artifactID))
+        {
+            inventoryData.artifactsCollected.Add(artifactID, true);
+        }
+        else // if the artifact id is already in the dictionary, set the value to true
+        {
+            inventoryData.artifactsCollected[artifactID] = true;
+        }
+        // save the updated inventory data
         SaveInventoryData();
     }
 
-    public bool IsArtifactCollected()
+    // this method checks if an artifact has been collected
+    // it accepts an artifact id as a parameter and returns a boolean
+    public bool IsArtifactCollected(string artifactID)
     {
-        return inventoryData.isArtifactCollected;
+        // if the artifact id is in the dictionary, return the value (true if collected, false otherwise)
+        if (inventoryData.artifactsCollected.ContainsKey(artifactID))
+        {
+            return inventoryData.artifactsCollected[artifactID];
+        }
+        // if the artifact id is not in the dictionary, return false
+        return false;
     }
 
     /* add back in when we have a button to toggle inventory
