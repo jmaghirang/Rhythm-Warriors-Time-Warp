@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
+using Microsoft.MixedReality.Toolkit.Experimental.UI;
 
 public class TutorialSequence : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class TutorialSequence : MonoBehaviour
     public GameObject weapon; // Weapon player will be shown holding
     public GameObject healthBar; // Health bar to show to player
     public GameObject timeBar; // Song progress bar to show to player
+    public GameObject nameInput; // Field for player to input their name
+    //public GameObject confirmationButton;
+
+    private bool nameSaved = false;
 
     // Keeps track of what is called once
     private bool execute1Once = false;
@@ -23,7 +28,7 @@ public class TutorialSequence : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -31,7 +36,8 @@ public class TutorialSequence : MonoBehaviour
     {
         // Keeping track of the current dialogue showing
         index = DialogueManager.instance.index;
-        GameManager.instance.player.isSpeaking = true;
+        GameManager.instance.player.isSpeaking = false;
+        DialogueManager.instance.npc.isSpeaking = true;
 
         // Bool variables to make sure each coroutine runs exactly once
         if (!execute1Once && index == ExecuteIndex(0))
@@ -157,10 +163,19 @@ public class TutorialSequence : MonoBehaviour
     {
         DialogueManager.instance.dialogueBox.UI.SetActive(false);
 
-        // Code to prompt player to input 
-        //
-        yield return new WaitForSeconds(3f);
+        nameInput.SetActive(true);
+
+        yield return new WaitUntil(() => nameSaved == true);
+
+        nameInput.SetActive(false);
 
         DialogueManager.instance.dialogueBox.UI.SetActive(true);
+    }
+
+    public void SavePlayerName()
+    {
+        PlayerPrefs.SetString("PlayerName", NonNativeKeyboard.Instance.InputField.text);
+
+        nameSaved = true;
     }
 }

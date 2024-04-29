@@ -39,6 +39,8 @@ public class DialogueManager : MonoBehaviour
 
     public bool endOfDialogue = false; // Boolean signifying end of dialogue/messages
 
+    public bool fixedBox = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,7 +70,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // Always make the dialogue box rotate to face the player
-        MenuManager.instance.OrientMenu(dialogueBox);
+        // MenuManager.instance.OrientMenu(dialogueBox);
     }
 
     IEnumerator TypeLine()
@@ -141,7 +143,12 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayDialogueBox()
     {
-        MenuManager.instance.ShowDialogue(dialogueBox);
+        if (!fixedBox)
+        {
+            MenuManager.instance.OrientMenu(dialogueBox);
+            MenuManager.instance.ShowDialogue(dialogueBox);
+        }
+        
         dialogueBox.UI.SetActive(true);
     }
 }
