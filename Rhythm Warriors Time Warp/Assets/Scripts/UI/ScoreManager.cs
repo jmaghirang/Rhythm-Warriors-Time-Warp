@@ -33,8 +33,9 @@ public class ScoreManager : MonoBehaviour
 
         if(!_vignette)
         {
-            previousMissCounter("error, vignette empty")
+            print("error, vignette empty");
         }
+
         else
         {
             _vignette.enabled.Override(false);
@@ -112,7 +113,7 @@ public class ScoreManager : MonoBehaviour
 
             if (intensity < 0) intensity = 0;
 
-            _vignette.intensity.Override(intensity):
+            _vignette.intensity.Override(intensity);
 
             yield return new WaitForSeconds(0.1f);
         }
