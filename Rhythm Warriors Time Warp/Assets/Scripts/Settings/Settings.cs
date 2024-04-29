@@ -139,6 +139,8 @@ public class Settings : MonoBehaviour
     public void SetOffset()
     {
         PlayerPrefs.SetInt("Offset", offset.offsetValue);
+
+        SongManager.instance.inputDelay = offset.offsetValue;
     }
 
     public void ToggleCameraShake(bool defaultSetting)

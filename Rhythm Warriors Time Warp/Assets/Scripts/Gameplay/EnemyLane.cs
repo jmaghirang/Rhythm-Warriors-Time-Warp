@@ -28,40 +28,35 @@ public class EnemyLane : Lane
         // Spawn enemies
         SpawnObjects();
 
-        // Hit Registration - Player Accuracy (in progress still testing)
-
-        /*if (timeIndex < timeStamps.Count)
+        // Player Accuracy 
+        /*if (inputIndex < timeStamps.Count && SongManager.instance.audioSource.isPlaying)
         {
             // Assigned variables for clarity
-            double timeStamp = timeStamps[timeIndex];
+            double timeStamp = timeStamps[inputIndex];
             double marginOfError = SongManager.instance.errorMargin;
             double audioTime = SongManager.GetAudioSourceTime() - (SongManager.instance.inputDelay / 1000.0); // milliseconds to seconds
 
             // If the player hit within the margin of error
             if (Math.Abs(audioTime - timeStamp) < marginOfError)
             {
-                Hit();
                 // Notify of accurate hit
-                print($"Hit on {timeIndex} note");
+                print($"Hit on {inputIndex} note");
 
-                // Destroy enemy game object
-                Destroy(enemies[timeIndex].gameObject);
                 // Increment index to next time stamp that needs to be fulfilled
-                timeIndex++;
+                inputIndex++;
             }
             else
             {
                 // Notify of inaccurate hit
-                print($"Hit inaccurate on {timeIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
             }
-            //}
 
             // If the player did not hit the object within the margin of error at the specified time stamp
             if (timeStamp + marginOfError <= audioTime)
             {
-                Miss();
-                print($"Missed {timeIndex} note");
-                timeIndex++;
+                // Notify of missed hit
+                print($"Missed {inputIndex} note");
+                inputIndex++;
             }
         }*/
     }

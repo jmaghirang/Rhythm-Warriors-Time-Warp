@@ -265,6 +265,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
+  playerName: 
   isSpeaking: 1
 --- !u!1 &4974765526077134452
 GameObject:

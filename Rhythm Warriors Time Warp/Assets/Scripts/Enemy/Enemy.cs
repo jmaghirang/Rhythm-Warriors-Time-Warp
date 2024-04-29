@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -7,8 +8,8 @@ using UnityEngine.VFX;
 
 public class Enemy : Object
 {
-    // If the enemy can be hit - i don't think this does anything rn
-    public bool canBeHit;
+    double marginOfError;
+    double audioTime;
 
     public GameObject vfx;
 
@@ -22,6 +23,9 @@ public class Enemy : Object
     // Update is called once per frame
     void Update()
     {
+        marginOfError = SongManager.instance.errorMargin;
+        audioTime = SongManager.GetAudioSourceTime() - (SongManager.instance.inputDelay / 1000.0); // milliseconds to seconds
+
         // Current song time subtracted by the time enemy was instantiated
         double timeSinceInstantiated = SongManager.GetAudioSourceTime() - timeInstantiated;
 
@@ -42,7 +46,10 @@ public class Enemy : Object
             // Destroy(vfx);
 
             // This means player misses
-            ScoreManager.instance.UpdateMisses(1);
+            if (assignedTime + marginOfError <= audioTime)
+            {
+               ScoreManager.instance.UpdateMisses(1); 
+            }
         }
         else
         {
@@ -61,21 +68,28 @@ public class Enemy : Object
         // If the enemy collides with a game object tagged with 'weapon'...
         if (other.CompareTag("Weapon"))
         {
-            canBeHit = true;
-
-            VFXManager.instance.TriggerVFX(this);
-            // Destroy enemy if it gets hit
-            Destroy(gameObject);
-
-            // Update score with score manager
-            //ScoreManager scoreManager = FindObjectOfType<ScoreManager>(); // get reference
-            if (ScoreManager.instance != null)
+            if (Math.Abs(audioTime - assignedTime) < marginOfError)
             {
-                ScoreManager.instance.UpdateScore(1); // add one score when the weapon hits the enemy
+                VFXManager.instance.TriggerVFX(this);
+                // Destroy enemy if it gets hit
+                Destroy(gameObject);
+
+                // Update score with score manager
+                //ScoreManager scoreManager = FindObjectOfType<ScoreManager>(); // get reference
+                if (ScoreManager.instance != null)
+                {
+                    print("Hit accurate");
+                    ScoreManager.instance.UpdateScore(1); // add one score when the weapon hits the enemy
+                }
+                else
+                {
+                    Debug.LogError("ScoreManager not found in the scene!"); // debugging
+                }
             }
             else
             {
-                Debug.LogError("ScoreManager not found in the scene!"); // debugging
+                ScoreManager.instance.UpdateMisses(1);
+                print($"Hit inaccurate with {Math.Abs(audioTime - assignedTime)} delay");
             }
         }
     }
