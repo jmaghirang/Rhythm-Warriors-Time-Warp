@@ -1,35 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Rendering.LookDev;
-using UnityEngine.Rendering.Universal;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
+using System.Collections;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
+    // public PostProcessVolume postProcessVolume; // reference to the post-processing Volume
+    // private Vignette vignette; // reference to the vignette effect
+
+    // reference to other scripts
+    public CameraShake cameraShake;
+    public HapticFeedback hapticFeedback;
+
+    private int currentScore = 0;
+    private int currentMisses = 0;
+    private int previousMissCounter = 0; // previous value of missCounter
 
     private void Awake()
     {
         instance = this;
     }
 
-    // public reference to the CameraShake script
-    public CameraShake cameraShake;
-
-    // reference to the HapticFeedback script
-    public HapticFeedback hapticFeedback;
-
-    // reference to the PostProcessingController script
-    // public PostProcessingController postProcessingController;
-
-    private int currentScore = 0;
-    private int currentMisses = 0;
-
-    private int previousMissCounter = 0; // previous value of missCounter
+    /*private void Start()
+    {
+        // get the vignette effect from the post-processing volume if available
+        if (postProcessVolume != null && postProcessVolume.profile != null)
+        {
+            postProcessVolume.profile.TryGetSettings(out vignette);
+        }
+    }*/
 
     void Update()
     {
-        
+
     }
 
     public int GetCurrentScore()
@@ -42,7 +45,7 @@ public class ScoreManager : MonoBehaviour
         return currentMisses;
     }
     
-    // update the score based on hitting enemy prefab
+    // Update the score based on hitting enemy prefab
     public void UpdateScore(int scoreToAdd)
     {
         currentScore += scoreToAdd; // increase the score by the specified amount
@@ -55,7 +58,6 @@ public class ScoreManager : MonoBehaviour
     public void UpdateMisses(int missesToAdd)
     {
         currentMisses += missesToAdd;
-
         OnMiss();
     }
 
@@ -70,11 +72,14 @@ public class ScoreManager : MonoBehaviour
             // start the haptic feedback
             hapticFeedback.PlayerGotHit();
 
-            // start the vignette effect
-            // postProcessingController.StartVignetteEffect();
-
             // update previousMissCounter
             previousMissCounter = currentMisses;
+
+            /*if (vignette != null)
+            {
+                vignette.intensity.value = 1f; // set vignette intensity to maximum
+                StartCoroutine(ResetVignette());
+            }*/
         }
 
         GameManager.instance.player.TakeDamage(2);
@@ -83,4 +88,10 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("Miss");
         Debug.Log("Misses updated. Current misses: " + currentMisses);
     }
+
+    /*private IEnumerator ResetVignette()
+    {
+        yield return new WaitForSeconds(0.1f); // adjust the duration as needed
+        vignette.intensity.value = 0f; // reset vignette intensity
+    }*/
 }
