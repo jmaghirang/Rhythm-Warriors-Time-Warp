@@ -8,14 +8,17 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager instance;
     public GameObject inventoryUI; // assign inventory ui in the inspector
     private InputActionProperty inventoryButton;
-    private InventoryData inventoryData;
+    public InventoryData inventoryData;
 
     private void Awake()
     {
         instance = this;
         LoadInventoryData(); // load inventory data on startup
     }
-
+    public InventoryData GetInventoryData()
+    {
+        return inventoryData;
+    }
     private void LoadInventoryData()
     {
         // load inventory data from persistent storage
