@@ -1,12 +1,17 @@
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using System.Collections;
+using System.Collections.Generic;
 
+// some VFX code referenced from: https://www.youtube.com/watch?v=N3JR5m7knGQ&t=86s
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-    // public PostProcessVolume postProcessVolume; // reference to the post-processing Volume
-    // private Vignette vignette; // reference to the vignette effect
+
+    public float intensity = 0; // intensity of the vignette effect
+
+    PostProcessVolume _volume;
+    Vignette _vignette;
 
     // reference to other scripts
     public CameraShake cameraShake;
@@ -21,14 +26,20 @@ public class ScoreManager : MonoBehaviour
         instance = this;
     }
 
-    /*private void Start()
+    void Start()
     {
-        // get the vignette effect from the post-processing volume if available
-        if (postProcessVolume != null && postProcessVolume.profile != null)
+        _volume = gameObject.GetComponent<PostProcessVolume>();
+        _volume.profile.TryGetSettings(out _vignette);
+
+        if(!_vignette)
         {
-            postProcessVolume.profile.TryGetSettings(out vignette);
+            previousMissCounter("error, vignette empty")
         }
-    }*/
+        else
+        {
+            _vignette.enabled.Override(false);
+        }
+    }
 
     void Update()
     {
@@ -72,14 +83,11 @@ public class ScoreManager : MonoBehaviour
             // start the haptic feedback
             hapticFeedback.PlayerGotHit();
 
+            // trigger the vignette effect coroutine
+            StartCoroutine(ShowVignetteEffect());
+
             // update previousMissCounter
             previousMissCounter = currentMisses;
-
-            /*if (vignette != null)
-            {
-                vignette.intensity.value = 1f; // set vignette intensity to maximum
-                StartCoroutine(ResetVignette());
-            }*/
         }
 
         GameManager.instance.player.TakeDamage(2);
@@ -89,9 +97,27 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("Misses updated. Current misses: " + currentMisses);
     }
 
-    /*private IEnumerator ResetVignette()
+    private IEnumerator ShowVignetteEffect()
     {
-        yield return new WaitForSeconds(0.1f); // adjust the duration as needed
-        vignette.intensity.value = 0f; // reset vignette intensity
-    }*/
+        intensity = 0.4f;
+
+        _vignette.enabled.Override(true);
+        _vignette.intensity.Override(0.4f);
+
+        yield return new WaitForSeconds(0.4f);
+
+        while (intensity > 0)
+        {
+            intensity -= 0.01f;
+
+            if (intensity < 0) intensity = 0;
+
+            _vignette.intensity.Override(intensity):
+
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        _vignette.enabled.Override(false);
+        yield break;
+    }
 }
