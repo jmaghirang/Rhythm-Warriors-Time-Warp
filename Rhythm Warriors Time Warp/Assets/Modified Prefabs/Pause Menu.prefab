@@ -205,7 +205,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79561979765272318}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ff6782bb4242df41887790cec0fdc76, type: 3}
   m_Name: 
@@ -223,7 +223,9 @@ MonoBehaviour:
   cameraShakeToggle: {fileID: 8382565974524513939}
   edgeBlurToggle: {fileID: 613492453018968567}
   motionBlurToggle: {fileID: 3334841624869946624}
-  uiToggle: {fileID: 0}
+  panelsToggle: {fileID: 7075430802625191745}
+  scorePanel: {fileID: 0}
+  missPanel: {fileID: 0}
   postProcessVolume: {fileID: 0}
 --- !u!1 &92584305502103864
 GameObject:

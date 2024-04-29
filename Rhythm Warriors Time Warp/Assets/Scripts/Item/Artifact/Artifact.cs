@@ -37,7 +37,6 @@ public class Artifact : MonoBehaviour
     }
 }
 
-// Jamie Lee
 /*
 public class Artifact : MonoBehaviour
 {
