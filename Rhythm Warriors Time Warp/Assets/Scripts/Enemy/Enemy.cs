@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -37,7 +38,7 @@ public class Enemy : Object
         GetComponent<MeshRenderer>().enabled = false;
 
         // If the enemy is past the point of where it's supposed to be hit...
-        if (t > 0.5)
+        if (t > 0.5 + marginOfError)
         {
             // If the object passes where it is supposed to despawn
             Destroy(gameObject);
@@ -46,7 +47,12 @@ public class Enemy : Object
             // Destroy(vfx);
 
             // This means player misses
-            ScoreManager.instance.UpdateMisses(1); 
+            /*if (assignedTime + marginOfError < audioTime)
+            {
+                ScoreManager.instance.UpdateMisses(1);
+            }*/
+
+            ScoreManager.instance.UpdateMisses(1);
         }
         else
         {
@@ -65,26 +71,11 @@ public class Enemy : Object
         // If the enemy collides with a game object tagged with 'weapon'...
         if (other.CompareTag("Weapon"))
         {
-            if (Math.Abs(audioTime - assignedTime) < marginOfError)
+            if ((audioTime - assignedTime) < 0)
             {
-                if ((audioTime - assignedTime) + marginOfError < 0) // Early hit
-                {
-                    ScoreManager.instance.EarlyHit();
+                ScoreManager.instance.EarlyHit();
 
-                    Debug.Log("Early hit");
-                }
-                else if ((audioTime - assignedTime) + marginOfError > 0) // Late hit
-                {
-                    ScoreManager.instance.LateHit();
-
-                    Debug.Log("Late hit");
-                }
-                else if (audioTime == assignedTime)
-                {
-                    ScoreManager.instance.PerfectHit();
-
-                    Debug.Log("Perfect!");
-                }
+                Debug.Log("Early hit");
 
                 VFXManager.instance.TriggerVFX(this);
                 // Destroy enemy if it gets hit
@@ -95,7 +86,51 @@ public class Enemy : Object
                 if (ScoreManager.instance != null)
                 {
                     Debug.Log("Hit accurate");
-                    ScoreManager.instance.UpdateScore(1); // add one score when the weapon hits the enemy
+                    ScoreManager.instance.UpdateScore(50); // add one score when the weapon hits the enemy
+                }
+                else
+                {
+                    Debug.LogError("ScoreManager not found in the scene!"); // debugging
+                }
+            }
+            else if (Math.Abs(audioTime - assignedTime) < marginOfError)
+            {
+                ScoreManager.instance.PerfectHit();
+
+                Debug.Log($"Perfect! {Math.Abs(audioTime - assignedTime)} delay");
+
+                VFXManager.instance.TriggerVFX(this);
+                // Destroy enemy if it gets hit
+                Destroy(gameObject);
+
+                // Update score with score manager
+                //ScoreManager scoreManager = FindObjectOfType<ScoreManager>(); // get reference
+                if (ScoreManager.instance != null)
+                {
+                    Debug.Log("Hit accurate");
+                    ScoreManager.instance.UpdateScore(100); // add one score when the weapon hits the enemy
+                }
+                else
+                {
+                    Debug.LogError("ScoreManager not found in the scene!"); // debugging
+                }
+            }
+            else if ((audioTime - assignedTime) > 0)
+            {
+                ScoreManager.instance.LateHit();
+
+                Debug.Log("Late hit");
+
+                VFXManager.instance.TriggerVFX(this);
+                // Destroy enemy if it gets hit
+                Destroy(gameObject);
+
+                // Update score with score manager
+                //ScoreManager scoreManager = FindObjectOfType<ScoreManager>(); // get reference
+                if (ScoreManager.instance != null)
+                {
+                    Debug.Log("Hit accurate");
+                    ScoreManager.instance.UpdateScore(50); // add one score when the weapon hits the enemy
                 }
                 else
                 {

@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
 
     public float intensity = 0; // intensity of the vignette effect
 
-    PostProcessVolume _volume;
+    public PostProcessVolume _volume;
     Vignette _vignette;
 
     // reference to other scripts
@@ -31,7 +31,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {
-        _volume = gameObject.GetComponent<PostProcessVolume>();
+        //_volume = gameObject.GetComponent<PostProcessVolume>();
         _volume.profile.TryGetSettings(out _vignette);
 
         if(!_vignette)
@@ -121,12 +121,12 @@ public class ScoreManager : MonoBehaviour
 
             // update previousMissCounter
             previousMissCounter = currentMisses;
+
+            MissedHit();
         }
 
         GameManager.instance.player.TakeDamage(2);
         AudioManager.instance.missSFX.Play();
-
-        MissedHit();
 
         Debug.Log("Miss");
         Debug.Log("Misses updated. Current misses: " + currentMisses);
