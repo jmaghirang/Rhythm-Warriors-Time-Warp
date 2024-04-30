@@ -47,6 +47,8 @@ public class SongManager : MonoBehaviour
     {
         ReadSong();
         noteDespawnZ = noteHitZ - (noteSpawnZ - noteHitZ);
+
+        inputDelay = PlayerPrefs.GetInt("Offset", 0);
     }
 
     // Update is called once per frame

@@ -4998,14 +4998,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 340817246}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 0
+  sharedProfile: {fileID: 11400000, guid: 952c86052236d3a46a01823093381596, type: 2}
+  isGlobal: 1
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: ec82c708646a67d4fa35246d106a4c72, type: 2}
+  priority: 0
 --- !u!1001 &342611573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5514,7 +5514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   intensity: 0
-  _volume: {fileID: 0}
+  _volume: {fileID: 340817248}
   cameraShake: {fileID: 1028271082}
   hapticFeedback: {fileID: 1028271081}
   accuracyText: {fileID: 164143581}
@@ -12883,7 +12883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &851530084
 Transform:
   m_ObjectHideFlags: 0
@@ -15423,7 +15423,7 @@ PrefabInstance:
       objectReference: {fileID: 297159356}
     - target: {fileID: 7370059009483149131, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7621777869537744996, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: cameraTransform
@@ -16430,7 +16430,7 @@ MonoBehaviour:
   - {fileID: 1124890145}
   - {fileID: 444239433}
   songDelay: 0
-  errorMargin: 0.2
+  errorMargin: 0.025
   inputDelay: 0
   fileLocation: Feudal Japan MIDI/Japan Notes.mid
   noteScreenTime: 3
@@ -17207,7 +17207,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 700781386637774577, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2060243486}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7351028291473453071, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1784242225}
   m_SourcePrefab: {fileID: 100100000, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
 --- !u!4 &1180904771 stripped
 Transform:
@@ -24086,6 +24089,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4153046552397228, guid: 85ad72d200e16f048a2397c407eb9e1e, type: 3}
   m_PrefabInstance: {fileID: 1783933142}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1784242220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7351028291473453071, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
+  m_PrefabInstance: {fileID: 1180904770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1784242225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784242220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1180904771}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1001 &1784663694
 PrefabInstance:
   m_ObjectHideFlags: 0

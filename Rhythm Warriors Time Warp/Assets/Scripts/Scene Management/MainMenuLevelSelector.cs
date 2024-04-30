@@ -94,22 +94,22 @@ public class MainMenuLevelSelector : MonoBehaviour
         // Greece
         else if (selectedLevels[2])
         {
-            songTitle.text = "";
-            songDuration.text = "";
+            songTitle.text = "Greek Dance Music";
+            songDuration.text = "2:48";
         }
 
         // Egypt
         else if (selectedLevels[3])
         {
-            songTitle.text = "";
-            songDuration.text = "";
+            songTitle.text = "Nile Bound - Future Castle";
+            songDuration.text = "3:03";
         }
 
         // Future
         else if (selectedLevels[4])
         {
-            songTitle.text = "";
-            songDuration.text = "";
+            songTitle.text = "Game Music - ZapSplat";
+            songDuration.text = "3:14";
         }
     }
 

@@ -75,7 +75,7 @@ public class Enemy : Object
             {
                 ScoreManager.instance.EarlyHit();
 
-                Debug.Log("Early hit");
+                Debug.Log($"Early hit {Math.Abs(audioTime - assignedTime)} delay");
 
                 VFXManager.instance.TriggerVFX(this);
                 // Destroy enemy if it gets hit
@@ -119,7 +119,7 @@ public class Enemy : Object
             {
                 ScoreManager.instance.LateHit();
 
-                Debug.Log("Late hit");
+                Debug.Log($"Late hit {Math.Abs(audioTime - assignedTime)} delay");
 
                 VFXManager.instance.TriggerVFX(this);
                 // Destroy enemy if it gets hit
