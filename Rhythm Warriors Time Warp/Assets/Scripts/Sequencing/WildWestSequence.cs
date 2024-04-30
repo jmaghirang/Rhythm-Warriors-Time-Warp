@@ -38,7 +38,7 @@ public class WildWestSequence : MonoBehaviour
         if (fragment.isCollected)
         {
             Artifact.instance.fragments[1].isCollected = fragment.isCollected;
-            SceneTransitionManager.instance.LoadNextScene((int)SceneIndexes.FEUDAL_JAPAN);
+            SceneTransitionManager.instance.LoadNextScene(6);
         }
     }
 

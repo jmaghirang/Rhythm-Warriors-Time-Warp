@@ -224,8 +224,6 @@ MonoBehaviour:
   edgeBlurToggle: {fileID: 613492453018968567}
   motionBlurToggle: {fileID: 3334841624869946624}
   panelsToggle: {fileID: 7075430802625191745}
-  scorePanel: {fileID: 0}
-  missPanel: {fileID: 0}
   postProcessVolume: {fileID: 0}
 --- !u!1 &92584305502103864
 GameObject:
@@ -7721,7 +7719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04bd0e68a98e83498113b2829bcd368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDistance: 0.75
+  spawnDistance: 1.5
   UI: {fileID: 4658321621574592322}
 --- !u!1 &4696184334880539836
 GameObject:

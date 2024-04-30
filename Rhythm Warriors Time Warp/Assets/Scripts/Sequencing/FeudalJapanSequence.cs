@@ -36,7 +36,7 @@ public class FeudalJapanSequence : MonoBehaviour
         if (fragment.isCollected)
         {
             Artifact.instance.fragments[2].isCollected = fragment.isCollected;
-            SceneTransitionManager.instance.LoadNextScene((int)SceneIndexes.FEUDAL_JAPAN); //Next level - greece?
+            SceneTransitionManager.instance.LoadNextScene(8); //Next level - greece?
         }
     }
 

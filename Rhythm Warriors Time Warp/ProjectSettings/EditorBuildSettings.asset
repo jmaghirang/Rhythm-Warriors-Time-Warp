@@ -5,39 +5,54 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Main Menu/Main Menu.unity
     guid: cb8e20fa0ab5ac74e9589b87a11d198c
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Intro/Intro.unity
     guid: 08be0a645345035469ec0d239e4d6059
   - enabled: 0
     path: Assets/Scenes/Intro Trash.unity
     guid: e32b4ceb5eeee00469423d61e8c4d6d4
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Village/Village.unity
     guid: 06f59c3e03365c54db0cbf57a089ab7b
   - enabled: 1
     path: Assets/Scenes/Tutorial/Tutorial.unity
     guid: 76c46460c717ed249935f7a03d1534d7
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Village/Village After Tutorial.unity
     guid: 0864bb45ce588c140ba6547170628c6d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Levels/Wild West/Wild West.unity
     guid: a2a6791da2054d64abd0c6f755f3e8e5
-  - enabled: 0
-    path: Assets/Scenes/Levels/Feudal Japan.unity
+  - enabled: 1
+    path: Assets/Scenes/Village/Village After Wild West.unity
+    guid: 61977d0a5d0a7dd4e942c3bf86a66224
+  - enabled: 1
+    path: Assets/Scenes/Levels/Feudal Japan/Feudal Japan.unity
     guid: fd89d15c5a604f448b2469a44c20e035
-  - enabled: 0
-    path: Assets/Scenes/Levels/Ancient Greece.unity
+  - enabled: 1
+    path: Assets/Scenes/Village/Village After Japan.unity
+    guid: f11c9c7964bed9f4a9909bde540fb86a
+  - enabled: 1
+    path: Assets/Scenes/Levels/Ancient Greece/Ancient Greece.unity
     guid: 096ff556f0f207a42b20d56e19592d2a
-  - enabled: 0
-    path: Assets/Scenes/Levels/Ancient Egypt.unity
+  - enabled: 1
+    path: Assets/Scenes/Village/Village After Greece.unity
+    guid: df3baafc5775ae545a0a9690a08511b5
+  - enabled: 1
+    path: Assets/Scenes/Levels/Ancient Egypt/Ancient Egypt.unity
     guid: 1c4cfb33c7592e14783503f9f9bb1795
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/Village/Village After Egypt.unity
+    guid: 55530f118cdf31d4b9d3559fac4ac138
+  - enabled: 1
     path: Assets/Scenes/Levels/Dystopian Future.unity
     guid: 8ec3ee7bbb323c841908b91c8c909daf
+  - enabled: 1
+    path: Assets/Scenes/Village/Village After Future.unity
+    guid: aaf9479ea5e17d547ac2d9fc53116d60
   - enabled: 0
     path: Assets/Scenes/Level Select.unity
     guid: cd4a047d8a5ee3a45adc551c7abacae0
