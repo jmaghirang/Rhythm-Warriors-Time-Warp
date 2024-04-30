@@ -24,6 +24,11 @@ public class ScoreManager : MonoBehaviour
     private int currentMisses = 0;
     private int previousMissCounter = 0; // previous value of missCounter
 
+    public GameObject scorePanel; // reference to the score panel
+    public GameObject missPanel; // reference to the miss panel
+
+    bool isEnabled = false;
+
     private void Awake()
     {
         instance = this;
@@ -53,6 +58,20 @@ public class ScoreManager : MonoBehaviour
         {
             accuracyText.text = "";
         }
+
+        int showPanels = PlayerPrefs.GetInt("PanelsEnabled", 0);
+        
+        if (showPanels == 1)
+        {
+            isEnabled = true;
+        }
+        else if (showPanels == 0)
+        {
+            isEnabled = false;
+        }
+
+        scorePanel.SetActive(isEnabled);
+        missPanel.SetActive(isEnabled);
     }
 
     public int GetCurrentScore()

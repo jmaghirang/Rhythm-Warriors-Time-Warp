@@ -67,7 +67,7 @@ public class MenuManager : MonoBehaviour
         if (n.isSpeaking && !p.isSpeaking)
         {
             // Position of menu will be spawned in front of the npc speaking and is faced towards the player
-            m.UI.transform.position = n.transform.position + new Vector3(playerCamera.forward.x, 0, playerCamera.forward.z).normalized * -(m.spawnDistance + 0.5f);
+            m.UI.transform.position = n.transform.position /*+ new Vector3(playerCamera.forward.x, 0, playerCamera.forward.z).normalized * -(m.spawnDistance + 0.5f)*/;
         }
         else
         {

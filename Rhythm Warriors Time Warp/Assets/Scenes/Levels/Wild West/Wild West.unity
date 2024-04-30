@@ -4370,6 +4370,8 @@ MonoBehaviour:
   cameraShake: {fileID: 82795745}
   hapticFeedback: {fileID: 82795744}
   accuracyText: {fileID: 1652835935}
+  scorePanel: {fileID: 2027335742}
+  missPanel: {fileID: 421174421}
 --- !u!1001 &53997196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54892,6 +54894,8 @@ MonoBehaviour:
   cameraShake: {fileID: 82795745}
   hapticFeedback: {fileID: 82795744}
   accuracyText: {fileID: 0}
+  scorePanel: {fileID: 0}
+  missPanel: {fileID: 0}
 --- !u!1001 &1278426645
 PrefabInstance:
   m_ObjectHideFlags: 0

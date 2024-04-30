@@ -35,8 +35,8 @@ public class Settings : MonoBehaviour
     public Toggle motionBlurToggle;
 
     public Toggle panelsToggle; // toggle for both the score and miss panels
-    public GameObject scorePanel; // reference to the score panel
-    public GameObject missPanel; // reference to the miss panel
+    //public GameObject scorePanel; // reference to the score panel
+    //public GameObject missPanel; // reference to the miss panel
 
     public PostProcessVolume postProcessVolume; // reference to the post processing volume component
 
@@ -177,9 +177,6 @@ public class Settings : MonoBehaviour
     {
         // save the setting
         PlayerPrefs.SetInt("PanelsEnabled", isEnabled ? 1 : 0);
-
-        scorePanel.SetActive(isEnabled);
-        missPanel.SetActive(isEnabled);
     }
 
     /* 

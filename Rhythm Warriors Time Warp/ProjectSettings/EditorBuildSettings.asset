@@ -28,7 +28,19 @@ EditorBuildSettings:
     guid: a2a6791da2054d64abd0c6f755f3e8e5
   - enabled: 1
     path: Assets/Scenes/Levels/Feudal Japan.unity
-    guid: e9638ea905f3572478158d62d9d130dc
+    guid: fd89d15c5a604f448b2469a44c20e035
+  - enabled: 1
+    path: Assets/Scenes/Levels/Ancient Greece.unity
+    guid: 096ff556f0f207a42b20d56e19592d2a
+  - enabled: 1
+    path: Assets/Scenes/Levels/Ancient Egypt.unity
+    guid: 1c4cfb33c7592e14783503f9f9bb1795
+  - enabled: 1
+    path: Assets/Scenes/Levels/Dystopian Future.unity
+    guid: 8ec3ee7bbb323c841908b91c8c909daf
+  - enabled: 1
+    path: Assets/Scenes/Level Select.unity
+    guid: cd4a047d8a5ee3a45adc551c7abacae0
   - enabled: 1
     path: Assets/Scenes/Win Screen.unity
     guid: 30a6a3417b89ea04c8542079680bca35
@@ -44,9 +56,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Level 3.unity
     guid: b49c27f5428f3934d876ca246863c07c
-  - enabled: 1
-    path: Assets/Scenes/Level Select.unity
-    guid: cd4a047d8a5ee3a45adc551c7abacae0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: db414da60d3fe1b408ef3633bd3f16e4, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1820ae183c6762d45a6688eca32d7979, type: 2}

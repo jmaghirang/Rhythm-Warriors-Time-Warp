@@ -70,7 +70,10 @@ public class DialogueManager : MonoBehaviour
         }
 
         // Always make the dialogue box rotate to face the player
-        // MenuManager.instance.OrientMenu(dialogueBox);
+        if (!fixedBox)
+        {
+            MenuManager.instance.OrientMenu(dialogueBox);
+        }
     }
 
     IEnumerator TypeLine()
@@ -145,7 +148,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (!fixedBox)
         {
-            MenuManager.instance.OrientMenu(dialogueBox);
+            //MenuManager.instance.OrientMenu(dialogueBox);
             MenuManager.instance.ShowDialogue(dialogueBox);
         }
         
