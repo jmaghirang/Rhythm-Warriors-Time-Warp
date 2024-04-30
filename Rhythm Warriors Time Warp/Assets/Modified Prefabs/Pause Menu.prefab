@@ -215,6 +215,7 @@ MonoBehaviour:
   offset: {fileID: 6731965483429396467}
   cameraShake: {fileID: 0}
   hapticFeedback: {fileID: 0}
+  edgeBlur: {fileID: 0}
   teleMoveToggle: {fileID: 4134063650623775718}
   contMoveToggle: {fileID: 3260830542360523263}
   snapRotationToggle: {fileID: 3397784514525136676}
@@ -1352,7 +1353,7 @@ GameObject:
   - component: {fileID: 599555783311490847}
   - component: {fileID: 7647326940071276839}
   m_Layer: 5
-  m_Name: Motion Blur Label
+  m_Name: Damage Effect Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1374,8 +1375,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.687, y: 0}
-  m_SizeDelta: {x: 60.707, y: 9.029}
+  m_AnchoredPosition: {x: 11.03, y: 0}
+  m_SizeDelta: {x: 67.4, y: 9.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &599555783311490847
 CanvasRenderer:
@@ -1405,7 +1406,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Motion Blur
+  m_text: Damage Effect
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a5b1ec0e49ab31e4ab8552f42f555b25, type: 2}
   m_sharedMaterial: {fileID: 364274557488930554, guid: a5b1ec0e49ab31e4ab8552f42f555b25, type: 2}
@@ -1468,7 +1469,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.3527222, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4483,7 +4484,7 @@ GameObject:
   - component: {fileID: 6117186476509576962}
   - component: {fileID: 3334841624869946624}
   m_Layer: 5
-  m_Name: Motion Blur Toggle
+  m_Name: Damage Effect Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11890,7 +11891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1631178379572641000}
   m_Layer: 5
-  m_Name: Motion Blur
+  m_Name: Damage Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

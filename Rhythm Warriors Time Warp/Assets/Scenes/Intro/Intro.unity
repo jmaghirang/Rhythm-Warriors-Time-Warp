@@ -24797,6 +24797,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1590342749}
     - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: damageEffect
+      value: 
+      objectReference: {fileID: 9186205721283757581}
+    - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: panelsToggle
       value: 
       objectReference: {fileID: 2059993488}
@@ -24832,6 +24836,10 @@ PrefabInstance:
       propertyPath: contRotationToggle
       value: 
       objectReference: {fileID: 1011452098}
+    - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: damageEffectToggle
+      value: 
+      objectReference: {fileID: 947609983}
     - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: snapRotationToggle
       value: 
@@ -24882,6 +24890,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50a9211d01b07b1438011eaccfddc982, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9186205721283757581 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8808710774836926759, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+  m_PrefabInstance: {fileID: 9186205721283757579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807

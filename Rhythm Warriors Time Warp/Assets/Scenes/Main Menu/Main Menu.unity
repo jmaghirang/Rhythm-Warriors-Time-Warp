@@ -4009,7 +4009,7 @@ GameObject:
   - component: {fileID: 232240596}
   - component: {fileID: 232240597}
   m_Layer: 5
-  m_Name: Motion Blur Toggle
+  m_Name: Damage Effect Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12386,7 +12386,7 @@ GameObject:
   - component: {fileID: 632776950}
   - component: {fileID: 632776949}
   m_Layer: 5
-  m_Name: Motion Blur Label
+  m_Name: Damage Effect Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12400,7 +12400,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632776947}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12408,8 +12408,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.687, y: 0}
-  m_SizeDelta: {x: 60.707, y: 9.029}
+  m_AnchoredPosition: {x: 10.11, y: 0}
+  m_SizeDelta: {x: 65.54, y: 9.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &632776949
 MonoBehaviour:
@@ -12431,7 +12431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Motion Blur
+  m_text: Damage Effect
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a5b1ec0e49ab31e4ab8552f42f555b25, type: 2}
   m_sharedMaterial: {fileID: 364274557488930554, guid: a5b1ec0e49ab31e4ab8552f42f555b25, type: 2}
@@ -12494,7 +12494,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.088777535, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -28553,6 +28553,8 @@ MonoBehaviour:
   offset: {fileID: 162364763}
   cameraShake: {fileID: 2141329285}
   hapticFeedback: {fileID: 2141329284}
+  edgeBlur: {fileID: 0}
+  damageEffect: {fileID: 0}
   teleMoveToggle: {fileID: 344774750}
   contMoveToggle: {fileID: 61323205}
   snapRotationToggle: {fileID: 1390287090}
@@ -28560,9 +28562,8 @@ MonoBehaviour:
   hapticFeedbackToggle: {fileID: 891430523}
   cameraShakeToggle: {fileID: 1977436916}
   edgeBlurToggle: {fileID: 585079992}
-  motionBlurToggle: {fileID: 232240597}
+  damageEffectToggle: {fileID: 0}
   panelsToggle: {fileID: 0}
-  postProcessVolume: {fileID: 0}
 --- !u!114 &1342903221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36048,6 +36049,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 469584, guid: 2216270888a4ced48b33b7b5641611e6, type: 3}
   m_PrefabInstance: {fileID: 1738790078}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1740458371 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9138668032358737224, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
+  m_PrefabInstance: {fileID: 31463751}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c500f2a52a5eb4a952658e1bf51e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1746922438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36408,7 +36420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f15956d0c7fe144db6c20a77b9af39f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryUI: {fileID: 1781775209}
+  inventory: {fileID: 0}
+  playingLevel: 0
   canViewInventory: 0
 --- !u!1 &1772972006
 GameObject:
@@ -38631,7 +38644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1871588145}
   m_Layer: 5
-  m_Name: Motion Blur
+  m_Name: Damage Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43353,6 +43366,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 31463756}
     - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: edgeBlur
+      value: 
+      objectReference: {fileID: 1740458371}
+    - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: missPanel
       value: 
       objectReference: {fileID: 2131342185}
@@ -43368,6 +43385,10 @@ PrefabInstance:
       propertyPath: contRotation
       value: 
       objectReference: {fileID: 31463754}
+    - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: damageEffect
+      value: 
+      objectReference: {fileID: 2141329287}
     - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: panelsToggle
       value: 
@@ -43404,6 +43425,10 @@ PrefabInstance:
       propertyPath: contRotationToggle
       value: 
       objectReference: {fileID: 2081864695}
+    - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: damageEffectToggle
+      value: 
+      objectReference: {fileID: 232240597}
     - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: snapRotationToggle
       value: 
@@ -43475,6 +43500,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4845879988007282577, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
   m_PrefabInstance: {fileID: 2141329283}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2141329287 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8808710774836926759, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+  m_PrefabInstance: {fileID: 2141329283}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1671010273643204192
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7662,6 +7662,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 82795745}
     - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: damageEffect
+      value: 
+      objectReference: {fileID: 106327884}
+    - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: panelsToggle
       value: 
       objectReference: {fileID: 979948861}
@@ -7693,6 +7697,10 @@ PrefabInstance:
       propertyPath: contRotationToggle
       value: 
       objectReference: {fileID: 1852979292}
+    - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: damageEffectToggle
+      value: 
+      objectReference: {fileID: 1852979288}
     - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: snapRotationToggle
       value: 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -23,6 +24,7 @@ public class Settings : MonoBehaviour
     public CameraShake cameraShake;
     public HapticFeedback hapticFeedback;
     public TunnelingVignetteController edgeBlur;
+    public Volume damageEffect; // reference to the post processing volume component
 
     public Toggle teleMoveToggle;
     public Toggle contMoveToggle;
@@ -33,13 +35,11 @@ public class Settings : MonoBehaviour
 
     public Toggle cameraShakeToggle;
     public Toggle edgeBlurToggle;
-    public Toggle motionBlurToggle;
+    public Toggle damageEffectToggle;
 
     public Toggle panelsToggle; // toggle for both the score and miss panels
     //public GameObject scorePanel; // reference to the score panel
     //public GameObject missPanel; // reference to the miss panel
-
-    public PostProcessVolume postProcessVolume; // reference to the post processing volume component
 
     /* 
     // add these when they're added in the settings menu
@@ -55,10 +55,6 @@ public class Settings : MonoBehaviour
         snapRotation = player.GetComponent<ActionBasedSnapTurnProvider>();
         contRotation = player.GetComponent<ActionBasedContinuousTurnProvider>();
 
-        /* load player preferences
-         motionBlurToggle.isOn = PlayerPrefs.GetInt("MotionBlurEnabled", 1) == 1;
-        */
-
         contMoveToggle.isOn = PlayerPrefs.GetInt("ContinuousMovementEnabled", 1) == 1;
         teleMoveToggle.isOn = PlayerPrefs.GetInt("TeleportationEnabled", 0) == 1;
         contRotationToggle.isOn = PlayerPrefs.GetInt("ContinuousRotationEnabled", 0) == 1;
@@ -69,8 +65,10 @@ public class Settings : MonoBehaviour
         offset.offsetValue = PlayerPrefs.GetInt("Offset", 0);
 
         cameraShakeToggle.isOn = PlayerPrefs.GetInt("CameraShakeEnabled", 1) == 1;
-        hapticFeedbackToggle.isOn = PlayerPrefs.GetInt("HapticFeedbackEnabled", 1) == 1;
         edgeBlurToggle.isOn = PlayerPrefs.GetInt("EdgeBlurEnabled", 1) == 1;
+        damageEffectToggle.isOn = PlayerPrefs.GetInt("DamageEffectEnabled", 1) == 1;
+
+        hapticFeedbackToggle.isOn = PlayerPrefs.GetInt("HapticFeedbackEnabled", 1) == 1;
 
         panelsToggle.isOn = PlayerPrefs.GetInt("PanelsEnabled", 1) == 1;
 
@@ -88,6 +86,7 @@ public class Settings : MonoBehaviour
         ToggleCameraShake(cameraShakeToggle.isOn);
         ToggleHapticFeedback(hapticFeedbackToggle.isOn);
         ToggleEdgeBlur(edgeBlurToggle.isOn);
+        ToggleDamageEffect(damageEffectToggle.isOn);
 
         SetVolume();
 
@@ -185,6 +184,20 @@ public class Settings : MonoBehaviour
         else
         {
             edgeBlur.enabled = false;
+        }
+    }
+
+    public void ToggleDamageEffect(bool defaultSetting)
+    {
+        PlayerPrefs.SetInt("DamageEffect", defaultSetting ? 1 : 0);
+
+        if (damageEffectToggle.isOn)
+        {
+            damageEffect.enabled = true;
+        }
+        else
+        {
+            damageEffect.enabled = false;
         }
     }
 
