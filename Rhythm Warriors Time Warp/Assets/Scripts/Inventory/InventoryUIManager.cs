@@ -7,11 +7,23 @@ public class InventoryUIManager : MonoBehaviour
     public Material collectedMaterial; // assign the "Runes_Stones_Material" in the inspector
     public Material notCollectedMaterial; // assign the "Runes_Texture" in the inspector
     public Dictionary<string, Renderer> artifactRenderers; // assign the Renderer of each artifact in the inventory UI in the inspector
-
     private void Awake()
     {
-        instance = this;
-        // for each artifact id in the inventory data, update the material of the corresponding renderer
+        // check if instance already exists
+        if (instance == null)
+        {
+            // if no instance exists, set instance to this
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            // if instance already exists and it's not this, then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of InventoryUIManager.
+            Destroy(gameObject);
+        }
+
+        // sets this to not be destroyed when reloading scene
+        DontDestroyOnLoad(gameObject);
+    
         foreach (var artifactID in InventoryManager.instance.inventoryData.artifactsCollected.Keys)
         {
             UpdateArtifactMaterial(artifactID, InventoryManager.instance.IsArtifactCollected(artifactID));

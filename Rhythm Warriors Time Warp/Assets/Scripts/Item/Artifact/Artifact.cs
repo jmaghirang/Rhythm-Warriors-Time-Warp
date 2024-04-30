@@ -20,13 +20,23 @@ public class Artifact : MonoBehaviour
         { 4, new Fragment {ID=4, isCollected=false} },
         { 5, new Fragment {ID=5, isCollected=false} }
     };
+    
     // Start is called before the first frame update
     void Start()
     {
-        // reset the material of the artifact in the inventory UI
-        foreach (var fragment in fragments.Values)
+        Debug.Log("Artifact Start method called.");
+        Debug.Log("InventoryUIManager.instance: " + InventoryUIManager.instance); // check if instance is null
+        if (InventoryUIManager.instance != null)
         {
-            InventoryUIManager.instance.UpdateArtifactMaterial(fragment.ID.ToString(), fragment.isCollected);
+            foreach (var fragment in fragments.Values)
+            {
+                Debug.Log("Fragment ID: " + fragment.ID + ", isCollected: " + fragment.isCollected);
+                InventoryUIManager.instance.UpdateArtifactMaterial(fragment.ID.ToString(), fragment.isCollected);
+            }
+        }
+        else
+        {
+            Debug.LogError("InventoryUIManager.instance is null!");
         }
     }
 
