@@ -124,7 +124,7 @@ public class TutorialSequence : MonoBehaviour
         SongManager.instance.StartSong();
 
         // Wait until the player has hit a certain amount of enemies
-        yield return new WaitUntil(() => ScoreManager.instance.GetCurrentScore() == 6);
+        yield return new WaitUntil(() => ScoreManager.instance.GetCurrentScore() > 600);
 
         // Stop the song to stop gameplay
         SongManager.instance.StopSong();

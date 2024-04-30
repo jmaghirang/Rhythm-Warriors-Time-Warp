@@ -1,5 +1,6 @@
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,10 +10,11 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
 
-    public float intensity = 1; // intensity of the vignette effect
+    public float intensity = 0.5f; // intensity of the vignette effect
+    public float duration = 0.5f;
 
-    public PostProcessVolume _volume;
-    Vignette _vignette;
+    public Volume _volume;
+    private Vignette _vignette;
 
     // reference to other scripts
     public CameraShake cameraShake;
@@ -37,7 +39,7 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         //_volume = gameObject.GetComponent<PostProcessVolume>();
-        _volume.profile.TryGetSettings(out _vignette);
+        /*_volume.profile.TryGetSettings(out _vignette);
 
         if(!_vignette)
         {
@@ -47,6 +49,11 @@ public class ScoreManager : MonoBehaviour
         else
         {
             _vignette.enabled.Override(false);
+        }*/
+
+        if (_volume.profile.TryGet(out Vignette vignette))
+        {
+            _vignette = vignette;
         }
 
         accuracyText.text = "";
@@ -136,7 +143,7 @@ public class ScoreManager : MonoBehaviour
             hapticFeedback.PlayerGotHit();
 
             // trigger the vignette effect coroutine
-            StartCoroutine(ShowVignetteEffect());
+            StartCoroutine(FlashVignetteEffect());
 
             // update previousMissCounter
             previousMissCounter = currentMisses;
@@ -151,27 +158,65 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("Misses updated. Current misses: " + currentMisses);
     }
 
-    private IEnumerator ShowVignetteEffect()
+    // https://youtu.be/8S22Qt_-nY8?si=sF-Ht-xcSZg1ggAA
+    public IEnumerator FlashVignetteEffect()
     {
-        intensity = 0.4f;
+        FadeIn();
 
-        _vignette.enabled.Override(true);
-        _vignette.intensity.Override(0.4f);
+        yield return new WaitForSeconds(.5f);
 
-        yield return new WaitForSeconds(0.4f);
+        FadeOut();
+    }
 
-        while (intensity > 0)
+    public void FadeIn()
+    {
+        StartCoroutine(ShowVignetteEffect(0, intensity));
+    }
+
+    public void FadeOut()
+    {
+        StartCoroutine(ShowVignetteEffect(intensity, 0));
+    }
+
+    private IEnumerator ShowVignetteEffect(float startValue, float endValue)
+    {
+        /* intensity = 0.4f;
+
+         _vignette.enabled.Override(true);
+         _vignette.intensity.Override(0.4f);
+
+         yield return new WaitForSeconds(0.4f);
+
+         while (intensity > 0)
+         {
+             intensity -= 0.01f;
+
+             if (intensity < 0) intensity = 0;
+
+             _vignette.intensity.Override(intensity);
+
+             yield return new WaitForSeconds(0.1f);
+         }
+
+         _vignette.enabled.Override(false);
+         yield break;*/
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime <= duration)
         {
-            intensity -= 0.01f;
+            float blend = elapsedTime / duration;
+            elapsedTime += Time.deltaTime;
 
-            if (intensity < 0) intensity = 0;
+            float intensity = Mathf.Lerp(startValue, endValue, blend);
+            ApplyValue(intensity);
 
-            _vignette.intensity.Override(intensity);
-
-            yield return new WaitForSeconds(0.1f);
+            yield return null;
         }
+    }
 
-        _vignette.enabled.Override(false);
-        yield break;
+    private void ApplyValue(float value)
+    {
+        _vignette.intensity.Override(value);
     }
 }

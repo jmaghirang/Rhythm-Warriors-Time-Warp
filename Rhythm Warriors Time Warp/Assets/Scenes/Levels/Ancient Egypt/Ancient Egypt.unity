@@ -11475,55 +11475,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2797917615958267560, guid: 2b840cfaaaf02c34aab17d92d4907f70, type: 3}
   m_PrefabInstance: {fileID: 648717857}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &660001963
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 660001965}
-  - component: {fileID: 660001964}
-  m_Layer: 0
-  m_Name: Post Processing
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &660001964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660001963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 11400000, guid: 952c86052236d3a46a01823093381596, type: 2}
-  isGlobal: 1
-  blendDistance: 0
-  weight: 1
-  priority: 0
---- !u!4 &660001965
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 660001963}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1848921628}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &660785886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14675,13 +14626,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2e1691713f7eb46b9274f4c988dd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensity: 0
-  _volume: {fileID: 660001964}
+  intensity: 0.5
+  duration: 0.1
+  _volume: {fileID: 1514849481}
   cameraShake: {fileID: 1848921626}
   hapticFeedback: {fileID: 1848921625}
   accuracyText: {fileID: 2064232581}
-  scorePanel: {fileID: 0}
-  missPanel: {fileID: 0}
+  scorePanel: {fileID: 2027335742}
+  missPanel: {fileID: 421174421}
 --- !u!1001 &832780664
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25347,6 +25299,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 418099369308091080, guid: 3b41a3d10d8e79b4f94f03b0a4b3e305, type: 3}
   m_PrefabInstance: {fileID: 1514825032}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1514849481 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8808710774836926759, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+  m_PrefabInstance: {fileID: 1848921622}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1516137582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25554,6 +25517,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1647549595845276854, guid: 720d8f4b92096934397ed301df72cccb, type: 3}
   m_PrefabInstance: {fileID: 303295960}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1531788537 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9138668032358737224, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
+  m_PrefabInstance: {fileID: 809715232}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c500f2a52a5eb4a952658e1bf51e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1551949078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30369,6 +30343,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1450252953}
     - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: edgeBlur
+      value: 
+      objectReference: {fileID: 1531788537}
+    - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: missPanel
       value: 
       objectReference: {fileID: 421174421}
@@ -30451,9 +30429,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9160580495245086579, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1348378526}
-    - targetCorrespondingSourceObject: {fileID: 8023472904374985199, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 660001965}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1178617368059264142, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       insertIndex: -1
@@ -30497,11 +30472,6 @@ MonoBehaviour:
 --- !u!82 &1848921627 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 5886472671932083953, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
-  m_PrefabInstance: {fileID: 1848921622}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1848921628 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8023472904374985199, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
   m_PrefabInstance: {fileID: 1848921622}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1848921629 stripped
