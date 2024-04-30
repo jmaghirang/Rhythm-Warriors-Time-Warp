@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // Handling pausing and resuming game
-        if (ControlManager.instance.pauseButton.action.WasPressedThisFrame())
+        if (ControlManager.instance.pauseButton.action.WasPressedThisFrame() && !InventoryManager.instance.inventory.gameObject.activeSelf)
         {
             MenuManager.instance.TriggerPauseMenu();
 

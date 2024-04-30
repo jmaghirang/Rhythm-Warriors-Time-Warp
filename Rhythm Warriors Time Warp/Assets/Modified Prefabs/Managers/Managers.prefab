@@ -286,6 +286,18 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
+  inventoryButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Inventory Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 363a863a-2b16-419a-a650-4b4fb3d09185
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -6731079529568404648, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &5178368617309555485
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,6 +396,54 @@ MonoBehaviour:
   index: 0
   pauseIndexes: 
   endOfDialogue: 0
+  fixedBox: 0
+--- !u!1 &5721595996204775917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1123377072650634550}
+  - component: {fileID: 1346847098037170086}
+  m_Layer: 0
+  m_Name: Inventory Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1123377072650634550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5721595996204775917}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4845879988007282577}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1346847098037170086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5721595996204775917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f15956d0c7fe144db6c20a77b9af39f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 0}
+  playingLevel: 0
+  canViewInventory: 0
 --- !u!1 &5734488533664962245
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +534,7 @@ Transform:
   - {fileID: 6949708252169820613}
   - {fileID: 8023472904374985199}
   - {fileID: 6880178356819983150}
+  - {fileID: 1123377072650634550}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6252547135678260699
@@ -520,19 +581,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff6782bb4242df41887790cec0fdc76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleMove: {fileID: 0}
-  contMove: {fileID: 0}
-  snapRotation: {fileID: 0}
-  contRotation: {fileID: 0}
-  camShake: {fileID: 0}
+  player: {fileID: 0}
+  volume: {fileID: 0}
+  offset: {fileID: 0}
+  cameraShake: {fileID: 0}
   hapticFeedback: {fileID: 0}
   teleMoveToggle: {fileID: 0}
   contMoveToggle: {fileID: 0}
   snapRotationToggle: {fileID: 0}
   contRotationToggle: {fileID: 0}
-  cameraShakeToggle: {fileID: 0}
   hapticFeedbackToggle: {fileID: 0}
-  uiToggle: {fileID: 0}
+  cameraShakeToggle: {fileID: 0}
+  edgeBlurToggle: {fileID: 0}
+  motionBlurToggle: {fileID: 0}
+  panelsToggle: {fileID: 0}
   postProcessVolume: {fileID: 0}
 --- !u!1 &6273365774075448987
 GameObject:

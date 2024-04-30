@@ -5,10 +5,14 @@ public class Fragment : MonoBehaviour
 {
     public int ID;
     public bool isCollected = false;
+    public bool grabbable = false;
 
     void Start()
     {
-        GetComponent<XRGrabInteractable>().selectEntered.AddListener(x => FragmentCollected());
+        if (grabbable)
+        {
+            GetComponent<XRGrabInteractable>().selectEntered.AddListener(x => FragmentCollected());
+        }
     }
 
     void FragmentCollected()

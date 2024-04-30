@@ -5,20 +5,33 @@ using System.Collections.Generic;
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager instance;
-    public GameObject inventoryUI; // assign inventory ui in the inspector
+    public Menu inventory;
+    private GameObject inventoryUI; // assign inventory ui in the inspector
     private InputActionProperty inventoryButton;
     public InventoryData inventoryData;
 
+    public bool playingLevel = false;
     public bool canViewInventory = false;
 
     private void Awake()
     {
         instance = this;
         LoadInventoryData(); // load inventory data on startup
+
+        inventoryUI = inventory.gameObject;
     }
 
     public void Update()
     {
+        if (!playingLevel || GameManager.instance.isPaused)
+        {
+            canViewInventory = true;
+        }
+        else if (playingLevel && !GameManager.instance.isPaused)
+        {
+            canViewInventory = false;
+        }
+
         if (ControlManager.instance.inventoryButton.action.WasPressedThisFrame() && canViewInventory)
         {
             ToggleInventory();
@@ -67,6 +80,15 @@ public class InventoryManager : MonoBehaviour
     {
         if (inventoryUI != null)
         {
+            if (GameManager.instance.isPaused)
+            {
+                MenuManager.instance.ShowInventory(inventory);
+            }
+            else
+            {
+                MenuManager.instance.ShowMenu(inventory);
+            }
+
             inventoryUI.SetActive(!inventoryUI.activeSelf);
         }
     }

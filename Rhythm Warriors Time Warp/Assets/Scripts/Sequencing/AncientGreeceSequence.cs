@@ -15,6 +15,7 @@ public class AncientGreeceSequence : MonoBehaviour
     void Start()
     {
         // fragment.ID = Artifact.instance.fragments[3].ID;
+        InventoryManager.instance.playingLevel = true;
 
         SongManager.instance.StartSong();
     }

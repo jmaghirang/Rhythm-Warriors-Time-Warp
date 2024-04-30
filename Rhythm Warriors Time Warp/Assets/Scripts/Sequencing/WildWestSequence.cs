@@ -17,6 +17,7 @@ public class WildWestSequence : MonoBehaviour
     void Start()
     {
         // fragment.ID = Artifact.instance.fragments[1].ID;
+        InventoryManager.instance.playingLevel = true;
 
         SongManager.instance.StartSong();
     }

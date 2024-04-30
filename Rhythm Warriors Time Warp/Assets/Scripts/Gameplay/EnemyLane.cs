@@ -21,7 +21,7 @@ public class EnemyLane : Lane
 
     private void Awake()
     {
-        note = Resources.Load("Prefabs/" + enemyType, typeof(GameObject)) as GameObject;
+        note = Resources.Load<GameObject>("Prefabs/" + enemyType);
     }
 
     // Start is called before the first frame update

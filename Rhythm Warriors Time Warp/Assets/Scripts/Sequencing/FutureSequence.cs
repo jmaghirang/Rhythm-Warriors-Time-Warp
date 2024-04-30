@@ -15,6 +15,7 @@ public class FutureSequence : MonoBehaviour
     void Start()
     {
         // fragment.ID = Artifact.instance.fragments[5].ID;
+        InventoryManager.instance.playingLevel = true;
 
         SongManager.instance.StartSong();
     }

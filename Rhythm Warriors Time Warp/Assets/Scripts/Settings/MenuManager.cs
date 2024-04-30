@@ -84,7 +84,7 @@ public class MenuManager : MonoBehaviour
         gameOverMenu.UI.SetActive(true);
 
         // Position of pauseMenu will be spawned at the position of where the player is looking
-        //ShowMenu(gameOverMenu);
+        ShowMenu(gameOverMenu);
     }
 
     public void TriggerPauseMenu()
@@ -94,5 +94,11 @@ public class MenuManager : MonoBehaviour
 
         // Position of pauseMenu will be spawned at the position of where the player is looking
         ShowMenu(pauseMenu);
+    }
+
+    public void ShowInventory(Menu m)
+    {
+        m.UI.transform.position = new Vector3(pauseMenu.transform.position.x - 1f, pauseMenu.transform.position.y, pauseMenu.transform.position.z);
+        OrientMenu(m);
     }
 }

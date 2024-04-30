@@ -15,6 +15,7 @@ public class FeudalJapanSequence : MonoBehaviour
     void Start()
     {
         // fragment.ID = Artifact.instance.fragments[2].ID;
+        InventoryManager.instance.playingLevel = true;
 
         SongManager.instance.StartSong();
     }
