@@ -25287,7 +25287,7 @@ MonoBehaviour:
   songDelay: 0
   errorMargin: 0.2
   inputDelay: 0
-  fileLocation: Ancient Egypt Midi/ancient egypt notes.mid
+  fileLocation: Ancient Egypt Midi/newegyptmapt.mid
   noteScreenTime: 3
   noteSpawnZ: 80
   noteHitZ: 1

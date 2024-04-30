@@ -6772,6 +6772,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 920591243, guid: 7a284f14247cfd04fae39ed37effe002, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5159502019294666306, guid: 7a284f14247cfd04fae39ed37effe002, type: 3}
       propertyPath: m_Name
       value: Berkana
@@ -18640,7 +18644,7 @@ MonoBehaviour:
   songDelay: 0
   errorMargin: 0.2
   inputDelay: 0
-  fileLocation: Ancient Greece MIDI/greeknotes.mid
+  fileLocation: Ancient Greece MIDI/greekbeatmapnew.mid
   noteScreenTime: 3
   noteSpawnZ: 80
   noteHitZ: 1
