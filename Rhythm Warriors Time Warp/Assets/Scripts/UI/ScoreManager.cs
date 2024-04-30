@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
 
-    public float intensity = 0; // intensity of the vignette effect
+    public float intensity = 1; // intensity of the vignette effect
 
     public PostProcessVolume _volume;
     Vignette _vignette;

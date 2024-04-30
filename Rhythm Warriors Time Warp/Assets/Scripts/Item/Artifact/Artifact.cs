@@ -1,4 +1,4 @@
-using System;
+/* using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,7 +47,6 @@ public class Artifact : MonoBehaviour
     }
 }
 
-/*
 public class Artifact : MonoBehaviour
 {
     public static Artifact instance;

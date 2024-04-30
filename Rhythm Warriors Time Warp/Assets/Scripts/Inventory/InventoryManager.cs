@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -25,10 +24,12 @@ public class InventoryManager : MonoBehaviour
             ToggleInventory();
         }
     }
+
     public InventoryData GetInventoryData()
     {
         return inventoryData;
     }
+
     private void LoadInventoryData()
     {
         // load inventory data from persistent storage
@@ -70,44 +71,25 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    // this method is called when an artifact is collected
-    // it accepts an artifact id as a parameter
     public void CollectArtifact(string artifactID)
     {
-        // if the artifact id is not in the dictionary, add it and set the value to true
         if (!inventoryData.artifactsCollected.ContainsKey(artifactID))
         {
             inventoryData.artifactsCollected.Add(artifactID, true);
         }
-        else // if the artifact id is already in the dictionary, set the value to true
+        else
         {
             inventoryData.artifactsCollected[artifactID] = true;
         }
-        // save the updated inventory data
         SaveInventoryData();
     }
 
-    // this method checks if an artifact has been collected
-    // it accepts an artifact id as a parameter and returns a boolean
     public bool IsArtifactCollected(string artifactID)
     {
-        // if the artifact id is in the dictionary, return the value (true if collected, false otherwise)
         if (inventoryData.artifactsCollected.ContainsKey(artifactID))
         {
             return inventoryData.artifactsCollected[artifactID];
         }
-        // if the artifact id is not in the dictionary, return false
         return false;
     }
-
-    /* add back in when we have a button to toggle inventory
-    void OnDestroy()
-    {
-        // unregister the inventory button action
-        if (inventoryButton != null)
-        {
-            inventoryButton.action.performed -= _ => ToggleInventory();
-        }
-    }
-    */
 }
