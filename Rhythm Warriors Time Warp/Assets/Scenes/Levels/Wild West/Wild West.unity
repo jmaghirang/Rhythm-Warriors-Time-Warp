@@ -4365,6 +4365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2e1691713f7eb46b9274f4c988dd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intensity: 0
   cameraShake: {fileID: 82795745}
   hapticFeedback: {fileID: 82795744}
 --- !u!1001 &53997196
@@ -7617,7 +7618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6513711426493924375, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: inventoryButton.m_UseReference
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6513711426493924375, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: inventoryButton.m_Action.m_Name
@@ -54820,6 +54821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2e1691713f7eb46b9274f4c988dd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  intensity: 0
   cameraShake: {fileID: 82795745}
   hapticFeedback: {fileID: 82795744}
 --- !u!1001 &1278426645
@@ -76031,6 +76033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 1847818750}
+  canViewInventory: 0
 --- !u!114 &1764558750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89450,30 +89453,13 @@ PrefabInstance:
     - {fileID: 7399526153793855762, guid: 88fcbb9198b78c5498e823ef11cc10a8, type: 3}
     - {fileID: 851516034392292320, guid: 88fcbb9198b78c5498e823ef11cc10a8, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3549437265815622640, guid: 88fcbb9198b78c5498e823ef11cc10a8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2109804218}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88fcbb9198b78c5498e823ef11cc10a8, type: 3}
 --- !u!224 &2109804216 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3642545287968698378, guid: 88fcbb9198b78c5498e823ef11cc10a8, type: 3}
   m_PrefabInstance: {fileID: 2109804215}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2109804218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1847818750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 059e0aee960c8964e905b1c789ab4352, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collectedMaterial: {fileID: 2100000, guid: fa51f2540e7ca82489d695cd45956551, type: 2}
-  notCollectedMaterial: {fileID: 2100000, guid: 007ecd2250870084e88521d74e1ddda3, type: 2}
 --- !u!1 &2114700753
 GameObject:
   m_ObjectHideFlags: 0

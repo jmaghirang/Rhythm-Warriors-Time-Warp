@@ -10,10 +10,20 @@ public class InventoryManager : MonoBehaviour
     private InputActionProperty inventoryButton;
     public InventoryData inventoryData;
 
+    public bool canViewInventory = false;
+
     private void Awake()
     {
         instance = this;
         LoadInventoryData(); // load inventory data on startup
+    }
+
+    public void Update()
+    {
+        if (ControlManager.instance.inventoryButton.action.WasPressedThisFrame() && canViewInventory)
+        {
+            ToggleInventory();
+        }
     }
     public InventoryData GetInventoryData()
     {

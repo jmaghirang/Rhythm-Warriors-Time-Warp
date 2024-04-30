@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 // some VFX code referenced from: https://www.youtube.com/watch?v=N3JR5m7knGQ&t=86s
 public class ScoreManager : MonoBehaviour
@@ -16,6 +17,8 @@ public class ScoreManager : MonoBehaviour
     // reference to other scripts
     public CameraShake cameraShake;
     public HapticFeedback hapticFeedback;
+
+    public TextMeshProUGUI accuracyText;
 
     private int currentScore = 0;
     private int currentMisses = 0;
@@ -40,11 +43,16 @@ public class ScoreManager : MonoBehaviour
         {
             _vignette.enabled.Override(false);
         }
+
+        accuracyText.text = "";
     }
 
     void Update()
     {
-
+        if (!SongManager.instance.audioSource.isPlaying)
+        {
+            accuracyText.text = "";
+        }
     }
 
     public int GetCurrentScore()
@@ -73,6 +81,30 @@ public class ScoreManager : MonoBehaviour
         OnMiss();
     }
 
+    public void LateHit()
+    {
+        accuracyText.text = "Late";
+        accuracyText.color = Color.yellow;
+    }
+
+    public void EarlyHit()
+    {
+        accuracyText.text = "Early";
+        accuracyText.color = Color.yellow;
+    }
+
+    public void PerfectHit()
+    {
+        accuracyText.text = "Perfect!";
+        accuracyText.color = Color.cyan;
+    }
+
+    public void MissedHit()
+    {
+        accuracyText.text = "Miss";
+        accuracyText.color = Color.white;
+    }
+
     public void OnMiss()
     {
         // check if missCounter has increased
@@ -93,6 +125,8 @@ public class ScoreManager : MonoBehaviour
 
         GameManager.instance.player.TakeDamage(2);
         AudioManager.instance.missSFX.Play();
+
+        MissedHit();
 
         Debug.Log("Miss");
         Debug.Log("Misses updated. Current misses: " + currentMisses);

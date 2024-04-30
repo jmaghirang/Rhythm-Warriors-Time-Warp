@@ -46,10 +46,7 @@ public class Enemy : Object
             // Destroy(vfx);
 
             // This means player misses
-            if (assignedTime + marginOfError <= audioTime)
-            {
-               ScoreManager.instance.UpdateMisses(1); 
-            }
+            ScoreManager.instance.UpdateMisses(1); 
         }
         else
         {
@@ -70,6 +67,25 @@ public class Enemy : Object
         {
             if (Math.Abs(audioTime - assignedTime) < marginOfError)
             {
+                if ((audioTime - assignedTime) + marginOfError < 0) // Early hit
+                {
+                    ScoreManager.instance.EarlyHit();
+
+                    Debug.Log("Early hit");
+                }
+                else if ((audioTime - assignedTime) + marginOfError > 0) // Late hit
+                {
+                    ScoreManager.instance.LateHit();
+
+                    Debug.Log("Late hit");
+                }
+                else if (audioTime == assignedTime)
+                {
+                    ScoreManager.instance.PerfectHit();
+
+                    Debug.Log("Perfect!");
+                }
+
                 VFXManager.instance.TriggerVFX(this);
                 // Destroy enemy if it gets hit
                 Destroy(gameObject);
@@ -78,7 +94,7 @@ public class Enemy : Object
                 //ScoreManager scoreManager = FindObjectOfType<ScoreManager>(); // get reference
                 if (ScoreManager.instance != null)
                 {
-                    print("Hit accurate");
+                    Debug.Log("Hit accurate");
                     ScoreManager.instance.UpdateScore(1); // add one score when the weapon hits the enemy
                 }
                 else
@@ -89,7 +105,7 @@ public class Enemy : Object
             else
             {
                 ScoreManager.instance.UpdateMisses(1);
-                print($"Hit inaccurate with {Math.Abs(audioTime - assignedTime)} delay");
+                Debug.Log($"Hit inaccurate with {Math.Abs(audioTime - assignedTime)} delay");
             }
         }
     }
