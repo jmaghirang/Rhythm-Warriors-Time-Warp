@@ -96,9 +96,12 @@ public class TutorialSequence : MonoBehaviour
 
         // Show the player the weapon in their hand
         weapon.SetActive(true);
+        InventoryManager.instance.inventory.gameObject.SetActive(true);
 
         // Code to show player items received
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
+
+        InventoryManager.instance.inventory.gameObject.SetActive(false);
 
         DialogueManager.instance.dialogueBox.UI.SetActive(true);
     }
