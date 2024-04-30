@@ -22,6 +22,7 @@ public class Settings : MonoBehaviour
 
     public CameraShake cameraShake;
     public HapticFeedback hapticFeedback;
+    public TunnelingVignetteController edgeBlur;
 
     public Toggle teleMoveToggle;
     public Toggle contMoveToggle;
@@ -55,8 +56,6 @@ public class Settings : MonoBehaviour
         contRotation = player.GetComponent<ActionBasedContinuousTurnProvider>();
 
         /* load player preferences
-         uiToggleToggle.isOn = PlayerPrefs.GetInt("UIToggleEnabled", 1) == 1;
-         edgeBlurToggle.isOn = PlayerPrefs.GetInt("EdgeBlurEnabled", 1) == 1;
          motionBlurToggle.isOn = PlayerPrefs.GetInt("MotionBlurEnabled", 1) == 1;
         */
 
@@ -71,6 +70,7 @@ public class Settings : MonoBehaviour
 
         cameraShakeToggle.isOn = PlayerPrefs.GetInt("CameraShakeEnabled", 1) == 1;
         hapticFeedbackToggle.isOn = PlayerPrefs.GetInt("HapticFeedbackEnabled", 1) == 1;
+        edgeBlurToggle.isOn = PlayerPrefs.GetInt("EdgeBlurEnabled", 1) == 1;
 
         panelsToggle.isOn = PlayerPrefs.GetInt("PanelsEnabled", 1) == 1;
 
@@ -87,6 +87,7 @@ public class Settings : MonoBehaviour
 
         ToggleCameraShake(cameraShakeToggle.isOn);
         ToggleHapticFeedback(hapticFeedbackToggle.isOn);
+        ToggleEdgeBlur(edgeBlurToggle.isOn);
 
         SetVolume();
 
@@ -170,6 +171,20 @@ public class Settings : MonoBehaviour
         else
         {
             hapticFeedback.enabled = false;
+        }
+    }
+
+    public void ToggleEdgeBlur(bool defaultSetting)
+    {
+        PlayerPrefs.SetInt("EdgeBlurEnabled", defaultSetting ? 1 : 0);
+
+        if (edgeBlurToggle.isOn)
+        {
+            edgeBlur.enabled = true;
+        }
+        else
+        {
+            edgeBlur.enabled = false;
         }
     }
 

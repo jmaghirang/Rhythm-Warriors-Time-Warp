@@ -5533,6 +5533,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5528984956299130045, guid: 0ba0eb67fb06fa245ad0736e1646a3dd, type: 3}
   m_PrefabInstance: {fileID: 217249384}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &219014865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9138668032358737224, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
+  m_PrefabInstance: {fileID: 1771492335}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c500f2a52a5eb4a952658e1bf51e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &219920727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33462,6 +33473,10 @@ PrefabInstance:
       propertyPath: volume
       value: 
       objectReference: {fileID: 1389551431}
+    - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: edgeBlur
+      value: 
+      objectReference: {fileID: 219014865}
     - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: cameraShake
       value: 
