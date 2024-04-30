@@ -264,7 +264,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assignedTime: 0
-  canBeHit: 0
   vfx: {fileID: 7385635063262165958, guid: f156ac1497c0ece4bb5cb200ec97951c, type: 3}
 --- !u!1 &6554396695751698625
 GameObject:

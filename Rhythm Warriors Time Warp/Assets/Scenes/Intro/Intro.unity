@@ -8329,7 +8329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23260,6 +23260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 366892270}
+  canViewInventory: 0
 --- !u!1001 &2064674903
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24438,7 +24439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1035775109346670452, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1035775109346670452, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -24658,7 +24659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7531871788703225667, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: spawnDistance
-      value: 1.25
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

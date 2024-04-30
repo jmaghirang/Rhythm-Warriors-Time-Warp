@@ -15,6 +15,14 @@ public class EnemyLane : Lane
     public List<Enemy> enemies = new();
 
     public string enemyType;
+    GameObject note;
+
+    //public GameObject enemyPrefab;
+
+    private void Awake()
+    {
+        note = Resources.Load("Prefabs/" + enemyType, typeof(GameObject)) as GameObject;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -76,8 +84,11 @@ public class EnemyLane : Lane
                 // Debug.Log("Spawn Index: " + spawnIndex + "\n");
 
                 // Spawn object at timestamp - screentime
-                GameObject note = Resources.Load("Prefabs/" + enemyType, typeof(GameObject)) as GameObject;
-                var enemy = Instantiate(note, new Vector3(transform.localPosition.x, transform.localPosition.y, SongManager.instance.noteSpawnZ), note.transform.rotation, transform);
+                // GameObject note = Resources.Load("Prefabs/" + enemyType, typeof(GameObject)) as GameObject;
+
+                GameObject enemy = Instantiate(note, new Vector3(transform.localPosition.x, transform.localPosition.y, SongManager.instance.noteSpawnZ), note.transform.rotation, transform);
+                //ScoreManager.instance.UpdateScore(1);
+
                 Debug.Log("Enemy Spawned");
 
                 // Add spawned enemy to list

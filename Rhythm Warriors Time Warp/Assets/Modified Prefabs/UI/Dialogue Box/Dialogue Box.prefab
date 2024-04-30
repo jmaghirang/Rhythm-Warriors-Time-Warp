@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04bd0e68a98e83498113b2829bcd368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDistance: 1
+  spawnDistance: 2
   UI: {fileID: 4135175838917137598}
 --- !u!1 &6441068125482035252
 GameObject:

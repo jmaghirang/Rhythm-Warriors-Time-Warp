@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Microsoft.MixedReality.Toolkit.Experimental.UI;
-using UnityEditor.ShaderGraph.Internal;
 
 //code from https://youtu.be/irJm8LkkDGw?si=X4xQS6N764VAtp2Q
 
