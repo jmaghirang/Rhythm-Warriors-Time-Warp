@@ -16,7 +16,7 @@ public class WildWestSequence : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fragment.ID = Artifact.instance.fragments[1].ID;
+        // fragment.ID = Artifact.instance.fragments[1].ID;
 
         SongManager.instance.StartSong();
     }
@@ -37,7 +37,8 @@ public class WildWestSequence : MonoBehaviour
 
         if (fragment.isCollected)
         {
-            Artifact.instance.fragments[1].isCollected = fragment.isCollected;
+            InventoryManager.instance.CollectArtifact(fragment.ID.ToString()); // Collect the artifact
+            InventoryUIManager.instance.OnArtifactCollected(fragment.ID.ToString()); // Update UI
             SceneTransitionManager.instance.LoadNextScene(6);
         }
     }
