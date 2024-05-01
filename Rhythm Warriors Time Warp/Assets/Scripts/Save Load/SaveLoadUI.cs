@@ -7,7 +7,6 @@ public class SaveLoadUI : MonoBehaviour
     public Button saveButton;
     public Button loadButton;
     public GameObject[] fragmentPrefabs;
-    public GameObject[] levelObjects;
     public Text playerNameText;
     public Text dateSavedText;
     public Text saveTimeText;
@@ -51,13 +50,6 @@ public class SaveLoadUI : MonoBehaviour
 
     int GetSelectedLevel()
     {
-        for (int i = 0; i < levelObjects.Length; i++)
-        {
-            if (levelObjects[i].activeSelf)
-            {
-                return i + 1;
-            }
-        }
         return 1;
     }
 
@@ -67,11 +59,6 @@ public class SaveLoadUI : MonoBehaviour
         dateSavedText.text = "Date Saved: " + data.dateSaved.ToString();
         saveTimeText.text = "Time Saved: " + data.saveTime.ToString();
         currentLevelText.text = "Current Level: " + data.currentLevel.ToString();
-
-        for (int i = 0; i < levelObjects.Length; i++)
-        {
-            levelObjects[i].SetActive(i + 1 == data.currentLevel);
-        }
 
         foreach (string fragmentID in data.collectedFragmentIDs)
         {
