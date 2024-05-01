@@ -36,7 +36,7 @@ public class WildWestSequence : MonoBehaviour
             StartCoroutine(CollectFragment());
         }
 
-    if (fragment != null && fragment.isCollected)
+        if (fragment != null && fragment.isCollected)
         {
             InventoryManager.instance.CollectArtifact(fragment.ID.ToString()); // Collect the artifact
             // InventoryUIManager.instance.OnArtifactCollected(fragment.ID.ToString()); // Update UI

@@ -22821,10 +22821,30 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: messages.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
+      propertyPath: characters.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
+      propertyPath: characters.Array.data[1].name
+      value: Bull
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
+      propertyPath: messages.Array.data[0].charID
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: messages.Array.data[0].message
+      value: The pharaoh's curse has awoken the undead. Be wary, traveler!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
+      propertyPath: messages.Array.data[1].message
+      value: I'll put you restless spirits to rest and claim what's rightfully mine.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
+      propertyPath: messages.Array.data[2].message
       value: The fragment!
       objectReference: {fileID: 0}
     - target: {fileID: 4135175838917137598, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}

@@ -15008,6 +15008,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1372695118}
     - target: {fileID: 4507001929566214724, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: nextLineSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 12e7accd9e963114aaeaab48754e542f, type: 3}
+    - target: {fileID: 4507001929566214724, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: textComponent
       value: 
       objectReference: {fileID: 1372695116}
@@ -19650,11 +19654,32 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: messages.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
+      propertyPath: characters.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
+      propertyPath: characters.Array.data[0].name
+      value: Me
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
+      propertyPath: characters.Array.data[1].name
+      value: Samurai
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
+      propertyPath: messages.Array.data[1].charID
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: messages.Array.data[0].message
-      value: The fragment!
+      value: You've entered the realm of Bushido, where honor and skill are tested
+        with every blade.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
+      propertyPath: messages.Array.data[1].message
+      value: I'll prove my strength, one clash at a time.
       objectReference: {fileID: 0}
     - target: {fileID: 4135175838917137598, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: m_Name

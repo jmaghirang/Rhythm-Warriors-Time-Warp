@@ -34,12 +34,12 @@ public class FeudalJapanSequence : MonoBehaviour
             StartCoroutine(CollectFragment());
         }
 
-        if (fragment.isCollected)
+        if (fragment != null && fragment.isCollected)
         {
             InventoryManager.instance.CollectArtifact(fragment.ID.ToString()); // Collect the artifact
             // InventoryUIManager.instance.OnArtifactCollected(fragment.ID.ToString()); // Update UI
-            // Artifact.instance.fragments[2].isCollected = fragment.isCollected;
-            SceneTransitionManager.instance.LoadNextScene(8); //Next level - greece?
+            // Artifact.instance.fragments[1].isCollected = fragment.isCollected;
+            SceneTransitionManager.instance.LoadNextScene(6);
         }
     }
 
