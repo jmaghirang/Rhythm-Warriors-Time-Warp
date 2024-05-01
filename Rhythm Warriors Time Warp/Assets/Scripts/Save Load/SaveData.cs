@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-[System.Serializable]
+[Serializable]
 public class SaveData
 {
     public string playerName;
-    public DateTime dateSaved;
-    public DateTime saveTime;
     public string[] collectedFragmentIDs;
     public int currentLevel;
+    public string dateSaved;
+    public string timeSaved;
 }

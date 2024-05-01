@@ -1,81 +1,112 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Collections.Generic;
 
 public class SaveLoadUI : MonoBehaviour
 {
-    public Button saveButton;
-    public Button loadButton;
-    public GameObject[] fragmentPrefabs;
     public Text playerNameText;
+    public Text timeSavedText;
     public Text dateSavedText;
-    public Text saveTimeText;
-    public Text currentLevelText;
 
-    private SaveData currentSaveData;
+    public GameObject[] fragmentPrefabs;
 
-    void Start()
+    private int currentSaveSlot = 1; // default to the first save slot
+
+    private void Start()
     {
-        saveButton.onClick.AddListener(SaveGame);
-        loadButton.onClick.AddListener(LoadGame);
-        LoadSavedData();
+        // initialize UI with saved data
+        UpdateUITextFromPrefs();
     }
 
-    void SaveGame()
+    private void UpdateUITextFromPrefs()
     {
-        currentSaveData = new SaveData();
-        currentSaveData.playerName = "Player";
-        currentSaveData.dateSaved = DateTime.Now;
-        currentSaveData.saveTime = DateTime.Now;
-        currentSaveData.collectedFragmentIDs = GetCollectedFragmentIDs();
-        currentSaveData.currentLevel = GetSelectedLevel();
-
-        SaveLoadManager.SaveGame(currentSaveData);
-        LoadSavedData();
+        playerNameText.text = PlayerPrefs.GetString($"PlayerName{currentSaveSlot}", "Default Player");
+        timeSavedText.text = PlayerPrefs.GetString($"TimeSaved{currentSaveSlot}", "00:00");
+        dateSavedText.text = PlayerPrefs.GetString($"DateSaved{currentSaveSlot}", "MM/dd/yyyy");
     }
 
-    void LoadGame()
+    public void SaveSlot1Clicked()
     {
-        currentSaveData = SaveLoadManager.LoadGame();
-        if (currentSaveData != null)
+        SaveDataToPrefs(1);
+    }
+
+    public void SaveSlot2Clicked()
+    {
+        SaveDataToPrefs(2);
+    }
+
+    public void SaveSlot3Clicked()
+    {
+        SaveDataToPrefs(3);
+    }
+
+    public void LoadSlot1Clicked()
+    {
+        LoadDataFromPrefs(1);
+    }
+
+    public void LoadSlot2Clicked()
+    {
+        LoadDataFromPrefs(2);
+    }
+
+    public void LoadSlot3Clicked()
+    {
+        LoadDataFromPrefs(3);
+    }
+
+    private void SaveDataToPrefs(int slotNumber)
+    {
+        PlayerPrefs.SetString($"PlayerName{slotNumber}", playerNameText.text);
+        PlayerPrefs.SetString($"TimeSaved{slotNumber}", DateTime.Now.ToShortTimeString());
+        PlayerPrefs.SetString($"DateSaved{slotNumber}", DateTime.Today.ToShortDateString());
+
+        // dummy collected fragment IDs for testing
+        string[] collectedFragmentIDs = new string[] { "Fragment1", "Fragment2", "Fragment3", "Fragment4", "Fragment5" };
+        SaveCollectedFragmentsToPrefs(slotNumber, collectedFragmentIDs);
+
+        PlayerPrefs.Save();
+
+        UpdateUITextFromPrefs();
+    }
+
+    private void SaveCollectedFragmentsToPrefs(int slotNumber, string[] collectedFragmentIDs)
+    {
+        string json = JsonUtility.ToJson(new SerializableStringArray(collectedFragmentIDs));
+        PlayerPrefs.SetString($"CollectedFragments{slotNumber}", json);
+    }
+
+    private void LoadDataFromPrefs(int slotNumber)
+    {
+        currentSaveSlot = slotNumber;
+        UpdateUITextFromPrefs();
+
+        string json = PlayerPrefs.GetString($"CollectedFragments{slotNumber}", string.Empty);
+        SerializableStringArray serializedArray = JsonUtility.FromJson<SerializableStringArray>(json);
+        if (serializedArray != null)
         {
-            ApplyLoadedData(currentSaveData);
+            // load 3D model fragments based on collected fragment IDs
+            Load3DModelFragments(serializedArray.array);
         }
     }
 
-    string[] GetCollectedFragmentIDs()
+    private void Load3DModelFragments(string[] fragmentIDs)
     {
-        return new string[] { "1", "2", "3", "4", "5"};
-    }
-
-    int GetSelectedLevel()
-    {
-        return 1;
-    }
-
-    void ApplyLoadedData(SaveData data)
-    {
-        playerNameText.text = "Player Name: " + data.playerName;
-        dateSavedText.text = "Date Saved: " + data.dateSaved.ToString();
-        saveTimeText.text = "Time Saved: " + data.saveTime.ToString();
-        currentLevelText.text = "Current Level: " + data.currentLevel.ToString();
-
-        foreach (string fragmentID in data.collectedFragmentIDs)
+        foreach (GameObject fragmentPrefab in fragmentPrefabs)
         {
-            int id = int.Parse(fragmentID);
-            if (id >= 1 && id <= fragmentPrefabs.Length)
-            {
-                fragmentPrefabs[id - 1].SetActive(true);
-            }
+            Instantiate(fragmentPrefab, transform.position, Quaternion.identity, transform);
         }
     }
+}
 
-    void LoadSavedData()
+[Serializable]
+public class SerializableStringArray
+{
+    public string[] array;
+
+    public SerializableStringArray(string[] array)
     {
-        currentSaveData = SaveLoadManager.LoadGame();
-        if (currentSaveData != null)
-        {
-            ApplyLoadedData(currentSaveData);
-        }
+        this.array = array;
     }
 }

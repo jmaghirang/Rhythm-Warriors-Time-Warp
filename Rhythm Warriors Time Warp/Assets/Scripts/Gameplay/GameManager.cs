@@ -9,10 +9,18 @@ using UnityEngine.UIElements;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    private int currentLevel;
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public Player player;
@@ -102,5 +110,22 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log ("QUIT!");
         Application.Quit();
+    }
+
+    /* for save/load functionality */
+    public void LoadPlayerProgress(SaveData saveData)
+    {
+        // update player progress based on saveData
+        currentLevel = saveData.currentLevel;
+    }
+
+    public int GetCurrentLevel()
+    {
+        return currentLevel;
+    }
+
+    public void SetCurrentLevel(int level)
+    {
+        currentLevel = level;
     }
 }
