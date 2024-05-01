@@ -206,6 +206,7 @@ MonoBehaviour:
   playerCamera: {fileID: 0}
   pauseMenu: {fileID: 0}
   gameOverMenu: {fileID: 0}
+  heightOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &3458641305719499114
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,18 +275,6 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -5449384609717469660, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  hideButton:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Hide Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: bfdf623f-5aed-41da-bdc7-a6434226782f
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
   inventoryButton:
     m_UseReference: 1
     m_Action:
@@ -446,6 +435,7 @@ MonoBehaviour:
   pauseIndexes: 
   endOfDialogue: 0
   fixedBox: 0
+  nextLineSound: {fileID: 0}
 --- !u!1 &5721595996204775917
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +483,7 @@ MonoBehaviour:
   inventory: {fileID: 0}
   playingLevel: 0
   canViewInventory: 0
+  hasInventory: 0
 --- !u!1 &5734488533664962245
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +627,7 @@ MonoBehaviour:
   cameraShake: {fileID: 0}
   hapticFeedback: {fileID: 0}
   edgeBlur: {fileID: 0}
+  damageEffect: {fileID: 0}
   teleMoveToggle: {fileID: 0}
   contMoveToggle: {fileID: 0}
   snapRotationToggle: {fileID: 0}
@@ -643,9 +635,8 @@ MonoBehaviour:
   hapticFeedbackToggle: {fileID: 0}
   cameraShakeToggle: {fileID: 0}
   edgeBlurToggle: {fileID: 0}
-  motionBlurToggle: {fileID: 0}
+  damageEffectToggle: {fileID: 0}
   panelsToggle: {fileID: 0}
-  postProcessVolume: {fileID: 0}
 --- !u!1 &6273365774075448987
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +721,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7370059009483149131}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 50a9211d01b07b1438011eaccfddc982, type: 3}
   m_Name: 
@@ -786,6 +777,8 @@ MonoBehaviour:
   player: {fileID: 0}
   startPlaying: 0
   isPaused: 0
+  playingTutorial: 0
+  isGameOver: 0
 --- !u!1 &9161623462619134108
 GameObject:
   m_ObjectHideFlags: 0

@@ -41,14 +41,14 @@ public class DialogueManager : MonoBehaviour
 
     public bool fixedBox = false;
 
-    public AudioClip nextLineSound;
-    private AudioSource audioSource;
+    public AudioSource nextLineSound;
+    //private AudioSource audioSource;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        // Get the AudioSource component from this GameObject
+        /*// Get the AudioSource component from this GameObject
         audioSource = GetComponent<AudioSource>();
 
         // Add an AudioSource component if it doesn't exist
@@ -58,7 +58,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // Ensure the AudioSource doesn't play through the listener's ears
-        audioSource.spatialBlend = 0;
+        nextLineSound.spatialBlend = 0;*/
     }
 
     // Update is called once per frame
@@ -124,10 +124,11 @@ public class DialogueManager : MonoBehaviour
             endOfDialogue = true;
         }
 
-                // Play sound effect when moving to the next line
+        // Play sound effect when moving to the next line
         if (nextLineSound != null)
         {
-            audioSource.PlayOneShot(nextLineSound);
+            // audioSource.PlayOneShot(nextLineSound);
+            nextLineSound.Play();
         }
     }
 
@@ -148,6 +149,12 @@ public class DialogueManager : MonoBehaviour
 
         // Start typing the message
         StartCoroutine(TypeLine());
+
+        if (npc.isSpeaking)
+        {
+            Animator npcAnimator = npc.GetComponent<Animator>();
+            npcAnimator.SetTrigger("Talk");
+        }
     }
 
     public void DisplayDialogue(Message[] msgs, Character[] chars)

@@ -25,11 +25,8 @@ public class ControlManager : MonoBehaviour
     // With XR Device Simulator, it is Shift + B
     public InputActionProperty continueButton;
 
-    // XR Device Simulator, Space + B
-    public InputActionProperty hideButton;
-
     // Input on controller to trigger inventory
-    // It is set to the menu button on the right controller
+    // / XR Device Simulator, Space + B
     public InputActionProperty inventoryButton;
 
     // Start is called before the first frame update

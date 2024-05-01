@@ -4,11 +4,13 @@ using UnityEngine;
 using System;
 using UnityEngine.UI;
 using Microsoft.MixedReality.Toolkit.Experimental.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class TutorialSequence : MonoBehaviour
 {
     private int index;
 
+    public GameObject inventoryBtn;
     public GameObject weapon; // Weapon player will be shown holding
     public GameObject healthBar; // Health bar to show to player
     public GameObject timeBar; // Song progress bar to show to player
@@ -97,13 +99,17 @@ public class TutorialSequence : MonoBehaviour
         // Show the player the weapon in their hand
         weapon.SetActive(true);
         InventoryManager.instance.inventory.gameObject.SetActive(true);
+        inventoryBtn.SetActive(true);
 
         // Code to show player items received
         yield return new WaitForSeconds(3f);
 
         InventoryManager.instance.inventory.gameObject.SetActive(false);
+        inventoryBtn.SetActive(false);
 
         DialogueManager.instance.dialogueBox.UI.SetActive(true);
+
+        InventoryManager.instance.hasInventory = true;
     }
 
     public IEnumerator SwingWeapon()
@@ -120,6 +126,8 @@ public class TutorialSequence : MonoBehaviour
 
     public IEnumerator HitEnemies()
     {
+        GameManager.instance.playingTutorial = true;
+
         DialogueManager.instance.dialogueBox.UI.SetActive(false);
         healthBar.SetActive(true);
 
@@ -127,13 +135,25 @@ public class TutorialSequence : MonoBehaviour
         SongManager.instance.StartSong();
 
         // Wait until the player has hit a certain amount of enemies
-        yield return new WaitUntil(() => ScoreManager.instance.GetCurrentScore() > 600);
+        yield return new WaitUntil(() => ScoreManager.instance.GetCurrentScore() > 600 || ScoreManager.instance.GetCurrentMisses() > 10);
 
         // Stop the song to stop gameplay
         SongManager.instance.StopSong();
 
-        healthBar.SetActive(false);
-        DialogueManager.instance.dialogueBox.UI.SetActive(true);
+        if (ScoreManager.instance.GetCurrentMisses() > 10)
+        {
+            GameManager.instance.PauseGame();
+            MenuManager.instance.gameOverMenu.UI.SetActive(true);
+
+            GameManager.instance.isGameOver = true;
+        }
+        else
+        {
+            healthBar.SetActive(false);
+            DialogueManager.instance.dialogueBox.UI.SetActive(true);
+
+            GameManager.instance.playingTutorial = false;
+        }
     }
 
     public IEnumerator GiveTracker()
@@ -177,8 +197,16 @@ public class TutorialSequence : MonoBehaviour
 
     public void SavePlayerName()
     {
-        PlayerPrefs.SetString("PlayerName", NonNativeKeyboard.Instance.InputField.text);
+        if (ShowKeyboard.instance.inputField.text == "")
+        {
+            NonNativeKeyboard.Instance.Clear();
+            ShowKeyboard.instance.OpenKeyboard();
+        }
+        else
+        {
+            PlayerPrefs.SetString("PlayerName", NonNativeKeyboard.Instance.InputField.text);
 
-        nameSaved = true;
+            nameSaved = true;
+        }
     }
 }

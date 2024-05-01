@@ -26,11 +26,14 @@ public class GameManager : MonoBehaviour
     public Player player;
 
     public bool startPlaying; // Game has started or not started yet
-    public bool isPaused = false; // Game is paused or not - set to not paused initially
+    public bool isPaused; // Game is paused or not - set to not paused initially
 
     private float audioClipPosition = 0f; // Variable to keep track of the playback position of the audio clip
 
     private AudioSource theMusic; // Music in scene
+
+    public bool playingTutorial;
+    public bool isGameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -40,13 +43,18 @@ public class GameManager : MonoBehaviour
 
         // Set time scale to 1
         Time.timeScale = 1f;
+
+        playingTutorial = false;
+        isGameOver = false;
+        isPaused = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Handling pausing and resuming game
-        if (ControlManager.instance.pauseButton.action.WasPressedThisFrame() && !InventoryManager.instance.inventory.gameObject.activeSelf)
+        if (ControlManager.instance.pauseButton.action.WasPressedThisFrame() && !InventoryManager.instance.inventory.gameObject.activeSelf 
+            && !playingTutorial && !isGameOver)
         {
             MenuManager.instance.TriggerPauseMenu();
 
@@ -64,13 +72,11 @@ public class GameManager : MonoBehaviour
 
         if (player.currentHealth < 1)
         {
-            MenuManager.instance.TriggerGameOverPanel();
-
             TriggerGameOver();
         }
     }
 
-    private void PauseGame()
+    public void PauseGame()
     {
         VFXManager.instance.DisableEffects();
 
@@ -100,10 +106,13 @@ public class GameManager : MonoBehaviour
 
     public void TriggerGameOver()
     {
-        VFXManager.instance.DisableEffects();
+        PauseGame();
 
-        Time.timeScale = 0f;
-        SongManager.instance.StopSong();
+        Time.timeScale = 1f;
+
+        MenuManager.instance.gameOverMenu.UI.SetActive(true);
+
+        isGameOver = true;
     }
 
     public void QuitGame()

@@ -29,6 +29,8 @@ public class ScoreManager : MonoBehaviour
     public GameObject scorePanel; // reference to the score panel
     public GameObject missPanel; // reference to the miss panel
 
+    public int damageTaken; //inspector
+
     bool isEnabled = false;
 
     private void Awake()
@@ -151,7 +153,7 @@ public class ScoreManager : MonoBehaviour
             MissedHit();
         }
 
-        GameManager.instance.player.TakeDamage(2);
+        GameManager.instance.player.TakeDamage(damageTaken);
         AudioManager.instance.missSFX.Play();
 
         Debug.Log("Miss");
