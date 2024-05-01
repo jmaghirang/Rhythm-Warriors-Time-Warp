@@ -29,10 +29,12 @@ public class MenuManager : MonoBehaviour
     private NPC n;
     private Player p;
 
+    public Vector3 heightOffset; //inspector
+
     // Start is called before the first frame update
     void Start()
     {
-    
+        
     }
 
     // Update is called once per frame
@@ -67,7 +69,7 @@ public class MenuManager : MonoBehaviour
         if (n.isSpeaking && !p.isSpeaking)
         {
             // Position of menu will be spawned in front of the npc speaking and is faced towards the player
-            m.UI.transform.position = n.transform.position /*+ new Vector3(playerCamera.forward.x, 0, playerCamera.forward.z).normalized * -(m.spawnDistance + 0.5f)*/;
+            m.UI.transform.position = n.transform.position + (2.5f * Vector3.up) /*+ new Vector3(playerCamera.forward.x, 0, playerCamera.forward.z).normalized * -(m.spawnDistance + 0.5f)*/;
         }
         else
         {

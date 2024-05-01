@@ -12,19 +12,22 @@ public class InventoryManager : MonoBehaviour
 
     public bool playingLevel = false;
     public bool canViewInventory = false;
+    public bool hasInventory = false;
 
     private void Awake()
     {
         instance = this;
         DontDestroyOnLoad(gameObject);
         LoadInventoryData(); // load inventory data on startup
-
-        inventoryUI = inventory.gameObject;
     }
 
     public void Update()
     {
-        if (!playingLevel || GameManager.instance.isPaused)
+        if (!hasInventory)
+        {
+            canViewInventory = false;
+        }
+        else if (!playingLevel || GameManager.instance.isPaused)
         {
             canViewInventory = true;
         }
@@ -33,7 +36,7 @@ public class InventoryManager : MonoBehaviour
             canViewInventory = false;
         }
 
-        if (ControlManager.instance.inventoryButton.action.WasPressedThisFrame() && canViewInventory)
+        if (ControlManager.instance.inventoryButton.action.WasPressedThisFrame() && canViewInventory && !GameManager.instance.isGameOver)
         {
             ToggleInventory();
         }
@@ -79,6 +82,8 @@ public class InventoryManager : MonoBehaviour
 
     public void ToggleInventory()
     {
+        inventoryUI = inventory.gameObject;
+
         if (inventoryUI != null)
         {
             if (GameManager.instance.isPaused)

@@ -9,18 +9,27 @@ using Microsoft.MixedReality.Toolkit.Experimental.UI;
 
 public class ShowKeyboard : MonoBehaviour
 {
-    private TMP_InputField inputField;
+    public static ShowKeyboard instance;
+
+    public TMP_InputField inputField;
 
     public Button confirm;
 
     public float distance = 0.5f;
     public float verticalOffset = -0.5f;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         inputField = GetComponent<TMP_InputField>();
         inputField.onSelect.AddListener(x => OpenKeyboard());
+
+        inputField.characterLimit = 10;
     }
 
     // Update is called once per frame
