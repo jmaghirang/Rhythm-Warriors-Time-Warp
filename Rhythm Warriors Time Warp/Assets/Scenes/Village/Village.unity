@@ -17763,7 +17763,7 @@ PrefabInstance:
     - target: {fileID: 4627585695359849428, guid: e242759f74bad3449824aa539857e459, type: 3}
       propertyPath: disabledButtons.Array.data[0]
       value: 
-      objectReference: {fileID: 2132969183}
+      objectReference: {fileID: 936127254}
     - target: {fileID: 4658321621574592322, guid: e242759f74bad3449824aa539857e459, type: 3}
       propertyPath: m_Name
       value: Pause Menu
@@ -27915,6 +27915,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3228750408513985712, guid: d8b41ce140660d24fa4bac370ae50279, type: 3}
   m_PrefabInstance: {fileID: 935247849}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &936127254 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9036097414829029539, guid: e242759f74bad3449824aa539857e459, type: 3}
+  m_PrefabInstance: {fileID: 614005986}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &939189919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64628,17 +64639,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8975901782693978074, guid: 89662c646ff07fc428377c459a1b98de, type: 3}
   m_PrefabInstance: {fileID: 2129557846}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2132969183 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3713469310059132700, guid: e242759f74bad3449824aa539857e459, type: 3}
-  m_PrefabInstance: {fileID: 614005986}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2136044044
 PrefabInstance:
   m_ObjectHideFlags: 0

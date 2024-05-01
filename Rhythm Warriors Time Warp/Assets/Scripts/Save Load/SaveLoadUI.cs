@@ -2,12 +2,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
+using TMPro;
 
 public class SaveLoadUI : MonoBehaviour
 {
-    public Text playerNameText;
-    public Text timeSavedText;
-    public Text dateSavedText;
+    public TextMeshProUGUI playerNameText;
+    public TextMeshProUGUI timeSavedText;
+    public TextMeshProUGUI dateSavedText;
 
     public GameObject[] fragmentPrefabs;
 
@@ -21,7 +22,7 @@ public class SaveLoadUI : MonoBehaviour
 
     private void UpdateUITextFromPrefs()
     {
-        playerNameText.text = PlayerPrefs.GetString($"PlayerName{currentSaveSlot}", "Default Player");
+        playerNameText.text = PlayerPrefs.GetString($"PlayerName{currentSaveSlot}", "Player");
         timeSavedText.text = PlayerPrefs.GetString($"TimeSaved{currentSaveSlot}", "00:00");
         dateSavedText.text = PlayerPrefs.GetString($"DateSaved{currentSaveSlot}", "MM/dd/yyyy");
     }
