@@ -28554,7 +28554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33543,6 +33543,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1340419714}
     - target: {fileID: 4507001929566214724, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: nextLineSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7e64717ba1097354e8608e0f785c0ec0, type: 3}
+    - target: {fileID: 4507001929566214724, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: textComponent
       value: 
       objectReference: {fileID: 1688098710}
@@ -33667,6 +33671,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1097266823}
     - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: toggleSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e49454031ac24b4e9c4bee5acafdd80, type: 3}
+    - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: damageEffect
       value: 
       objectReference: {fileID: 1097266824}
@@ -33674,6 +33682,10 @@ PrefabInstance:
       propertyPath: panelsToggle
       value: 
       objectReference: {fileID: 1278410353}
+    - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: toggleOnSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e49454031ac24b4e9c4bee5acafdd80, type: 3}
     - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: contMoveToggle
       value: 
@@ -33690,6 +33702,10 @@ PrefabInstance:
       propertyPath: teleMoveToggle
       value: 
       objectReference: {fileID: 1773198961}
+    - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: toggleOffSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 9e49454031ac24b4e9c4bee5acafdd80, type: 3}
     - target: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: motionBlurToggle
       value: 

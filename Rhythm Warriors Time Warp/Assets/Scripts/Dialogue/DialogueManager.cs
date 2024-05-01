@@ -41,10 +41,24 @@ public class DialogueManager : MonoBehaviour
 
     public bool fixedBox = false;
 
+    public AudioClip nextLineSound;
+    private AudioSource audioSource;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        // Get the AudioSource component from this GameObject
+        audioSource = GetComponent<AudioSource>();
 
+        // Add an AudioSource component if it doesn't exist
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
+        // Ensure the AudioSource doesn't play through the listener's ears
+        audioSource.spatialBlend = 0;
     }
 
     // Update is called once per frame
@@ -108,6 +122,12 @@ public class DialogueManager : MonoBehaviour
             // Close the dialogue box
             dialogueBox.UI.SetActive(false);
             endOfDialogue = true;
+        }
+
+                // Play sound effect when moving to the next line
+        if (nextLineSound != null)
+        {
+            audioSource.PlayOneShot(nextLineSound);
         }
     }
 

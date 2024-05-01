@@ -24669,6 +24669,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1340419714}
     - target: {fileID: 4507001929566214724, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: nextLineSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7e64717ba1097354e8608e0f785c0ec0, type: 3}
+    - target: {fileID: 4507001929566214724, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: textComponent
       value: 
       objectReference: {fileID: 1688098710}
