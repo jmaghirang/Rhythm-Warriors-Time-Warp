@@ -216,6 +216,7 @@ MonoBehaviour:
   cameraShake: {fileID: 0}
   hapticFeedback: {fileID: 0}
   edgeBlur: {fileID: 0}
+  damageEffect: {fileID: 0}
   teleMoveToggle: {fileID: 4134063650623775718}
   contMoveToggle: {fileID: 3260830542360523263}
   snapRotationToggle: {fileID: 3397784514525136676}
@@ -223,9 +224,8 @@ MonoBehaviour:
   hapticFeedbackToggle: {fileID: 6546056620176767654}
   cameraShakeToggle: {fileID: 8382565974524513939}
   edgeBlurToggle: {fileID: 613492453018968567}
-  motionBlurToggle: {fileID: 3334841624869946624}
+  damageEffectToggle: {fileID: 0}
   panelsToggle: {fileID: 7075430802625191745}
-  postProcessVolume: {fileID: 0}
 --- !u!1 &92584305502103864
 GameObject:
   m_ObjectHideFlags: 0
@@ -14457,7 +14457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1173840157982687059
 Transform:
   m_ObjectHideFlags: 0
