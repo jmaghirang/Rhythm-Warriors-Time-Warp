@@ -16,6 +16,7 @@ public class InventoryManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        DontDestroyOnLoad(gameObject);
         LoadInventoryData(); // load inventory data on startup
 
         inventoryUI = inventory.gameObject;

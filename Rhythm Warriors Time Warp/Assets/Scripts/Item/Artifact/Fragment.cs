@@ -11,7 +11,15 @@ public class Fragment : MonoBehaviour
     {
         if (grabbable)
         {
-            GetComponent<XRGrabInteractable>().selectEntered.AddListener(x => FragmentCollected());
+            XRGrabInteractable grabInteractable = GetComponent<XRGrabInteractable>();
+            if (grabInteractable != null)
+            {
+                grabInteractable.selectEntered.AddListener(x => FragmentCollected());
+            }
+            else
+            {
+                Debug.LogWarning("XRGrabInteractable component not found on the object.");
+            }
         }
     }
 
