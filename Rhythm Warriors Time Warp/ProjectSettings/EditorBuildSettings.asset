@@ -53,6 +53,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Village/Village After Future.unity
     guid: aaf9479ea5e17d547ac2d9fc53116d60
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: fefb37ab82b848e4398104285978faf2
   - enabled: 0
     path: Assets/Scenes/Level Select.unity
     guid: cd4a047d8a5ee3a45adc551c7abacae0

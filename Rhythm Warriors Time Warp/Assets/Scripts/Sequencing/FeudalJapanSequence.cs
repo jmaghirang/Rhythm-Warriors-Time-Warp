@@ -41,6 +41,7 @@ public class FeudalJapanSequence : MonoBehaviour
             // InventoryUIManager.instance.OnArtifactCollected(fragment.ID.ToString()); // Update UI
             // Artifact.instance.fragments[1].isCollected = fragment.isCollected;
             SceneTransitionManager.instance.LoadNextScene(8);
+            fragment.isCollected = false;
         }
     }
 

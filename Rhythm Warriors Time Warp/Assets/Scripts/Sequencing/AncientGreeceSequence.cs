@@ -40,6 +40,7 @@ public class AncientGreeceSequence : MonoBehaviour
             // InventoryUIManager.instance.OnArtifactCollected(fragment.ID.ToString()); // Update UI
             // Artifact.instance.fragments[3].isCollected = fragment.isCollected;
             SceneTransitionManager.instance.LoadNextScene(10);
+            fragment.isCollected = false;
         }
     }
 

@@ -39,7 +39,8 @@ public class AncientEgyptSequence : MonoBehaviour
             //InventoryManager.instance.CollectArtifact(fragment.ID.ToString()); // Collect the artifact
             // InventoryUIManager.instance.OnArtifactCollected(fragment.ID.ToString()); // Update UI
             // Artifact.instance.fragments[1].isCollected = fragment.isCollected;
-            SceneTransitionManager.instance.LoadNextScene(10);
+            SceneTransitionManager.instance.LoadNextScene(12);
+            fragment.isCollected = false;
         }
     }
 

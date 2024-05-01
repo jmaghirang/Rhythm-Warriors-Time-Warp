@@ -41,6 +41,7 @@ public class FutureSequence : MonoBehaviour
             // InventoryUIManager.instance.OnArtifactCollected(fragment.ID.ToString()); // Update UI
             // Artifact.instance.fragments[1].isCollected = fragment.isCollected;
             SceneTransitionManager.instance.LoadNextScene(14);
+            fragment.isCollected = false;
         }
     }
 
