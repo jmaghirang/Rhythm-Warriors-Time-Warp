@@ -7429,6 +7429,10 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 2109804225}
+    - target: {fileID: 1346847098037170086, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: hasInventory
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1981456928316469639, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: hitSFX
       value: 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
+
 public class FutureSequence : MonoBehaviour
 {
     public Fragment fragment;
@@ -14,7 +15,7 @@ public class FutureSequence : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // fragment.ID = Artifact.instance.fragments[5].ID;
+        // fragment.ID = Artifact.instance.fragments[1].ID;
         InventoryManager.instance.playingLevel = true;
 
         SongManager.instance.StartSong();
@@ -34,11 +35,11 @@ public class FutureSequence : MonoBehaviour
             StartCoroutine(CollectFragment());
         }
 
-        if (fragment.isCollected)
+        if (fragment != null && fragment.isCollected)
         {
-            InventoryManager.instance.CollectArtifact(fragment.ID.ToString()); // Collect the artifact
+            //InventoryManager.instance.CollectArtifact(fragment.ID.ToString()); // Collect the artifact
             // InventoryUIManager.instance.OnArtifactCollected(fragment.ID.ToString()); // Update UI
-            // Artifact.instance.fragments[5].isCollected = fragment.isCollected;
+            // Artifact.instance.fragments[1].isCollected = fragment.isCollected;
             SceneTransitionManager.instance.LoadNextScene(14);
         }
     }

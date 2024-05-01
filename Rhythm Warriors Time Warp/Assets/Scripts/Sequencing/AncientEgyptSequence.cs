@@ -6,8 +6,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class AncientEgyptSequence : MonoBehaviour
 {
-    private bool songStarted = false;
-
     public Fragment fragment;
 
     [SerializeField]
@@ -16,24 +14,18 @@ public class AncientEgyptSequence : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // fragment.ID = Artifact.instance.fragments[2].ID;
+        // fragment.ID = Artifact.instance.fragments[1].ID;
         InventoryManager.instance.playingLevel = true;
 
-        GameManager.instance.player.isSpeaking = true;
-        DialogueManager.instance.npc.isSpeaking = false;
+        SongManager.instance.StartSong();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (DialogueManager.instance.endOfDialogue)
+        if (!SongManager.instance.audioSource.isPlaying && !GameManager.instance.isPaused)
         {
-            SongManager.instance.StartSong();
-            songStarted = true;
-        }
-
-        if (!SongManager.instance.audioSource.isPlaying && !GameManager.instance.isPaused && songStarted)
-        {
+            DialogueManager.instance.dialogueBox.UI.SetActive(true);
             trialComplete = true;
         }
 
@@ -44,10 +36,10 @@ public class AncientEgyptSequence : MonoBehaviour
 
         if (fragment != null && fragment.isCollected)
         {
-            InventoryManager.instance.CollectArtifact(fragment.ID.ToString()); // Collect the artifact
+            //InventoryManager.instance.CollectArtifact(fragment.ID.ToString()); // Collect the artifact
             // InventoryUIManager.instance.OnArtifactCollected(fragment.ID.ToString()); // Update UI
             // Artifact.instance.fragments[1].isCollected = fragment.isCollected;
-            SceneTransitionManager.instance.LoadNextScene(12);
+            SceneTransitionManager.instance.LoadNextScene(10);
         }
     }
 

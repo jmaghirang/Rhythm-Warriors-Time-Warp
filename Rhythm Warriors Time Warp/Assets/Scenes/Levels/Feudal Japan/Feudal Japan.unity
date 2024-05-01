@@ -15314,6 +15314,10 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1400597571}
+    - target: {fileID: 1346847098037170086, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+      propertyPath: hasInventory
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1981456928316469639, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
       propertyPath: hitSFX
       value: 
@@ -20058,7 +20062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4135175838917137598, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5622555124026892485, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: m_fontSize

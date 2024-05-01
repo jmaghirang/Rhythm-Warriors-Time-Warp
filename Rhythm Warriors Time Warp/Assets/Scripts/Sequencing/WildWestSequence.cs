@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-// Jamie Lee
-
 public class WildWestSequence : MonoBehaviour
 {
     public Fragment fragment;
@@ -38,7 +36,7 @@ public class WildWestSequence : MonoBehaviour
 
         if (fragment != null && fragment.isCollected)
         {
-            InventoryManager.instance.CollectArtifact(fragment.ID.ToString()); // Collect the artifact
+            //InventoryManager.instance.CollectArtifact(fragment.ID.ToString()); // Collect the artifact
             // InventoryUIManager.instance.OnArtifactCollected(fragment.ID.ToString()); // Update UI
             // Artifact.instance.fragments[1].isCollected = fragment.isCollected;
             SceneTransitionManager.instance.LoadNextScene(6);
