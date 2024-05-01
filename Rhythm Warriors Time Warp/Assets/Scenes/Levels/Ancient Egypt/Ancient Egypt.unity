@@ -22817,7 +22817,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: messages.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: characters.Array.size
@@ -22825,7 +22825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: characters.Array.data[1].name
-      value: Bull
+      value: Minotaur
       objectReference: {fileID: 0}
     - target: {fileID: 2864482790039856987, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: messages.Array.data[0].charID
@@ -22843,13 +22843,29 @@ PrefabInstance:
       propertyPath: messages.Array.data[2].message
       value: The fragment!
       objectReference: {fileID: 0}
+    - target: {fileID: 3003615549145676228, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1553.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3003615549145676228, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -707.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4135175838917137598, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: m_Name
       value: Dialogue Box
       objectReference: {fileID: 0}
     - target: {fileID: 4135175838917137598, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622555124026892485, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
+      propertyPath: m_fontSize
+      value: 68.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5622555124026892485, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 68.23
       objectReference: {fileID: 0}
     - target: {fileID: 6202216460614094931, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: m_Pivot.x
@@ -22893,7 +22909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6202216460614094931, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.25
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6202216460614094931, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22933,7 +22949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7531871788703225667, guid: 43aedf3fd9404864fa628a8fbfba3c72, type: 3}
       propertyPath: spawnDistance
-      value: 1.25
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
