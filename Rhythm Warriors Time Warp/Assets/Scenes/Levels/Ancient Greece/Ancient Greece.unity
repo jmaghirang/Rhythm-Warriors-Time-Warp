@@ -1309,6 +1309,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4218870238741008, guid: 1217979e991336242af29838970f3b95, type: 3}
   m_PrefabInstance: {fileID: 93687977}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &93986842 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+  m_PrefabInstance: {fileID: 1192920730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff6782bb4242df41887790cec0fdc76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &96206212 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4410981479021864, guid: be7860f7b6eb8584eabd3efc1d506f43, type: 3}
@@ -11001,7 +11012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1035775109346670452, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1035775109346670452, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15374,6 +15385,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4627585695359849428, guid: e242759f74bad3449824aa539857e459, type: 3}
+      propertyPath: disabledButtons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4627585695359849428, guid: e242759f74bad3449824aa539857e459, type: 3}
+      propertyPath: disabledButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1078545450}
     - target: {fileID: 4658321621574592322, guid: e242759f74bad3449824aa539857e459, type: 3}
       propertyPath: m_Name
       value: Pause Menu
@@ -19818,6 +19837,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4689052459108438, guid: 1ed068f99d47a0745ae3e074c0cd2805, type: 3}
   m_PrefabInstance: {fileID: 1074139030}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1078545450 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3713469310059132700, guid: e242759f74bad3449824aa539857e459, type: 3}
+  m_PrefabInstance: {fileID: 811072652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1079271832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21694,14 +21724,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2e1691713f7eb46b9274f4c988dd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settings: {fileID: 93986842}
   intensity: 0.5
   duration: 0.1
   _volume: {fileID: 1192920735}
   cameraShake: {fileID: 1192920733}
   hapticFeedback: {fileID: 1192920732}
   accuracyText: {fileID: 548217265}
-  scorePanel: {fileID: 0}
-  missPanel: {fileID: 0}
+  scorePanel: {fileID: 2010224596}
+  missPanel: {fileID: 1202493745}
   damageTaken: 10
 --- !u!1001 &1206394975
 PrefabInstance:
@@ -26842,7 +26873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

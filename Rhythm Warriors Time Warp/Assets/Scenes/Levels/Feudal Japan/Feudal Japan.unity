@@ -4057,6 +4057,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4627585695359849428, guid: e242759f74bad3449824aa539857e459, type: 3}
+      propertyPath: disabledButtons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4627585695359849428, guid: e242759f74bad3449824aa539857e459, type: 3}
+      propertyPath: disabledButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1586098784}
     - target: {fileID: 4658321621574592322, guid: e242759f74bad3449824aa539857e459, type: 3}
       propertyPath: m_Name
       value: Pause Menu
@@ -5524,14 +5532,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2e1691713f7eb46b9274f4c988dd3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settings: {fileID: 735626442}
   intensity: 0.5
   duration: 0.1
   _volume: {fileID: 1028271084}
   cameraShake: {fileID: 1028271082}
   hapticFeedback: {fileID: 1028271081}
   accuracyText: {fileID: 164143581}
-  scorePanel: {fileID: 0}
-  missPanel: {fileID: 0}
+  scorePanel: {fileID: 1124022818}
+  missPanel: {fileID: 1973866423}
   damageTaken: 5
 --- !u!1001 &391261505
 PrefabInstance:
@@ -10945,6 +10954,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4696496946089248, guid: 0a6aebdbfd6f2e14a9491a01b875fc31, type: 3}
   m_PrefabInstance: {fileID: 732186153}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &735626442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7163915012416345610, guid: e37b45824ed4e4940b27d52ecc94336a, type: 3}
+  m_PrefabInstance: {fileID: 1028271079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff6782bb4242df41887790cec0fdc76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &735666673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17216,7 +17236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1035775109346670452, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1035775109346670452, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21484,7 +21504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22238,6 +22258,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4430110520264706, guid: d6f2f166eaeaeae419616e931137f1c4, type: 3}
   m_PrefabInstance: {fileID: 1583573424}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1586098784 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3713469310059132700, guid: e242759f74bad3449824aa539857e459, type: 3}
+  m_PrefabInstance: {fileID: 297159349}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1589054100
 GameObject:
   m_ObjectHideFlags: 0

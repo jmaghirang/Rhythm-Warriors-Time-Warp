@@ -10,6 +10,8 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
 
+    public Settings settings;
+
     public float intensity = 0.5f; // intensity of the vignette effect
     public float duration = 0.5f;
 
@@ -68,13 +70,13 @@ public class ScoreManager : MonoBehaviour
             accuracyText.text = "";
         }
 
-        int showPanels = PlayerPrefs.GetInt("PanelsEnabled", 0);
+        bool showPanels = settings.panelsToggle.isOn;
         
-        if (showPanels == 1)
+        if (showPanels == true)
         {
             isEnabled = true;
         }
-        else if (showPanels == 0)
+        else if (showPanels == false)
         {
             isEnabled = false;
         }

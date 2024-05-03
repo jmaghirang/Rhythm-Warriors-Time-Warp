@@ -28996,7 +28996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -54313,7 +54313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0937a864281a24a803baef277928a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneIndex: 10
+  nextSceneIndex: 11
 --- !u!54 &1765603400
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -54628,7 +54628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1035775109346670452, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1035775109346670452, guid: 3edca00fa065cd14eb1057272258d09d, type: 3}
       propertyPath: m_LocalPosition.z
